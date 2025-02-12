@@ -8,7 +8,6 @@
 #include <FlexCAN_T4.h>
 
 #define GEAR_REDUCION_RATIO 22.6f
-#define DIRECTION 1.0f
 
 class R1806
 {
@@ -25,7 +24,6 @@ class R1806
 
     private:
         float _gear_reduction_ratio;
-        float _direction;
 };
 
 #endif

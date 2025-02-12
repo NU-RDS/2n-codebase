@@ -1,0 +1,12 @@
+#ifndef SERIAL_PROTOCOLS_UTILS_H
+#define SERIAL_PROTOCOLS_UTILS_H
+
+#include <stdint.h>
+
+#define START_BYTE 0xAA
+#define END_BYTE   0xBB
+#define MSG_FEEDBACK 0x01
+#define FEEDBACK_PAYLOAD_LENGTH 32
+#define FEEDBACK_PACKET_SIZE 37 // 1 + 1 + 1 + FEEDBACK_PAYLOAD_LENGTH + 1 + 1
+
+#endif

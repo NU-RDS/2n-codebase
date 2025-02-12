@@ -1,9 +1,7 @@
-#include <cstdint>
+#ifndef MOTOR_PROTOCOLS_UTILS_H
+#define MOTOR_PROTOCOLS_UTILS_H
 
-union {
-    float f;
-    uint8_t bytes[4];
-    } convert32;
+#include <stdint.h>
 
 struct{
     struct{
@@ -25,3 +23,5 @@ struct{
         }AxisState;
     }Axis;
 }ODrive;
+
+#endif
