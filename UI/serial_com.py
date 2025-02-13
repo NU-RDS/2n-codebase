@@ -143,7 +143,7 @@ class MotorSerialInterface:
 
 # Example usage:
 if __name__ == '__main__':
-    msi = MotorSerialInterface(port='/dev/ttyACM0', baud_rate=115200)
+    msi = MotorSerialInterface(port='/dev/teensy4', baud_rate=115200)
     torques = [0.034, 0.0, 0.0, 0.0]
     now = time.time()
     try:
