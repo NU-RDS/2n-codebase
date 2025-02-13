@@ -3,10 +3,16 @@
 
 #include <stdint.h>
 
+#define NUM_MOTORS 4
+
 #define START_BYTE 0xAA
 #define END_BYTE   0xBB
 #define MSG_FEEDBACK 0x01
 #define FEEDBACK_PAYLOAD_LENGTH 32
 #define FEEDBACK_PACKET_SIZE 37 // 1 + 1 + 1 + FEEDBACK_PAYLOAD_LENGTH + 1 + 1
+
+#define MSG_TORQUE 0x02
+#define TORQUE_PAYLOAD_LENGTH 16
+#define TORQUE_PACKET_SIZE 21 // 1 + 1 + 1 + TORQUE_PAYLOAD_LENGTH + 1 + 1
 
 #endif
