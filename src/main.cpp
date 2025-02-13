@@ -80,12 +80,15 @@ void setup(void) {
     can1.mailboxStatus();
     delay(500);
 
-    can1.events();
-    can1.write(motor1_close_loop_request_cmd);
-    can1.write(motor2_close_loop_request_cmd);
-    can1.write(motor3_close_loop_request_cmd);
-    can1.write(motor4_close_loop_request_cmd);
-    delay(500);
+    // Repeat 5 times to ensure that the motors are in closed loop control mode.
+    for (int i=0; i<5; i++){
+        can1.events();
+        can1.write(motor1_close_loop_request_cmd);
+        can1.write(motor2_close_loop_request_cmd);
+        can1.write(motor3_close_loop_request_cmd);
+        can1.write(motor4_close_loop_request_cmd);
+        delay(500);
+    }
 }
 
 void loop() {
