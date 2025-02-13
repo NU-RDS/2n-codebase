@@ -4,7 +4,7 @@ import serial
 import time
 
 class TeensyComm:
-    def __init__(self, port='/dev/tty0', baudrate=115200, timeout=0.01):
+    def __init__(self, port='/dev/teensy4', baudrate=115200, timeout=0.01):
         """
         Leave the GUI to open the port.
         """
