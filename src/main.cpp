@@ -14,25 +14,32 @@ float motorVelocities[4] = {0.0, 0.0, 0.0, 0.0};
 uint8_t* packet;
 static uint32_t timeout = millis();
 
+// Global variables to hold the latest encoder feedback values.
 float motor1_position = 0.0;
 float motor1_velocity = 0.0;
+float motor2_position = 0.0;
+float motor2_velocity = 0.0;
+float motor3_position = 0.0;
+float motor3_velocity = 0.0;
+float motor4_position = 0.0;
+float motor4_velocity = 0.0;
+
+// CAN messages for torque commands and close loop control.
 CAN_message_t motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, 0.0);
 CAN_message_t motor1_close_loop_request_cmd = r1806_protocols.encodeRequestedStateCommand(1, ODrive.Axis.AxisState.CLOSED_LOOP_CONTROL);
 
-float motor2_position = 0.0;
-float motor2_velocity = 0.0;
 CAN_message_t motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(1, 0.0);
 CAN_message_t motor2_close_loop_request_cmd = r1806_protocols.encodeRequestedStateCommand(1, ODrive.Axis.AxisState.CLOSED_LOOP_CONTROL);
 
-float motor3_position = 0.0;
-float motor3_velocity = 0.0;
 CAN_message_t motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(1, 0.0);
 CAN_message_t motor3_close_loop_request_cmd = r1806_protocols.encodeRequestedStateCommand(1, ODrive.Axis.AxisState.CLOSED_LOOP_CONTROL);
 
-float motor4_position = 0.0;
-float motor4_velocity = 0.0;
 CAN_message_t motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(1, 0.0);
 CAN_message_t motor4_close_loop_request_cmd = r1806_protocols.encodeRequestedStateCommand(1, ODrive.Axis.AxisState.CLOSED_LOOP_CONTROL);
+
+// Timeout parameters: if no valid torque command is received within 100 ms, set torques to 0.
+const uint32_t TORQUE_TIMEOUT_MS = 100;
+uint32_t lastTorqueCmdTime = millis();
 
 void canSniff(const CAN_message_t &msg) {
     // Extract motor id and command id from the CAN message
@@ -80,8 +87,8 @@ void setup(void) {
     can1.mailboxStatus();
     delay(500);
 
-    // Repeat 5 times to ensure that the motors are in closed loop control mode.
-    for (int i=0; i<5; i++){
+    // Repeat 5 times to ensure the motors enter closed loop control.
+    for (int i = 0; i < 5; i++){
         can1.events();
         can1.write(motor1_close_loop_request_cmd);
         can1.write(motor2_close_loop_request_cmd);
@@ -93,26 +100,32 @@ void setup(void) {
 
 void loop() {
     can1.events();
-    // Serial.println("Motor 1 Position: " + String(motor1_position) + " rad. " + "Motor 1 Velocity: " + String(motor1_velocity) + " rad/s");
-    // --- New Section: Read Torque Command from Serial ---
-    // Check if a full torque command packet is available.
+
+    // --- Torque Command Reception ---
     if (Serial.available() >= TORQUE_PACKET_SIZE) {
         uint8_t torqueBuffer[TORQUE_PACKET_SIZE];
-        // Read the entire torque packet from Serial.
+        // Cast is required because readBytes expects a char pointer.
         Serial.readBytes((char*)torqueBuffer, TORQUE_PACKET_SIZE);
-        // Decode the torque packet directly.
         float* torques = serial_protocols.decodeTorquePacket(torqueBuffer);
         if (torques != nullptr) {
-            // Update CAN torque commands with the decoded torque values.
             motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, torques[0]);
             motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, torques[1]);
             motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, torques[2]);
             motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(4, torques[3]);
+            // Update the last valid torque command time.
+            lastTorqueCmdTime = millis();
         }
     }
-    // --- End New Section ---
+    
+    // --- Timeout Check: if no torque command received recently, reset torques to 0 ---
+    if (millis() - lastTorqueCmdTime > TORQUE_TIMEOUT_MS) {
+        motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, 0.0);
+        motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, 0.0);
+        motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, 0.0);
+        motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(4, 0.0);
+    }
 
-    // Send CAN torque commands at 50 Hz.
+    // --- Send Torque Commands at 50 Hz ---
     if (millis() - timeout > 20) {
         can1.write(motor1_torque_cmd);
         can1.write(motor2_torque_cmd);
@@ -121,7 +134,7 @@ void loop() {
         timeout = millis();
     }
 
-    // Update motor feedback data arrays.
+    // --- Update Encoder Feedback Data ---
     motorPositions[0] = motor1_position;
     motorPositions[1] = motor2_position;
     motorPositions[2] = motor3_position;
@@ -131,7 +144,7 @@ void loop() {
     motorVelocities[2] = motor3_velocity;
     motorVelocities[3] = motor4_velocity;
 
-    // Send the encoder feedback packet over Serial.
+    // --- Send Feedback Packet over Serial ---
     packet = serial_protocols.encodeFeedbackPacket(motorPositions, motorVelocities);
     Serial.write(packet, FEEDBACK_PACKET_SIZE);
 }
