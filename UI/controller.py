@@ -17,6 +17,35 @@ class Controller:
         self.trans_mat = np.array([[self._r/self._R1, -self._r/self._R1, 0.0, 0.0],
                                    [-self._r/self._R2, self._r/self._R2, self._r/self._R2, -self._r/self._R2]])
         
+    def go_home(self):
+        # Tensioning the system
+        motor_torques = np.array([0.34, 0.34, 0.34, 0.34])
+        velocities = self.MSI.get_motor_states()[1]
+        self.MSI.set_motor_torques(motor_torques)
+        while np.any(np.abs(velocities) > 0.1):
+            for i in range(4):
+                if velocities[i] > 0.1:
+                    motor_torques[i] = 0.34
+                else:
+                    motor_torques[i] = 0.0
+            self.MSI.set_motor_torques(motor_torques)
+            velocities = self.MSI.get_motor_states()[1]
+
+        # Moving to home position
+        motor_torques = np.array([0.68, -0.68, -0.68, 0.68])
+        velocities = self.MSI.get_motor_states()[1]
+        self.MSI.set_motor_torques(motor_torques)   
+        while np.any(np.abs(velocities) > 0.1):
+            for i in range(4):
+                if velocities[i] > 0.1:
+                    motor_torques[i] = -1**(i+1)*0.68
+                else:
+                    motor_torques[i] = 0.0
+            self.MSI.set_motor_torques(motor_torques)
+            velocities = self.MSI.get_motor_states()[1]
+        motor_states = self.MSI.get_motor_states()[0]
+        return motor_states  
+
     def torque_ctrl(self, js_0, ms_0, js_d):
         # js - joint_states
         # ms - motor_states
@@ -39,7 +68,7 @@ class Controller:
             motor_torques = self.trans_mat.conjugate().transpose() @ joint_torques
             self.MSI.set_motor_torques(motor_torques)
             print(f"Motor torque: {motor_torques[0]}") 
-            pos, vel = self.MSI.get_motor_states()
+            pos = self.MSI.get_motor_states()[0]
             ms = np.array(pos)
             js = self.trans_mat @ (ms.T - ms_0.T) + js_0
             js_e = js_d - js
