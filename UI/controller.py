@@ -51,11 +51,11 @@ class Controller:
         # ms - motor_states
         # js_d - desired joint_states
         prev_time = time.time()
-        js_0 = np.array(js_0)
+        js_0 = np.array(math.radians(js_0))
         js = np.array(js_0)
         ms_0 = np.array(ms_0) 
         ms = np.array(ms_0)
-        js_d = np.array(js_d)
+        js_d = np.array(math.radians(js_d))
         js_e = js_d - js
         js_e_sum = 0.0 + js_e
         # Lists to store data for plotting
@@ -93,7 +93,7 @@ class Controller:
 
         plt.tight_layout()
         plt.show()
-        return ms, js
+        return ms, math.degrees(js)
 
 if __name__ == '__main__':
     msi = MotorSerialInterface(port='/dev/ttyACM0', baud_rate=115200)
