@@ -17,8 +17,27 @@ class Controller:
         self.trans_mat = np.array([[self._r/self._R1, -self._r/self._R1, 0.0, 0.0],
                                    [-self._r/self._R2, self._r/self._R2, self._r/self._R2, -self._r/self._R2]])
         
-    def go_home(self):
-        # Tensioning the system
+    def go_home(self, tensioned):
+        # Moving to home position
+        motor_states = self.MSI.get_motor_states()[0]
+        if tensioned == True:
+            motor_torques = np.array([0.68, -0.68, -0.68, 0.68])
+            velocities = self.MSI.get_motor_states()[1]
+            self.MSI.set_motor_torques(motor_torques)   
+            while np.any(np.abs(velocities) > 0.1):
+                for i in range(4):
+                    if velocities[i] > 0.1:
+                        motor_torques[i] = -1**(i+1)*0.68
+                    else:
+                        motor_torques[i] = 0.0
+                self.MSI.set_motor_torques(motor_torques)
+                velocities = self.MSI.get_motor_states()[1]
+            motor_states = self.MSI.get_motor_states()[0]
+        else:
+            print("Tendons are not tensioned, please tension first!")
+        return motor_states  
+    
+    def tension(self):
         motor_torques = np.array([0.34, 0.34, 0.34, 0.34])
         velocities = self.MSI.get_motor_states()[1]
         self.MSI.set_motor_torques(motor_torques)
@@ -30,21 +49,9 @@ class Controller:
                     motor_torques[i] = 0.0
             self.MSI.set_motor_torques(motor_torques)
             velocities = self.MSI.get_motor_states()[1]
-
-        # Moving to home position
-        motor_torques = np.array([0.68, -0.68, -0.68, 0.68])
-        velocities = self.MSI.get_motor_states()[1]
-        self.MSI.set_motor_torques(motor_torques)   
-        while np.any(np.abs(velocities) > 0.1):
-            for i in range(4):
-                if velocities[i] > 0.1:
-                    motor_torques[i] = -1**(i+1)*0.68
-                else:
-                    motor_torques[i] = 0.0
-            self.MSI.set_motor_torques(motor_torques)
-            velocities = self.MSI.get_motor_states()[1]
         motor_states = self.MSI.get_motor_states()[0]
-        return motor_states  
+        tensioned = True
+        return motor_states, tensioned
 
     def torque_ctrl(self, js_0, ms_0, js_d):
         # js - joint_states
