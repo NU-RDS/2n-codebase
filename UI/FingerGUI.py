@@ -21,10 +21,9 @@ class FingerGUI:
         # 1) Define DoubleVar for joint1 and joint2: shared by sliders & text entries
         self.j1_var = tk.DoubleVar(value=0.0)
         self.j2_var = tk.DoubleVar(value=0.0)
-
-        # Home motor status, position
-        self.motor_home = None 
-        # Home joint status, position 
+        # Joint [J2, J1]. 
+        # J2 is the pip 
+        # J1 is the mip
         self.joint_home = None
         
         # motor last status (position), update after each torque_ctrl
@@ -65,7 +64,7 @@ class FingerGUI:
         self.joint1_scale = tk.Scale(pos_frame, from_=-90, to=90,
                                      orient=tk.HORIZONTAL,
                                      variable=self.j1_var,
-                                     length=200)  # Adjust length for better dragging
+                                     length=300)  # Adjust length for better dragging
         self.joint1_scale.grid(row=0, column=1, padx=5, pady=2)
         self.joint1_entry = tk.Entry(pos_frame, width=6,
                                      textvariable=self.j1_var)  # Shared variable with slider
@@ -75,7 +74,7 @@ class FingerGUI:
         self.joint2_scale = tk.Scale(pos_frame, from_=-90, to=90,
                                      orient=tk.HORIZONTAL,
                                      variable=self.j2_var,
-                                     length=200)
+                                     length=300)
         self.joint2_scale.grid(row=1, column=1, padx=5, pady=2)
         self.joint2_entry = tk.Entry(pos_frame, width=6,
                                      textvariable=self.j2_var)
@@ -223,7 +222,8 @@ class FingerGUI:
         # Get the desired joints position.
         j1_desired = self.j1_var.get()
         j2_desired = self.j2_var.get()
-        js_d = math.radians([j1_desired, j2_desired])
+        
+        js_d = math.radians([j2_desired, j1_desired])
         
         # read the current position and velocities
         position, velocities = self.msi.get_motor_states()
@@ -309,8 +309,8 @@ class FingerGUI:
                                                             self.motor_last,
                                                             self.joint_last,
                                                             self.controller.trans_mat)
-            j1_actual = joint_current[0]
-            j2_actual = joint_current[1]
+            j1_actual = joint_current[1]
+            j2_actual = joint_current[0]
             self.draw_finger(j1_actual, j2_actual)
         self.master.after(50, self.update_gui)
 
