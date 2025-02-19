@@ -21,7 +21,7 @@ class Controller:
         # Moving to home position
         motor_states = self.MSI.get_motor_states()[0]
         if tensioned == True:
-            motor_torques = np.array([0.68, -0.68, -0.68, 0.68])
+            motor_torques = np.array([0.0, 0.0, 0.68, -0.68])
             velocities = self.MSI.get_motor_states()[1]
             self.MSI.set_motor_torques(motor_torques)   
             while np.any(np.abs(velocities) > 0.1):
@@ -33,12 +33,13 @@ class Controller:
                 self.MSI.set_motor_torques(motor_torques)
                 velocities = self.MSI.get_motor_states()[1]
             motor_states = self.MSI.get_motor_states()[0]
+            joint_states = np.array([0.0, 0.0])
+            return motor_states, joint_states
         else:
             print("Tendons are not tensioned, please tension first!")
-        return motor_states  
     
     def tension(self):
-        motor_torques = np.array([0.34, 0.34, 0.34, 0.34])
+        motor_torques = np.array([0.0, 0.0, -0.34, -0.34])
         velocities = self.MSI.get_motor_states()[1]
         self.MSI.set_motor_torques(motor_torques)
         while np.any(np.abs(velocities) > 0.1):
@@ -58,11 +59,11 @@ class Controller:
         # ms - motor_states
         # js_d - desired joint_states
         prev_time = time.time()
-        js_0 = np.array(math.radians(js_0))
+        js_0 = np.array(np.radians(js_0))
         js = np.array(js_0)
         ms_0 = np.array(ms_0) 
         ms = np.array(ms_0)
-        js_d = np.array(math.radians(js_d))
+        js_d = np.array(np.radians(js_d))
         js_e = js_d - js
         js_e_sum = 0.0 + js_e
         # Lists to store data for plotting
@@ -100,13 +101,16 @@ class Controller:
 
         plt.tight_layout()
         plt.show()
-        return ms, math.degrees(js)
+        return ms, np.degrees(js)
 
 if __name__ == '__main__':
-    msi = MotorSerialInterface(port='/dev/ttyACM0', baud_rate=115200)
+    msi = MotorSerialInterface(port='/dev/teensy4', baud_rate=115200)
     controller = Controller()
-    ms_0, velocities = msi.get_motor_states()
-    js_0 = controller.trans_mat @ ms_0
-    js_d = np.array([math.pi/2, math.pi/4])
+    ms_0, tensioned = controller.tension()
+    ms_0, js_0 = controller.go_home(tensioned) 
+    js_d = np.array([0.0, 45.0])
+    ms_0 = msi.get_motor_states()[0]
     ms, js = controller.torque_ctrl(js_0, ms_0, js_d)
+    print(f"Final motor states: {ms}")
+    print(f"Final joint states: {js}")
     msi.close()
