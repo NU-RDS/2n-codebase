@@ -8,10 +8,10 @@ START_BYTE = 0xAA
 END_BYTE = 0xBB
 MSG_FEEDBACK = 0x01
 MSG_JOINT_COMMAND = 0x02
-FEEDBACK_PAYLOAD_LENGTH = 16
-FEEDBACK_PACKET_SIZE = 21
-JOINT_COMMAND_PAYLOAD_LENGTH = 16
-JOINT_COMMAND_PACKET_SIZE = 21
+FEEDBACK_PAYLOAD_LENGTH = 8
+FEEDBACK_PACKET_SIZE = 13
+JOINT_COMMAND_PAYLOAD_LENGTH = 8
+JOINT_COMMAND_PACKET_SIZE = 13
 
 class MotorSerialInterface:
     def __init__(self, port='/dev/teensy4', baud_rate=115200, timeout=1):
@@ -20,8 +20,8 @@ class MotorSerialInterface:
         time.sleep(2)
         
         # Initialize motor state (positions) and joint commands.
-        self._joint_states = (0.0, 0.0, 0.0, 0.0)
-        self._joint_commands = [0.0, 0.0, 0.0, 0.0]
+        self._joint_states = (0.0, 0.0)
+        self._joint_commands = [0.0, 0.0]
 
         # Locks to ensure thread-safe access.
         self._state_lock = threading.Lock()
@@ -65,26 +65,26 @@ class MotorSerialInterface:
             return None
 
         try:
-            # Unpack 4 float32 values: 4 joint positions
-            values = struct.unpack('<8f', payload)
+            # Unpack 2 float32 values: 2 joint positions
+            values = struct.unpack('<2f', payload)
         except struct.error:
             return None
 
-        raw_positions = values[0:4]
+        raw_positions = values[:]
         # Normalize angles to be within [-pi, pi].
         positions = tuple(self._pi2pi(angle) for angle in raw_positions)
         return positions
 
     def _encode_joint_command_packet(self, joint_commands):
         """
-        Encode a joint command packet given 4 position values.
+        Encode a joint command packet given 2 position values.
         Returns a bytes object.
         """
         packet = bytearray()
         packet.append(START_BYTE)
         packet.append(MSG_JOINT_COMMAND)
         packet.append(JOINT_COMMAND_PAYLOAD_LENGTH)
-        payload = struct.pack('<4f', *joint_commands)
+        payload = struct.pack('<2f', *joint_commands)
         packet.extend(payload)
         checksum = self._compute_checksum(MSG_JOINT_COMMAND, JOINT_COMMAND_PAYLOAD_LENGTH, payload)
         packet.append(checksum)
@@ -122,11 +122,11 @@ class MotorSerialInterface:
         """
         return (angle + 3.14159265359) % (2 * 3.14159265359) - 3.14159265359
 
-    def get_motor_states(self):
+    def get_joint_states(self):
         """
         Return the latest motor states.
         Returns:
-            (positions): tuple of 4-element tuples of floats.
+            (positions): tuple of 2-element tuples of floats.
         """
         with self._state_lock:
             return self._joint_states
@@ -135,10 +135,10 @@ class MotorSerialInterface:
         """
         Update the joint commands to be sent.
         Parameters:
-            positions: list or tuple of 4 float values.
+            positions: list or tuple of 2 float values.
         """
-        if len(positions) != 4:
-            raise ValueError("Expected 4 joint position command values")
+        if len(positions) != 2:
+            raise ValueError("Expected 2 joint position command values")
         with self._joint_command_lock:
             self._joint_commands = list(positions)
 
@@ -150,12 +150,11 @@ class MotorSerialInterface:
 # Example usage:
 if __name__ == '__main__':
     msi = MotorSerialInterface(port='/dev/teensy4', baud_rate=115200)
-    joint_commands = [0.0, 0.0, 0.0, 0.0]
+    joint_commands = [0.0, 0.0]
     try:
         while True:
-            positions = msi.get_motor_states()
-            now = time.time()
-            print(str(round(now,2))+": Motor Positions:", positions)
+            positions = msi.get_joint_states()
+            print(": Motor Positions:", positions)
             msi.set_joint_positions(joint_commands)
     except KeyboardInterrupt:
         msi.close()
