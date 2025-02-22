@@ -24,6 +24,9 @@ class MotorSerialInterface:
         self._motor_velocities = (0.0, 0.0, 0.0, 0.0)
         self._torque_commands = [0.0, 0.0, 0.0, 0.0]
 
+        self._joint_positions = (0.0, 0.0)
+        self._joint_desired = [0.0, 0.0]
+
         # Locks to ensure thread-safe access.
         self._state_lock = threading.Lock()
         self._torque_lock = threading.Lock()
@@ -124,6 +127,13 @@ class MotorSerialInterface:
         """
         with self._state_lock:
             return self._motor_positions, self._motor_velocities
+        
+    def get_joint_status(self):
+        '''
+        Return the lastest 
+        '''
+        with self._state_lock:
+            return self._joint_positions
 
     def set_motor_torques(self, torques):
         """
@@ -144,7 +154,7 @@ class MotorSerialInterface:
 # Example usage:
 if __name__ == '__main__':
     msi = MotorSerialInterface(port='/dev/teensy4', baud_rate=115200)
-    torques = [0.034, 0.0, 0.0, 0.0]
+    torques = [0.0, 0.0, -0.034, 0.0 ]
     now = time.time()
     try:
         while True:

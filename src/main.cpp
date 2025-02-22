@@ -20,17 +20,17 @@ CAN_message_t motor1_close_loop_request_cmd = r1806_protocols.encodeRequestedSta
 
 float motor2_position = 0.0;
 float motor2_velocity = 0.0;
-CAN_message_t motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(1, 0.0);
+CAN_message_t motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, 0.0);
 CAN_message_t motor2_close_loop_request_cmd = r1806_protocols.encodeRequestedStateCommand(1, ODrive.Axis.AxisState.CLOSED_LOOP_CONTROL);
 
 float motor3_position = 0.0;
 float motor3_velocity = 0.0;
-CAN_message_t motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(1, 0.0);
+CAN_message_t motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, 0.0);
 CAN_message_t motor3_close_loop_request_cmd = r1806_protocols.encodeRequestedStateCommand(1, ODrive.Axis.AxisState.CLOSED_LOOP_CONTROL);
 
 float motor4_position = 0.0;
 float motor4_velocity = 0.0;
-CAN_message_t motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(1, 0.0);
+CAN_message_t motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(4, 0.0);
 CAN_message_t motor4_close_loop_request_cmd = r1806_protocols.encodeRequestedStateCommand(1, ODrive.Axis.AxisState.CLOSED_LOOP_CONTROL);
 
 void canSniff(const CAN_message_t &msg) {
