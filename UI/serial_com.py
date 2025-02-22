@@ -153,18 +153,15 @@ class MotorSerialInterface:
 # Example usage:
 if __name__ == '__main__':
     msi = MotorSerialInterface(port='/dev/teensy4', baud_rate=115200)
-    torques = [0.034, 0.0, 0.0, 0.0]
+    torques = [0.0, 0.0, -0.34, 0.0]
     now = time.time()
     try:
         while True:
             positions, velocities = msi.get_motor_states()
             print("Motor Positions:", positions)
-            # print("Motor Velocities:", velocities)
-            # For demonstration, toggle the first motor's torque every 1 seconds.
-            if time.time() - now > 0.5:
-                torques[0] = -torques[0]
-                msi.set_motor_torques(torques)
-                now = time.time()
+            # For demonstration, toggle the first motor's torque every 1 seconds. 
+            msi.set_motor_torques(torques)
+            now = time.time()
     except KeyboardInterrupt:
         msi.close()
         print("Interface closed.")
