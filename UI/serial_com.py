@@ -7,35 +7,34 @@ import threading
 START_BYTE = 0xAA
 END_BYTE = 0xBB
 MSG_FEEDBACK = 0x01
-MSG_TORQUE = 0x02
-FEEDBACK_PAYLOAD_LENGTH = 32
-FEEDBACK_PACKET_SIZE = 37
-TORQUE_PAYLOAD_LENGTH = 16
-TORQUE_PACKET_SIZE = 21
+MSG_JOINT_COMMAND = 0x02
+FEEDBACK_PAYLOAD_LENGTH = 16
+FEEDBACK_PACKET_SIZE = 21
+JOINT_COMMAND_PAYLOAD_LENGTH = 16
+JOINT_COMMAND_PACKET_SIZE = 21
 
 class MotorSerialInterface:
-    def __init__(self, port='/dev/ttyACM0', baud_rate=115200, timeout=1):
+    def __init__(self, port='/dev/teensy4', baud_rate=115200, timeout=1):
         self.ser = serial.Serial(port, baud_rate, timeout=timeout)
         # Give the serial port a moment to initialize
         time.sleep(2)
         
-        # Initialize motor state (positions and velocities) and torque commands.
-        self._motor_positions = (0.0, 0.0, 0.0, 0.0)
-        self._motor_velocities = (0.0, 0.0, 0.0, 0.0)
-        self._torque_commands = [0.0, 0.0, 0.0, 0.0]
+        # Initialize motor state (positions) and joint commands.
+        self._joint_states = (0.0, 0.0, 0.0, 0.0)
+        self._joint_commands = [0.0, 0.0, 0.0, 0.0]
 
         # Locks to ensure thread-safe access.
         self._state_lock = threading.Lock()
-        self._torque_lock = threading.Lock()
+        self._joint_command_lock = threading.Lock()
 
         # Event to signal thread shutdown.
         self._stop_event = threading.Event()
 
-        # Start threads: one for reading feedback, one for sending torque commands.
+        # Start threads: one for reading feedback, one for sending joint commands.
         self._feedback_thread = threading.Thread(target=self._feedback_loop, daemon=True)
-        self._torque_thread = threading.Thread(target=self._torque_loop, daemon=True)
+        self._joint_command_thread = threading.Thread(target=self._joint_command_loop, daemon=True)
         self._feedback_thread.start()
-        self._torque_thread.start()
+        self._joint_command_thread.start()
 
     def _compute_checksum(self, msg_type, payload_len, payload):
         """Compute checksum as the modulo-256 sum of the message type, payload length, and payload bytes."""
@@ -47,7 +46,7 @@ class MotorSerialInterface:
     def _decode_feedback_packet(self, packet):
         """
         Validate and decode a feedback packet.
-        Returns a tuple (positions, velocities) if valid, or None otherwise.
+        Returns a tuple (positions) if valid, or None otherwise.
         """
         if len(packet) != FEEDBACK_PACKET_SIZE:
             return None
@@ -66,36 +65,34 @@ class MotorSerialInterface:
             return None
 
         try:
-            # Unpack 8 float32 values: first 4 are positions, next 4 are velocities.
+            # Unpack 4 float32 values: 4 joint positions
             values = struct.unpack('<8f', payload)
         except struct.error:
             return None
 
         raw_positions = values[0:4]
-        raw_velocities = values[4:8]
         # Normalize angles to be within [-pi, pi].
         positions = tuple(self._pi2pi(angle) for angle in raw_positions)
-        velocities = tuple(self._pi2pi(vel) for vel in raw_velocities)
-        return positions, velocities
+        return positions
 
-    def _encode_torque_packet(self, torques):
+    def _encode_joint_command_packet(self, joint_commands):
         """
-        Encode a torque command packet given 4 torque values.
+        Encode a joint command packet given 4 position values.
         Returns a bytes object.
         """
         packet = bytearray()
         packet.append(START_BYTE)
-        packet.append(MSG_TORQUE)
-        packet.append(TORQUE_PAYLOAD_LENGTH)
-        payload = struct.pack('<4f', *torques)
+        packet.append(MSG_JOINT_COMMAND)
+        packet.append(JOINT_COMMAND_PAYLOAD_LENGTH)
+        payload = struct.pack('<4f', *joint_commands)
         packet.extend(payload)
-        checksum = self._compute_checksum(MSG_TORQUE, TORQUE_PAYLOAD_LENGTH, payload)
+        checksum = self._compute_checksum(MSG_JOINT_COMMAND, JOINT_COMMAND_PAYLOAD_LENGTH, payload)
         packet.append(checksum)
         packet.append(END_BYTE)
         return bytes(packet)
 
     def _feedback_loop(self):
-        """Continuously reads from Serial and updates motor positions and velocities."""
+        """Continuously reads from Serial and updates motor positions."""
         while not self._stop_event.is_set():
             # Look for the start marker.
             byte = self.ser.read(1)
@@ -109,14 +106,14 @@ class MotorSerialInterface:
                 decoded = self._decode_feedback_packet(packet)
                 if decoded is not None:
                     with self._state_lock:
-                        self._motor_positions, self._motor_velocities = decoded
+                        self._joint_states = decoded
 
-    def _torque_loop(self):
-        """Periodically sends the current torque commands over Serial at approximately 50 Hz."""
+    def _joint_command_loop(self):
+        """Periodically sends the current joint commands over Serial at approximately 50 Hz."""
         while not self._stop_event.is_set():
-            with self._torque_lock:
-                current_torques = self._torque_commands[:]
-            packet = self._encode_torque_packet(current_torques)
+            with self._joint_command_lock:
+                current_joint_commands = self._joint_commands[:]
+            packet = self._encode_joint_command_packet(current_joint_commands)
             self.ser.write(packet)
 
     def _pi2pi(self, angle):
@@ -129,21 +126,21 @@ class MotorSerialInterface:
         """
         Return the latest motor states.
         Returns:
-            (positions, velocities): tuple of 4-element tuples of floats.
+            (positions): tuple of 4-element tuples of floats.
         """
         with self._state_lock:
-            return self._motor_positions, self._motor_velocities
+            return self._joint_states
 
-    def set_motor_torques(self, torques):
+    def set_joint_positions(self, positions):
         """
-        Update the torque commands to be sent.
+        Update the joint commands to be sent.
         Parameters:
-            torques: list or tuple of 4 float values.
+            positions: list or tuple of 4 float values.
         """
-        if len(torques) != 4:
-            raise ValueError("Expected 4 torque values")
-        with self._torque_lock:
-            self._torque_commands = list(torques)
+        if len(positions) != 4:
+            raise ValueError("Expected 4 joint position command values")
+        with self._joint_command_lock:
+            self._joint_commands = list(positions)
 
     def close(self):
         """Stop the threads and close the serial port."""
@@ -153,15 +150,13 @@ class MotorSerialInterface:
 # Example usage:
 if __name__ == '__main__':
     msi = MotorSerialInterface(port='/dev/teensy4', baud_rate=115200)
-    torques = [0.0, 0.0, -0.34, 0.0]
-    now = time.time()
+    joint_commands = [0.0, 0.0, 0.0, 0.0]
     try:
         while True:
-            positions, velocities = msi.get_motor_states()
-            print("Motor Positions:", positions)
-            # For demonstration, toggle the first motor's torque every 1 seconds. 
-            msi.set_motor_torques(torques)
+            positions = msi.get_motor_states()
             now = time.time()
+            print(str(round(now,2))+": Motor Positions:", positions)
+            msi.set_joint_positions(joint_commands)
     except KeyboardInterrupt:
         msi.close()
         print("Interface closed.")

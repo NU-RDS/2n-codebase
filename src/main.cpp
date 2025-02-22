@@ -9,8 +9,7 @@ CAN_message_t msg;
 R1806 r1806_protocols;
 SerialProtocols serial_protocols;
 
-float motorPositions[4] = {0.0, 0.0, 0.0, 0.0};
-float motorVelocities[4] = {0.0, 0.0, 0.0, 0.0};
+float joint_positions[4] = {0.0, 0.0, 0.0, 0.0};
 uint8_t* packet;
 static uint32_t timeout = millis();
 
@@ -38,8 +37,8 @@ CAN_message_t motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(1, 0.0);
 CAN_message_t motor4_close_loop_request_cmd = r1806_protocols.encodeRequestedStateCommand(1, ODrive.Axis.AxisState.CLOSED_LOOP_CONTROL);
 
 // Timeout parameters: if no valid torque command is received within 100 ms, set torques to 0.
-const uint32_t TORQUE_TIMEOUT_MS = 100;
-uint32_t lastTorqueCmdTime = millis();
+const uint32_t POSITION_TIMEOUT_MS = 100;
+uint32_t lastpositionCmdTime = millis();
 
 void canSniff(const CAN_message_t &msg) {
     // Extract motor id and command id from the CAN message
@@ -98,24 +97,25 @@ void setup(void) {
 void loop() {
     can1.events();
 
-    // --- Torque Command Reception ---
-    if (Serial.available() >= TORQUE_PACKET_SIZE) {
-        uint8_t torqueBuffer[TORQUE_PACKET_SIZE];
+    // --- Joint Position Command Reception ---
+    if (Serial.available() >= POSITION_PACKET_SIZE) {
+        uint8_t position_buffer[POSITION_PACKET_SIZE];
         // Cast is required because readBytes expects a char pointer.
-        Serial.readBytes((char*)torqueBuffer, TORQUE_PACKET_SIZE);
-        float* torques = serial_protocols.decodeTorquePacket(torqueBuffer);
-        if (torques != nullptr) {
+        Serial.readBytes((char*)position_buffer, POSITION_PACKET_SIZE);
+        float* positions = serial_protocols.decodePositionPacket(position_buffer);
+        if (positions != nullptr) {
+            float torques[4] = {0.0, 0.0, 0.0, 0.0};
             motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, torques[0]);
             motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, torques[1]);
             motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, torques[2]);
             motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(4, torques[3]);
             // Update the last valid torque command time.
-            lastTorqueCmdTime = millis();
+            lastpositionCmdTime = millis();
         }
     }
     
     // --- Timeout Check: if no torque command received recently, reset torques to 0 ---
-    if (millis() - lastTorqueCmdTime > TORQUE_TIMEOUT_MS) {
+    if (millis() - lastpositionCmdTime > POSITION_TIMEOUT_MS) {
         motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, 0.0);
         motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, 0.0);
         motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, 0.0);
@@ -131,17 +131,13 @@ void loop() {
         timeout = millis();
     }
 
-    // --- Update Encoder Feedback Data ---
-    motorPositions[0] = motor1_position;
-    motorPositions[1] = motor2_position;
-    motorPositions[2] = motor3_position;
-    motorPositions[3] = motor4_position;
-    motorVelocities[0] = motor1_velocity;
-    motorVelocities[1] = motor2_velocity;
-    motorVelocities[2] = motor3_velocity;
-    motorVelocities[3] = motor4_velocity;
+    // --- Update Joint States Feedback Data ---
+    joint_positions[0] = motor1_position;
+    joint_positions[1] = motor2_position;
+    joint_positions[2] = motor3_position;
+    joint_positions[3] = motor4_position;
 
     // --- Send Feedback Packet over Serial ---
-    packet = serial_protocols.encodeFeedbackPacket(motorPositions, motorVelocities);
+    packet = serial_protocols.encodeFeedbackPacket(joint_positions);
     Serial.write(packet, FEEDBACK_PACKET_SIZE);
 }
