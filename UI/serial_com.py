@@ -71,8 +71,11 @@ class MotorSerialInterface:
         except struct.error:
             return None
 
-        positions = values[0:4]
-        velocities = values[4:8]
+        raw_positions = values[0:4]
+        raw_velocities = values[4:8]
+        # Normalize angles to be within [-pi, pi].
+        positions = tuple(self._pi2pi(angle) for angle in raw_positions)
+        velocities = tuple(self._pi2pi(vel) for vel in raw_velocities)
         return positions, velocities
 
     def _encode_torque_packet(self, torques):
@@ -115,6 +118,12 @@ class MotorSerialInterface:
                 current_torques = self._torque_commands[:]
             packet = self._encode_torque_packet(current_torques)
             self.ser.write(packet)
+
+    def _pi2pi(self, angle):
+        """
+        Normalize angle to be within [-pi, pi].
+        """
+        return (angle + 3.14159265359) % (2 * 3.14159265359) - 3.14159265359
 
     def get_motor_states(self):
         """

@@ -3,6 +3,7 @@ import math
 import time
 
 from serial_com import MotorSerialInterface
+from pid import PIDController
 
 class FingerGUI:
     def __init__(self, master):
@@ -15,11 +16,36 @@ class FingerGUI:
         self.j1_var = tk.DoubleVar(value=0.0)
         self.j2_var = tk.DoubleVar(value=0.0)
 
+        self.control_mode = "init"  # 控制模式： init/ position / torque
+
+        # Create PID controllers
+        self.create_pid_controller()
+
         # 构建界面
         self.create_widgets()
 
         # 周期刷新 GUI（读取电机状态、更新画布等）
         self.update_gui()
+
+    def create_pid_controller(self):
+        # 创建 PID 控制器实例
+        self.pid_controllers = [PIDController(p=0.5, i=0.0, d=5.0, window_size=10, max_input=0.04),
+                                PIDController(p=0.5, i=0.0, d=5.0, window_size=10, max_input=0.04),
+                                PIDController(p=0.5, i=0.0, d=5.0, window_size=10, max_input=0.04),
+                                PIDController(p=0.5, i=0.0, d=5.0, window_size=10, max_input=0.04)]
+        # 初始化 PID 控制器状态
+        for pid in self.pid_controllers:
+            pid.update_state(0.0, 0.0)
+        
+        self.j1_position_target = 0.0
+        self.j2_position_target = 0.0
+        self.j3_position_target = 0.0
+        self.j4_position_target = 0.0
+
+        self.j1_torque_target = 0.0
+        self.j2_torque_target = 0.0
+        self.j3_torque_target = 0.0
+        self.j4_torque_target = 0.0
 
     def create_widgets(self):
         # -------------- 顶部按钮区 (Connect/Disconnect/Home/Stop) --------------
@@ -62,7 +88,7 @@ class FingerGUI:
                                      textvariable=self.j2_var)
         self.joint2_entry.grid(row=1, column=2, padx=5, pady=2)
 
-        send_pos_btn = tk.Button(pos_frame, text="Send Position", command=self.send_position_cmd)
+        send_pos_btn = tk.Button(pos_frame, text="Send Position", command=self.set_position_cmd)
         send_pos_btn.grid(row=2, column=0, columnspan=3, pady=5)
 
         # -------------- 4路电机力矩输入 --------------
@@ -95,7 +121,7 @@ class FingerGUI:
         self.torque_duration_entry.insert(0, "5")  # 默认持续5秒
         self.torque_duration_entry.grid(row=2, column=1, padx=5, pady=2)
 
-        send_torque_btn = tk.Button(torque_frame, text="Send Torque", command=self.send_torque_cmd)
+        send_torque_btn = tk.Button(torque_frame, text="Send Torque", command=self.set_torque_cmd)
         send_torque_btn.grid(row=2, column=2, columnspan=2, pady=5)
 
         # -------------- 日志显示 --------------
@@ -152,49 +178,35 @@ class FingerGUI:
     #   发送关节位置命令 ("POS j1 j2")
     #   (滑条 & 文本框共用 DoubleVar -> 只需一个 Send 按钮)
     # -------------------------------------------------------
-    def send_position_cmd(self):
+    def set_position_cmd(self):
+        self.control_mode = "position"
         if not self.msi:
             self.log("[GUI] Not connected.")
-            return
-        j1 = self.j1_var.get()
-        j2 = self.j2_var.get()
-        cmd_str = f"POS {j1} {j2}\n"
-        try:
-            self.msi.ser.write(cmd_str.encode('utf-8'))
-            self.log(f"[GUI] Sent Position: j1={j1}, j2={j2}")
-        except Exception as e:
-            self.log(f"[GUI] Error sending position cmd: {e}")
+            # return
+        j1_deg = self.j1_var.get()
+        j2_deg = self.j2_var.get()
+        self.j1_position_target = math.radians(j1_deg)
+        self.j2_position_target = math.radians(j2_deg)
 
     # -------------------------------------------------------
     #   发送 4 路电机力矩 (MotorSerialInterface 二进制协议)
     #   + 持续指定秒数后自动归零
     # -------------------------------------------------------
-    def send_torque_cmd(self):
+    def set_torque_cmd(self):
+        self.control_mode = "torque"
         if not self.msi:
             self.log("[GUI] Not connected.")
             return
-        try:
-            t0 = float(self.torque0_entry.get())
-            t1 = float(self.torque1_entry.get())
-            t2 = float(self.torque2_entry.get())
-            t3 = float(self.torque3_entry.get())
-        except ValueError:
-            self.log("[GUI] Invalid torque input (must be float).")
-            return
+        self.j1_torque_target = float(self.torque0_entry.get())
+        self.j2_torque_target = float(self.torque1_entry.get())
+        self.j3_torque_target = float(self.torque2_entry.get())
+        self.j4_torque_target = float(self.torque3_entry.get())
 
         # 读取持续时间(秒), 默认 5
         try:
             duration_s = float(self.torque_duration_entry.get())
         except ValueError:
             duration_s = 5.0
-
-        # 先设置力矩
-        try:
-            self.msi.set_motor_torques([t0, t1, t2, t3])
-            self.log(f"[GUI] set_motor_torques -> [{t0}, {t1}, {t2}, {t3}] for {duration_s} s")
-        except Exception as e:
-            self.log(f"[GUI] Error calling set_motor_torques: {e}")
-            return
 
         # 启动一个定时器, 在duration_s秒后将力矩归零
         ms_delay = int(duration_s * 1000)
@@ -213,8 +225,27 @@ class FingerGUI:
             positions, velocities = self.msi.get_motor_states()
             j1_actual = positions[0]
             j2_actual = positions[1]
+            j1_vel = velocities[0]
+            j2_vel = velocities[1]
             self.draw_finger(j1_actual, j2_actual)
-        self.master.after(50, self.update_gui)
+            self.pid_controllers[0].update_state(j1_actual, j1_vel)
+            self.pid_controllers[1].update_state(j2_actual, j2_vel)
+            if self.control_mode == "init":
+                # 控制模式：初始化
+                pass
+            elif self.control_mode == "position":
+                # 控制模式：位置控制
+                j1_torque = self.pid_controllers[0].get_input(self.j1_position_target)
+                j2_torque = self.pid_controllers[1].get_input(self.j2_position_target)
+                self.msi.set_motor_torques([j1_torque, j2_torque, 0, 0])
+                print([j1_torque, j2_torque, 0, 0])
+            elif self.control_mode == "torque":
+                # 控制模式：力矩控制
+                self.msi.set_motor_torques([self.j1_torque_target, self.j2_torque_target, self.j3_torque_target, self.j4_torque_target])
+            else:
+                # Unknown control mode
+                print("Unknown control mode")
+        self.master.after(1, self.update_gui)
 
     def draw_finger(self, j1, j2):
         self.canvas.delete("all")
