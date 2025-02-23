@@ -19,10 +19,17 @@ std::pair<std::vector<double>, std::vector<double>> Controller::torque_control(s
     std::vector<double> joint_error = {{joint_states_desired[0] - joint_states[0]}, {joint_states_desired[1] - joint_states[1]}};
     Controller::check_error(joint_error); // Check error and update gains
     joint_error_sum = {{joint_error_sum[0] + joint_error[0]}, {joint_error_sum[1] + joint_error[1]}};
+    std::vector<double> error_change = {0.0, 0.0};
+    for(int i = 0; i < 2; i++){
+        for(int j = 0; j < 4; j++){
+            error_change[i] = trans_mat[i][j] * motor_velocities[j];
+        } 
+    }
+    
     // PID Control of joint torques
     std::vector<double> joint_torques = {
-        {kp[0][0] * joint_error[0] + kd[0][0] * motor_velocities[0] + ki[0][0] * joint_error_sum[0]},
-        {kp[1][1] * joint_error[1] + kd[1][1] * motor_velocities[1] + ki[1][1] * joint_error_sum[1]}
+        {kp[0][0] * joint_error[0] + kd[0][0] * error_change[0] + ki[0][0] * joint_error_sum[0]},
+        {kp[1][1] * joint_error[1] + kd[1][1] * error_change[1] + ki[1][1] * joint_error_sum[1]}
     };
     // Convert motor torques
     std::vector<double> motor_torques(4, 0.0);

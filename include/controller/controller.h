@@ -8,6 +8,7 @@
 #include <array>
 #include <chrono>
 #include <math.h>
+#include <Eigen/Dense>
 
 class Controller{
     public:
