@@ -13,3 +13,12 @@ float* Finger::getJointStates(const float motor_states[NUM_MOTORS]) {
 
     return _joint_states;
 }
+
+float* Finger::getMotorCommands(const float joint_inputs[NUM_JOINTS]) {
+    _motor_commands[0] = joint_inputs[0]/2.0f;
+    _motor_commands[1] = 0.0;
+    _motor_commands[2] = -joint_inputs[0]/2.0f;
+    _motor_commands[3] = 0.0;
+
+    return _motor_commands;
+}

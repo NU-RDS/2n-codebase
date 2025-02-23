@@ -150,12 +150,14 @@ class MotorSerialInterface:
 # Example usage:
 if __name__ == '__main__':
     msi = MotorSerialInterface(port='/dev/teensy4', baud_rate=115200)
-    joint_commands = [0.0, 0.0]
+    joint_commands = [0.3, 0.3]
+    now = time.time()
     try:
         while True:
             positions = msi.get_joint_states()
-            print(": Motor Positions:", positions)
+            print("Motor Positions:", positions)
             msi.set_joint_positions(joint_commands)
+            time.sleep(0.01)
     except KeyboardInterrupt:
         msi.close()
         print("Interface closed.")

@@ -7,7 +7,7 @@ class PID
 {
     public:
         PID(unsigned int i_size, float kp, float ki, float kd);
-        float getInput(float state, float new_state);
+        float getInput(float state, float ref_target);
 
     private:
         void _updateState(float data);

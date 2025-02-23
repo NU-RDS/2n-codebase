@@ -13,10 +13,10 @@ PID::PID(unsigned int i_size, float kp, float ki, float kd)
     _kd = kd;
 }
 
-float PID::getInput(float ref_state, float new_state)
+float PID::getInput(float ref_state, float ref_target)
 {
     float input = (ref_state - _current_state) * _kp + this->_getISum(ref_state) * _ki - (_current_state - _i_list[_i_size - 2]) * _kd;
-    _updateState(new_state);
+    _updateState(ref_target);
     return input;
 }
 
