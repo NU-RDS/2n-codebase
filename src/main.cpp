@@ -4,18 +4,25 @@
 #include "serial_protocols/serial_protocols.h"
 #include "serial_protocols/utils.h"
 #include "finger/finger.h"
+#include "controller/controller.h"
 
 FlexCAN_T4<CAN1, RX_SIZE_256, TX_SIZE_16> can1;
 CAN_message_t msg;
 R1806 r1806_protocols;
 SerialProtocols serial_protocols;
 Finger finger;
+Controller controller;
 
 float* joint_states;
+float* joint_states_desired; // Received from UI
 float motor_states[4] = {0.0, 0.0, 0.0, 0.0}; // position
 float motor_offsets[4] = {0.0, 0.0, 0.0, 0.0};
 float static_torque = 0.06;
 bool calibrated = false;
+std::vector<double> motor_torques = {0.0, 0.0, 0.0, 0.0};
+std::vector<double> joint_error_sum = {0.0, 0.0};
+std::vector<double> joint_states_desired = {0.0, 0.0};
+std::vector<double> motor_velocities = {0.0, 0.0, 0.0, 0.0};
 uint8_t* packet;
 static uint32_t timeout = millis();
 
@@ -150,6 +157,11 @@ void setup(void) {
     delay(500);
 }
 
+void SerialEvent(){
+    // Read desired position from serial 
+    joint_error_sum = {0.0, 0.0};
+}
+
 void loop() {
     can1.events();
 
@@ -197,4 +209,14 @@ void loop() {
     // --- Send Feedback Packet over Serial ---
     packet = serial_protocols.encodeFeedbackPacket(joint_states);
     Serial.write(packet, FEEDBACK_PACKET_SIZE);
-}
+
+    // --------------- Sairam's Code ---------------
+    std::vector<double> js = {joint_states[0], joint_states[1]};
+    std::vector<double> js_d = {joint_states_desired[0], joint_states_desired[1]};
+    std::pair<std::vector<double>, std::vector<double>> result = (
+        controller.torque_control(js , js_d, joint_error_sum, motor_velocities)
+    );
+    motor_torques = result.first;
+    joint_error_sum = result.second;
+    // Motor torques encoding and can write
+    // --------------- Sairam's Code ---------------
