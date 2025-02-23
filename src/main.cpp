@@ -15,7 +15,6 @@ Controller controller;
 
 float* joint_states;
 float* joint_states_desired; // Received from UI
-float motor_states[4] = {0.0, 0.0, 0.0, 0.0}; // position
 float motor_offsets[4] = {0.0, 0.0, 0.0, 0.0};
 float print[2] = {0.0, 0.0};
 float* joint_commands;
@@ -26,6 +25,7 @@ float joint_targets[2] = {0.0, 0.0};
 float static_torque = 0.06;
 float velocity_limit = 12.0;
 bool calibrated = false;
+std::vector<double> motor_states = {0.0, 0.0, 0.0, 0.0}; // position
 std::vector<double> motor_torques = {0.0, 0.0, 0.0, 0.0};
 std::vector<double> joint_error_sum = {0.0, 0.0};
 std::vector<double> joint_states_desired = {0.0, 0.0};
@@ -64,25 +64,33 @@ void canSniff(const CAN_message_t &msg) {
         if(motor_id == 1) {
             if(cmd_id == 9) {
                 motor_position_states[0] = r1806_protocols.decodePositionFeedback(msg);
+                motor_states[0] = motor_position_states[0];
                 motor_velocity_states[0] = r1806_protocols.decodeVelocityFeedback(msg);
+                motor_velocities[0] = motor_velocity_states[0];
             }
         }
         else if(motor_id == 2) {
             if(cmd_id == 9) {
                 motor_position_states[1] = r1806_protocols.decodePositionFeedback(msg);
+                motor_states[1] = motor_position_states[1];
                 motor_velocity_states[1] = r1806_protocols.decodeVelocityFeedback(msg);
+                motor_velocities[1] = motor_velocity_states[1];
             }
         }
         else if(motor_id == 3) {
             if(cmd_id == 9) {
                 motor_position_states[2] = r1806_protocols.decodePositionFeedback(msg);
+                motor_states[2] = motor_position_states[2];
                 motor_velocity_states[2] = r1806_protocols.decodeVelocityFeedback(msg);
+                motor_velocities[2] = motor_velocity_states[2];
             }
         }
         else if(motor_id == 4) {
             if(cmd_id == 9) {
                 motor_position_states[3] = r1806_protocols.decodePositionFeedback(msg);
+                motor_states[3] = motor_position_states[3];
                 motor_velocity_states[3] = r1806_protocols.decodeVelocityFeedback(msg);
+                motor_velocities[3] = motor_velocity_states[3];
             }
         }
     }
@@ -91,28 +99,36 @@ void canSniff(const CAN_message_t &msg) {
             if(cmd_id == 9) {
                 float raw_motor1_position = r1806_protocols.decodePositionFeedback(msg);
                 motor_position_states[0] = raw_motor1_position - motor_position_offsets[0];
+                motor_states[0] = motor_position_states[0];
                 motor_velocity_states[0] = r1806_protocols.decodeVelocityFeedback(msg);
+                motor_velocities[0] = motor_velocity_states[0];
             }
         }
         else if(motor_id == 2) {
             if(cmd_id == 9) {
                 float raw_motor2_position = r1806_protocols.decodePositionFeedback(msg);
                 motor_position_states[1] = raw_motor2_position - motor_position_offsets[1];
+                motor_states[1] = motor_position_states[1];
                 motor_velocity_states[1] = r1806_protocols.decodeVelocityFeedback(msg);
+                motor_velocities[1] = motor_velocity_states[1];
             }
         }
         else if(motor_id == 3) {
             if(cmd_id == 9) {
                 float raw_motor3_position = r1806_protocols.decodePositionFeedback(msg);
                 motor_position_states[2] = raw_motor3_position - motor_position_offsets[2];
+                motor_states[2] = motor_position_states[2];
                 motor_velocity_states[2] = r1806_protocols.decodeVelocityFeedback(msg);
+                motor_velocities[2] = motor_velocity_states[2];
             }
         }
         else if(motor_id == 4) {
             if(cmd_id == 9) {
                 float raw_motor4_position = r1806_protocols.decodePositionFeedback(msg);
                 motor_position_states[3] = raw_motor4_position - motor_position_offsets[3];
+                motor_states[3] = motor_position_states[3];
                 motor_velocity_states[3] = r1806_protocols.decodeVelocityFeedback(msg);
+                motor_velocities[3] = motor_velocity_states[3];
             }
         }
     }
@@ -166,11 +182,25 @@ void setup(void) {
     delay(500);
 
     calibrate();
+    joint_states = {-math.pi/2, 0};
     delay(500);
 }
 
 void SerialEvent(){
+    // ---- Moved Serial Read to SerialEvent ----
     // Read desired position from serial 
+    if (Serial.available() >= JOINT_COMMAND_PACKET_SIZE) {
+        uint8_t joint_command_buffer[JOINT_COMMAND_PACKET_SIZE];
+        // Cast is required because readBytes expects a char pointer.
+        Serial.readBytes((char*)joint_command_buffer, JOINT_COMMAND_PACKET_SIZE);
+        joint_commands = serial_protocols.decodeJointCommandPacket(joint_command_buffer);
+        joint_states_desired = {joint_commands[0], joint_commands[1]};
+        if (joint_commands != nullptr) {
+            received_joint_commands = true;
+            // Update the last valid torque command time.
+            lastpositionCmdTime = millis();
+        }
+    }
     joint_error_sum = {0.0, 0.0};
 }
 
@@ -178,17 +208,17 @@ void loop() {
     can1.events();
     if(danger_mode == false){
         // --- Joint Position Command Reception ---
-        if (Serial.available() >= JOINT_COMMAND_PACKET_SIZE) {
-            uint8_t joint_command_buffer[JOINT_COMMAND_PACKET_SIZE];
-            // Cast is required because readBytes expects a char pointer.
-            Serial.readBytes((char*)joint_command_buffer, JOINT_COMMAND_PACKET_SIZE);
-            joint_commands = serial_protocols.decodeJointCommandPacket(joint_command_buffer);
-            if (joint_commands != nullptr) {
-                received_joint_commands = true;
-                // Update the last valid torque command time.
-                lastpositionCmdTime = millis();
-            }
-        }
+        //if (Serial.available() >= JOINT_COMMAND_PACKET_SIZE) {
+        //    uint8_t joint_command_buffer[JOINT_COMMAND_PACKET_SIZE];
+        //    // Cast is required because readBytes expects a char pointer.
+        //    Serial.readBytes((char*)joint_command_buffer, JOINT_COMMAND_PACKET_SIZE);
+        //    joint_commands = serial_protocols.decodeJointCommandPacket(joint_command_buffer);
+        //    if (joint_commands != nullptr) {
+        //        received_joint_commands = true;
+        //        // Update the last valid torque command time.
+        //        lastpositionCmdTime = millis();
+        //    }
+        //}
         
         // --- Timeout Check: if no torque command received recently, reset torques to 0 ---
         if (millis() - lastpositionCmdTime > POSITION_TIMEOUT_MS) {
@@ -199,19 +229,27 @@ void loop() {
         }
     
         // Override Testing
-        motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, -static_torque);
-        motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, -static_torque);
+        //motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, -static_torque);
+        //motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, -static_torque);
     
         // --- Update Joint States Feedback Data ---
         joint_states = finger.getJointStates(motor_position_states);
         print[0] = joint_states[0];
         print[1] = joint_states[1];
+        
     
         if(received_joint_commands == true){
-            // motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, 0.0);
-            // motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, 0.0);
-            // motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, 0.0);
-            // motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(4, 0.0);
+            std::vector<double> js = {joint_states[0], joint_states[1]}; // Converting to std::vector
+            std::vector<double> js_d = {joint_states_desired[0], joint_states_desired[1]};
+            std::pair<std::vector<double>, std::vector<double>> result = (
+                controller.torque_control(js , js_d, joint_error_sum, motor_velocities)
+            );
+            motor_torques = result.first;
+            joint_error_sum = result.second;
+            motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, motor_torques[0]);
+            motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, motor_torques[1]);
+            motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, motor_torques[2]);
+            motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(4, motor_torques[3]);
         }
     
         for (int i=0; i<NUM_MOTORS; i++) {
@@ -249,14 +287,4 @@ void loop() {
     packet = serial_protocols.encodeFeedbackPacket(joint_states);
     Serial.write(packet, FEEDBACK_PACKET_SIZE);
 
-    // --------------- Sairam's Code ---------------
-    std::vector<double> js = {joint_states[0], joint_states[1]};
-    std::vector<double> js_d = {joint_states_desired[0], joint_states_desired[1]};
-    std::pair<std::vector<double>, std::vector<double>> result = (
-        controller.torque_control(js , js_d, joint_error_sum, motor_velocities)
-    );
-    motor_torques = result.first;
-    joint_error_sum = result.second;
-    // Motor torques encoding and can write
-    // --------------- Sairam's Code ---------------
 }
