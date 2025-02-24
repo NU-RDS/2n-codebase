@@ -23,7 +23,7 @@ float motor_velocity_states[4] = {0.0, 0.0, 0.0, 0.0};
 float motor_position_offsets[4] = {0.0, 0.0, 0.0, 0.0};
 float joint_targets[2] = {0.0, 0.0};
 float static_torque = 0.065;
-float velocity_limit = 24.0;
+float velocity_limit = 50.0;
 bool calibrated = false;
 std::vector<double> motor_states = {0.0, 0.0, 0.0, 0.0}; // position
 std::vector<double> motor_torques = {0.0, 0.0, 0.0, 0.0};
@@ -244,15 +244,17 @@ void loop() {
             //Serial.print(received_joint_commands);
             std::vector<double> js = {joint_states[0], joint_states[1]}; // Converting to std::vector
             std::vector<double> js_d = {joint_states_desired[0], joint_states_desired[1]};
+            js_d[0] = joint_commands[0];
+            js_d[1] = joint_commands[1];
             std::pair<std::vector<double>, std::vector<double>> result = (
                 controller.torque_control(js , js_d, joint_error_sum, motor_velocities)
             );
             motor_torques = result.first;
             joint_error_sum = result.second;
-            motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, -static_torque-motor_torques[0]);
-            motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, -static_torque-motor_torques[1]);
-            motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, -static_torque-motor_torques[2]);
-            motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(4, -static_torque-motor_torques[3]);
+            motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, -static_torque+motor_torques[0]);
+            motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, -static_torque+motor_torques[1]);
+            motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, -static_torque+motor_torques[2]);
+            motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(4, -static_torque+motor_torques[3]);
             // print[0] = -static_torque-motor_torques[0];
             // print[1] = -static_torque-motor_torques[1];
             //Serial.print(motor_torques[2]);
@@ -273,20 +275,22 @@ void loop() {
     }
 
     if (millis() - timeout > 20) {
-        // can1.write(motor1_torque_cmd);
-        // can1.write(motor2_torque_cmd);
-        // can1.write(motor3_torque_cmd);
-        // can1.write(motor4_torque_cmd);
+        can1.write(motor1_torque_cmd);
+        can1.write(motor2_torque_cmd);
+        can1.write(motor3_torque_cmd);
+        can1.write(motor4_torque_cmd);
         timeout = millis();
     }
 
     // --- Update Joint States Feedback Data ---
     joint_states = finger.getJointStates(motor_position_states);
-    print[0] = joint_states[0];
-    print[1] = joint_states[1];
+    // print[0] = motor_torques[0];
+    // print[1] = motor_torques[1];
+    print[0] = -static_torque + motor_torques[2];
+    print[1] = -static_torque + motor_torques[3];
 
     // --- Send Feedback Packet over Serial ---
-    packet = serial_protocols.encodeFeedbackPacket(joint_states);
+    packet = serial_protocols.encodeFeedbackPacket(print);
     Serial.write(packet, FEEDBACK_PACKET_SIZE);
 
 }

@@ -5,9 +5,9 @@
 
 #define NUM_JOINTS 2
 #define NUM_MOTORS 4
-#define D_MOTOR_PULLEY 11.9998f // mm
-#define D_FINGER_PULLEY_1 35.7186f // mm
-#define D_FINGER_PULLEY_2 21.7176f // mm
+#define D_MOTOR_PULLEY 11.9998f // 12 mm
+#define D_FINGER_PULLEY_1 29.0f // 29 mm
+#define D_FINGER_PULLEY_2 35.0f // 35 mm
 
 class Finger{
     public:

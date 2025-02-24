@@ -11,9 +11,8 @@ float* Finger::getJointStates(const float motor_states[NUM_MOTORS]) {
     float joint2_position_2 = motor_states[1] * D_MOTOR_PULLEY / D_FINGER_PULLEY_2;
     float joint2_position_3 = motor_states[2] * D_MOTOR_PULLEY / D_FINGER_PULLEY_2;
     float joint2_position_4 = motor_states[3] * D_MOTOR_PULLEY / D_FINGER_PULLEY_2;
-    _joint_states[0] = joint1_position_1 - joint1_position_2;
-    _joint_states[1] = -joint2_position_1 + joint2_position_2 + joint2_position_3 - joint2_position_4;
-
+    _joint_states[0] = (joint1_position_1 - joint1_position_2)/2.0f;
+    _joint_states[1] = (joint2_position_1 + joint2_position_2 - joint2_position_3 + joint2_position_4)/4.0f;
     return _joint_states;
 }
 
