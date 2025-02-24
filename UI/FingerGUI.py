@@ -180,18 +180,18 @@ class FingerGUI:
     def update_gui(self):
         if self.msi:
             joint_states = self.msi.get_joint_states()  # Returns a tuple of 2 floats (radians)
-            if joint_states is not None and len(joint_states) >= 2:
-                j1_actual = joint_states[0]
-                j2_actual = joint_states[1]
-                self.joint_current = [j1_actual, j2_actual]
-                self.draw_finger(j1_actual, j2_actual)
-                # Update plot data
-                t = time.time() - self.start_time
-                self.time_data.append(t)
-                self.joint1_actual_data.append(math.degrees(j1_actual))
-                self.joint2_actual_data.append(math.degrees(j2_actual))
-                self.joint1_desired_data.append(self.j1_var.get())
-                self.joint2_desired_data.append(self.j2_var.get())
+            #if joint_states is not None and len(joint_states) >= 2:
+            j1_actual = joint_states[0]
+            j2_actual = joint_states[1]
+            self.joint_current = [j1_actual, j2_actual]
+            self.draw_finger(j1_actual, j2_actual)
+            # Update plot data
+            t = time.time() - self.start_time
+            self.time_data.append(t)
+            self.joint1_actual_data.append(math.degrees(j1_actual))
+            self.joint2_actual_data.append(math.degrees(j2_actual))
+            self.joint1_desired_data.append(self.j1_var.get())
+            self.joint2_desired_data.append(self.j2_var.get())
         self.master.after(50, self.update_gui)
 
     def draw_finger(self, j1, j2):
