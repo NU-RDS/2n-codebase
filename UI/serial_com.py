@@ -2,6 +2,7 @@ import serial
 import struct
 import time
 import threading
+import csv  # Added for CSV file handling
 
 # Protocol constants (must match Teensy's definitions)
 START_BYTE = 0xAA
@@ -126,7 +127,7 @@ class MotorSerialInterface:
         """
         Return the latest motor states.
         Returns:
-            (positions): tuple of 2-element tuples of floats.
+            (positions): tuple of 2 float values.
         """
         with self._state_lock:
             return self._joint_states
@@ -150,14 +151,29 @@ class MotorSerialInterface:
 # Example usage:
 if __name__ == '__main__':
     msi = MotorSerialInterface(port='/dev/teensy4', baud_rate=115200)
-    joint_commands = [0.0, 0.6]
-    now = time.time()
-    try:
-        while True:
-            positions = msi.get_joint_states()
-            print("Motor Positions:", positions)
-            msi.set_joint_positions(joint_commands)
-            time.sleep(0.1)
-    except KeyboardInterrupt:
-        msi.close()
-        print("Interface closed.")
+    # Set an example joint command
+    joint_commands = [0.0, 0.0]
+    msi.set_joint_positions(joint_commands)
+
+    # New feature: Record joint states for 10 seconds.
+    recorded_data = []  # This will hold tuples of (timestamp, joint1, joint2)
+    record_duration = 10  # seconds
+    record_start = time.time()
+    print("Recording joint states for 10 seconds...")
+    while time.time() - record_start < record_duration:
+        # Get the current joint states and timestamp
+        msi.set_joint_positions(joint_commands)
+        positions = msi.get_joint_states()
+        current_time = time.time()
+        recorded_data.append((current_time, positions[0], positions[1]))
+        time.sleep(0.01)  # Sampling interval of 10ms
+
+    # Save the recorded data to a CSV file.
+    csv_filename = 'joint_states.csv'
+    with open(csv_filename, 'w', newline='') as csvfile:
+        csv_writer = csv.writer(csvfile)
+        csv_writer.writerow(['timestamp', 'joint1', 'joint2'])
+        csv_writer.writerows(recorded_data)
+
+    print(f"Joint state data recorded for {record_duration} seconds has been saved to '{csv_filename}'.")
+    msi.close()

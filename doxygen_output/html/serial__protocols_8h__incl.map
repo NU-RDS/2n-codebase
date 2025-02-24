@@ -1,0 +1,8 @@
+<map id="include/serial_protocols/serial_protocols.h" name="include/serial_protocols/serial_protocols.h">
+<area shape="rect" id="Node000001" title="Declaration of the SerialProtocols class for handling serial communication." alt="" coords="5,5,181,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="58,167,129,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,47,63,80,58,99,60,118,78,154,73,157,55,119,53,99,58,78,76,44"/>
+<area shape="rect" id="Node000003" href="$serial__protocols_2utils_8h.html" title="Defines constants used in the serial communication protocols." alt="" coords="70,93,239,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="110,44,139,81,135,84,106,47"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="147,121,114,158,110,154,143,117"/>
+</map>

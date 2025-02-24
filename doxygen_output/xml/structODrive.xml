@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structODrive" kind="struct" language="C++" prot="public">
+    <compoundname>ODrive</compoundname>
+    <includes refid="motor__protocols_2utils_8h" local="no">utils.h</includes>
+    <briefdescription>
+<para>Namespace-like struct containing <ref refid="structODrive" kindref="compound">ODrive</ref> axis state values. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="structODrive" kindref="compound">ODrive</ref> struct is used to hold various enumerations that represent different axis states in an <ref refid="structODrive" kindref="compound">ODrive</ref> motor driver. </para>
+    </detaileddescription>
+    <location file="include/motor_protocols/utils.h" line="12" column="1"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

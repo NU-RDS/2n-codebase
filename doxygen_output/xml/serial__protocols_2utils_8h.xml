@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="serial__protocols_2utils_8h" kind="file" language="C++">
+    <compoundname>utils.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="serial__protocols_8h" local="yes">include/serial_protocols/serial_protocols.h</includedby>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/serial_protocols/utils.h</label>
+        <link refid="serial__protocols_2utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/serial_protocols/serial_protocols.h</label>
+        <link refid="serial__protocols_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/serial_protocols/utils.h</label>
+        <link refid="serial__protocols_2utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="serial__protocols_2utils_8h_1a52b56a381e777b55e1b59019d9ee072e" prot="public" static="no">
+        <name>NUM_MOTORS</name>
+        <initializer>4</initializer>
+        <briefdescription>
+<para>Number of motors controlled via the serial protocol. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/serial_protocols/utils.h" line="15" column="9" bodyfile="include/serial_protocols/utils.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="serial__protocols_2utils_8h_1a30d2043ca397843e08c43ade3aaee5b2" prot="public" static="no">
+        <name>START_BYTE</name>
+        <initializer>0xAA</initializer>
+        <briefdescription>
+<para>Special byte indicating the start of a packet. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/serial_protocols/utils.h" line="21" column="9" bodyfile="include/serial_protocols/utils.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="serial__protocols_2utils_8h_1a5126c1e2dc63cec63fc73710e48a9b5d" prot="public" static="no">
+        <name>END_BYTE</name>
+        <initializer>0xBB</initializer>
+        <briefdescription>
+<para>Special byte indicating the end of a packet. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/serial_protocols/utils.h" line="27" column="9" bodyfile="include/serial_protocols/utils.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="serial__protocols_2utils_8h_1ac4d65ccae3f423f70139217495e2cd98" prot="public" static="no">
+        <name>MSG_FEEDBACK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+<para>Message type for feedback packets. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/serial_protocols/utils.h" line="33" column="9" bodyfile="include/serial_protocols/utils.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="serial__protocols_2utils_8h_1acd2ea0fb131cece2099c97e29c34c659" prot="public" static="no">
+        <name>FEEDBACK_PAYLOAD_LENGTH</name>
+        <initializer>8</initializer>
+        <briefdescription>
+<para>Payload length for feedback packets (contains 2 floats). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/serial_protocols/utils.h" line="39" column="9" bodyfile="include/serial_protocols/utils.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="serial__protocols_2utils_8h_1a9880be088cab58dc6d9782bc31258ca8" prot="public" static="no">
+        <name>FEEDBACK_PACKET_SIZE</name>
+        <initializer>13</initializer>
+        <briefdescription>
+<para>Total packet size for feedback packets. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculated as: START_BYTE + MSG_FEEDBACK + payload length + checksum + END_BYTE. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/serial_protocols/utils.h" line="47" column="9" bodyfile="include/serial_protocols/utils.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="serial__protocols_2utils_8h_1a3b9841196ad5c5ec384168d6caf6db3e" prot="public" static="no">
+        <name>MSG_JOINT_COMMAND</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+<para>Message type for joint command packets. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/serial_protocols/utils.h" line="53" column="9" bodyfile="include/serial_protocols/utils.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="serial__protocols_2utils_8h_1a178af33f4519cf8d44cc290463600f88" prot="public" static="no">
+        <name>JOINT_COMMAND_PAYLOAD_LENGTH</name>
+        <initializer>8</initializer>
+        <briefdescription>
+<para>Payload length for joint command packets (contains 2 floats). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/serial_protocols/utils.h" line="59" column="9" bodyfile="include/serial_protocols/utils.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="serial__protocols_2utils_8h_1a60e48a418bc0b66b574f5ee4abb296e2" prot="public" static="no">
+        <name>JOINT_COMMAND_PACKET_SIZE</name>
+        <initializer>13</initializer>
+        <briefdescription>
+<para>Total packet size for joint command packets. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculated as: START_BYTE + MSG_JOINT_COMMAND + payload length + checksum + END_BYTE. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/serial_protocols/utils.h" line="67" column="9" bodyfile="include/serial_protocols/utils.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Defines constants used in the serial communication protocols. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SERIAL_PROTOCOLS_UTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SERIAL_PROTOCOLS_UTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="serial__protocols_2utils_8h_1a52b56a381e777b55e1b59019d9ee072e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NUM_MOTORS<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="serial__protocols_2utils_8h_1a30d2043ca397843e08c43ade3aaee5b2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>START_BYTE<sp/>0xAA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="serial__protocols_2utils_8h_1a5126c1e2dc63cec63fc73710e48a9b5d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>END_BYTE<sp/><sp/><sp/>0xBB</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="serial__protocols_2utils_8h_1ac4d65ccae3f423f70139217495e2cd98" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MSG_FEEDBACK<sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="serial__protocols_2utils_8h_1acd2ea0fb131cece2099c97e29c34c659" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FEEDBACK_PAYLOAD_LENGTH<sp/>8<sp/></highlight><highlight class="comment">//<sp/>2<sp/>floats</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="serial__protocols_2utils_8h_1a9880be088cab58dc6d9782bc31258ca8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FEEDBACK_PACKET_SIZE<sp/>13<sp/></highlight><highlight class="comment">//<sp/>1<sp/>+<sp/>1<sp/>+<sp/>1<sp/>+<sp/>FEEDBACK_PAYLOAD_LENGTH<sp/>+<sp/>1<sp/>+<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="serial__protocols_2utils_8h_1a3b9841196ad5c5ec384168d6caf6db3e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MSG_JOINT_COMMAND<sp/>0x02</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="serial__protocols_2utils_8h_1a178af33f4519cf8d44cc290463600f88" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JOINT_COMMAND_PAYLOAD_LENGTH<sp/>8<sp/></highlight><highlight class="comment">//<sp/>2<sp/>floats</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="serial__protocols_2utils_8h_1a60e48a418bc0b66b574f5ee4abb296e2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JOINT_COMMAND_PACKET_SIZE<sp/>13<sp/></highlight><highlight class="comment">//<sp/>1<sp/>+<sp/>1<sp/>+<sp/>1<sp/>+<sp/>JOINT_COMMAND_PAYLOAD_LENGTH<sp/>+<sp/>1<sp/>+<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SERIAL_PROTOCOLS_UTILS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/serial_protocols/utils.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,35 @@
+\doxysection{r1806.\+h}
+\hypertarget{r1806_8h_source}{}\label{r1806_8h_source}\index{include/motor\_protocols/r1806.h@{include/motor\_protocols/r1806.h}}
+\mbox{\hyperlink{r1806_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ R1806\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ R1806\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <FlexCAN\_T4.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ GEAR\_REDUCION\_RATIO\ 22.6f}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classR1806}{R1806}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classR1806_ac24ac7af211be841111d150808fdd2f7}{R1806}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classR1806_a116d467196ccdc10b6fa46b5c2d87e75}{extract\_node\_id}}(uint32\_t\ can\_id);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00055\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classR1806_a0db19be4b6c4e0be27d6128a8165de3e}{extract\_command\_id}}(uint32\_t\ can\_id);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00066\ \ \ \ \ CAN\_message\_t\ \mbox{\hyperlink{classR1806_a400662f13aa22e39f5b1d780d193c169}{encodeRequestedStateCommand}}(uint32\_t\ node\_id,\ uint32\_t\ requested\_state);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00078\ \ \ \ \ CAN\_message\_t\ \mbox{\hyperlink{classR1806_ac0f7a4e9e1d0aa7481a79217c75ea104}{encodeTorqueCommand}}(uint32\_t\ node\_id,\ \textcolor{keywordtype}{float}\ torque);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classR1806_afc210aa77fbaf2a72dbe3ec34e7ca9ba}{decodePositionFeedback}}(CAN\_message\_t\ frame);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classR1806_a80c75872c7390915c6ccb6f2ee12bbd5}{decodeVelocityFeedback}}(CAN\_message\_t\ frame);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{float}\ \_gear\_reduction\_ratio;}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ R1806\_H}}
+
+\end{DoxyCode}

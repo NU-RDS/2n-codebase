@@ -1,0 +1,37 @@
+<map id="src/main.cpp" name="src/main.cpp">
+<area shape="rect" id="Node000001" title="Main entry point for the motor control and serial feedback system." alt="" coords="361,5,467,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,167,119,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="361,24,286,29,200,39,124,56,95,67,76,81,66,96,61,115,60,153,55,153,55,114,61,94,72,77,93,62,122,51,200,34,285,23,361,18"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="289,167,357,192"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="410,32,339,156,334,153,405,29"/>
+<area shape="rect" id="Node000004" href="$r1806_8h.html" title="Motor protocols for the R1806 motor used with ODrive Pro." alt="" coords="86,86,267,111"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="380,33,225,84,223,79,379,28"/>
+<area shape="rect" id="Node000005" href="$motor__protocols_2utils_8h.html" title="Contains utility data structures and definitions for motor protocols." alt="" coords="580,86,752,111"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="451,28,617,79,615,84,450,33"/>
+<area shape="rect" id="Node000007" href="$serial__protocols_8h.html" title="Declaration of the SerialProtocols class for handling serial communication." alt="" coords="777,79,942,119"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="467,25,763,76,762,81,467,30"/>
+<area shape="rect" id="Node000008" href="$serial__protocols_2utils_8h.html" title="Defines constants used in the serial communication protocols." alt="" coords="897,167,1067,192"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="467,19,745,38,881,55,929,65,956,77,970,93,978,113,985,153,980,154,973,115,965,96,952,81,927,70,880,60,745,44,467,24"/>
+<area shape="rect" id="Node000009" href="$finger_8h.html" title="Declaration of the Finger class and related constants." alt="" coords="155,167,265,192"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="401,33,238,160,234,156,398,29"/>
+<area shape="rect" id="Node000010" href="$controller_8h.html" title="Declaration of the Controller class for torque control." alt="" coords="393,86,555,111"/>
+<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="425,29,459,73,455,76,421,32"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="161,114,92,161,89,157,158,109"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="773,240,844,265"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="702,109,745,131,767,146,785,165,801,195,809,225,804,227,796,197,781,168,763,150,742,135,699,114"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="855,120,819,228,814,226,850,118"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="890,117,954,157,951,161,888,121"/>
+<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="955,194,851,237,849,232,953,190"/>
+<area shape="poly" id="edge13_Node000009_Node000006" title=" " alt="" coords="266,188,278,189,550,223,760,244,759,249,550,228,278,195,265,193"/>
+<area shape="poly" id="edge21_Node000010_Node000003" title=" " alt="" coords="453,114,359,163,356,158,451,109"/>
+<area shape="poly" id="edge15_Node000010_Node000006" title=" " alt="" coords="460,114,442,130,425,150,417,172,418,181,423,190,445,207,479,220,522,230,571,237,672,246,759,249,759,254,672,251,570,243,521,235,478,225,442,211,419,194,412,183,411,171,420,148,438,126,457,110"/>
+<area shape="poly" id="edge16_Node000010_Node000009" title=" " alt="" coords="436,114,262,165,261,160,435,109"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="433,167,513,192"/>
+<area shape="poly" id="edge17_Node000010_Node000011" title=" " alt="" coords="476,112,476,153,470,153,471,111"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="537,167,600,192"/>
+<area shape="poly" id="edge18_Node000010_Node000012" title=" " alt="" coords="490,109,546,156,542,160,486,114"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="625,167,681,192"/>
+<area shape="poly" id="edge19_Node000010_Node000013" title=" " alt="" coords="501,109,615,159,613,164,499,114"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="705,167,771,192"/>
+<area shape="poly" id="edge20_Node000010_Node000014" title=" " alt="" coords="513,109,692,162,691,167,512,114"/>
+</map>

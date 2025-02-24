@@ -1,0 +1,1017 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="main_8cpp" kind="file" language="C++">
+    <compoundname>main.cpp</compoundname>
+    <includes local="no">FlexCAN_T4.h</includes>
+    <includes local="no">math.h</includes>
+    <includes refid="r1806_8h" local="yes">motor_protocols/r1806.h</includes>
+    <includes refid="motor__protocols_2utils_8h" local="yes">motor_protocols/utils.h</includes>
+    <includes refid="serial__protocols_8h" local="yes">serial_protocols/serial_protocols.h</includes>
+    <includes refid="serial__protocols_2utils_8h" local="yes">serial_protocols/utils.h</includes>
+    <includes refid="finger_8h" local="yes">finger/finger.h</includes>
+    <includes refid="controller_8h" local="yes">controller/controller.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>controller/controller.h</label>
+        <link refid="controller_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>finger/finger.h</label>
+        <link refid="finger_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>motor_protocols/r1806.h</label>
+        <link refid="r1806_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>motor_protocols/utils.h</label>
+        <link refid="motor__protocols_2utils_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>serial_protocols/serial_protocols.h</label>
+        <link refid="serial__protocols_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>serial_protocols/utils.h</label>
+        <link refid="serial__protocols_2utils_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>FlexCAN_T4.h</label>
+      </node>
+      <node id="13">
+        <label>array</label>
+      </node>
+      <node id="14">
+        <label>chrono</label>
+      </node>
+      <node id="11">
+        <label>iostream</label>
+      </node>
+      <node id="3">
+        <label>math.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="12">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="main_8cpp_1af491bc470adef8b258c75dafed0077b9" prot="public" static="no" mutable="no">
+        <type>FlexCAN_T4&lt; CAN1, RX_SIZE_256, TX_SIZE_16 &gt;</type>
+        <definition>FlexCAN_T4&lt;CAN1, RX_SIZE_256, TX_SIZE_16&gt; can1</definition>
+        <argsstring></argsstring>
+        <name>can1</name>
+        <briefdescription>
+<para>CAN bus object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="20" column="13" bodyfile="src/main.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" prot="public" static="no" mutable="no">
+        <type>CAN_message_t</type>
+        <definition>CAN_message_t msg</definition>
+        <argsstring></argsstring>
+        <name>msg</name>
+        <briefdescription>
+<para>Temporary CAN message storage. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="21" column="16" bodyfile="src/main.cpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" prot="public" static="no" mutable="no">
+        <type><ref refid="classR1806" kindref="compound">R1806</ref></type>
+        <definition>R1806 r1806_protocols</definition>
+        <argsstring></argsstring>
+        <name>r1806_protocols</name>
+        <briefdescription>
+<para><ref refid="classR1806" kindref="compound">R1806</ref> motor protocol handler. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="22" column="8" bodyfile="src/main.cpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a6c1a12e7433ba7b8e0403a9c8ec115ff" prot="public" static="no" mutable="no">
+        <type><ref refid="classSerialProtocols" kindref="compound">SerialProtocols</ref></type>
+        <definition>SerialProtocols serial_protocols</definition>
+        <argsstring></argsstring>
+        <name>serial_protocols</name>
+        <briefdescription>
+<para>Serial protocol handler. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="23" column="18" bodyfile="src/main.cpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1adee0025a48211ddc9040329deb7e2cce" prot="public" static="no" mutable="no">
+        <type><ref refid="classFinger" kindref="compound">Finger</ref></type>
+        <definition>Finger finger</definition>
+        <argsstring></argsstring>
+        <name>finger</name>
+        <briefdescription>
+<para><ref refid="classFinger" kindref="compound">Finger</ref> kinematics handler. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="24" column="9" bodyfile="src/main.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a872eb72dc091dfc922f3461989909363" prot="public" static="no" mutable="no">
+        <type><ref refid="classController" kindref="compound">Controller</ref></type>
+        <definition>Controller controller</definition>
+        <argsstring></argsstring>
+        <name>controller</name>
+        <briefdescription>
+<para><ref refid="classController" kindref="compound">Controller</ref> for torque control. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="25" column="13" bodyfile="src/main.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a147b8003a5567f680edf4838fa5b4972" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* joint_states</definition>
+        <argsstring></argsstring>
+        <name>joint_states</name>
+        <briefdescription>
+<para>Pointer to the current joint states. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="28" column="8" bodyfile="src/main.cpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a6dcd474047ac30b63b6203f7c616d87d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float motor_offsets[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>motor_offsets</name>
+        <initializer>= {0.0, 0.0, 0.0, 0.0}</initializer>
+        <briefdescription>
+<para>Offsets for motor positions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="29" column="8" bodyfile="src/main.cpp" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a4e0bf4dcd86c3fc4661fc2f75dbf0054" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float print[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>print</name>
+        <initializer>= {0.0, 0.0}</initializer>
+        <briefdescription>
+<para>Array used for serial feedback (positions). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="30" column="8" bodyfile="src/main.cpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a650a863e2f7800182a4f1c9f73b29f69" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* joint_commands</definition>
+        <argsstring></argsstring>
+        <name>joint_commands</name>
+        <briefdescription>
+<para>Pointer to decoded joint command values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="31" column="8" bodyfile="src/main.cpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float motor_position_states[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>motor_position_states</name>
+        <initializer>= {0.0, 0.0, 0.0, 0.0}</initializer>
+        <briefdescription>
+<para>Current motor position states. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="32" column="8" bodyfile="src/main.cpp" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1ada5550d3516005d96a11c936ee550114" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float motor_velocity_states[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>motor_velocity_states</name>
+        <initializer>= {0.0, 0.0, 0.0, 0.0}</initializer>
+        <briefdescription>
+<para>Current motor velocity states. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="33" column="8" bodyfile="src/main.cpp" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1ae555d77b5a5f0935e5ee63b6d2a6a191" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float motor_position_offsets[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>motor_position_offsets</name>
+        <initializer>= {0.0, 0.0, 0.0, 0.0}</initializer>
+        <briefdescription>
+<para>Calibration offsets for motor positions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="34" column="8" bodyfile="src/main.cpp" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a682d64c640e8b618b1e305c56f7c099a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float joint_targets[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>joint_targets</name>
+        <initializer>= {0.0, 0.0}</initializer>
+        <briefdescription>
+<para>Desired joint targets. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="35" column="8" bodyfile="src/main.cpp" bodystart="35" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1ad1b3af4cc560a77793b48b8e544f380d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float static_torque</definition>
+        <argsstring></argsstring>
+        <name>static_torque</name>
+        <initializer>= 0.065</initializer>
+        <briefdescription>
+<para>Static torque used during calibration. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="36" column="8" bodyfile="src/main.cpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1af5c20b3a568c8f616ca560e3db173396" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float velocity_limit</definition>
+        <argsstring></argsstring>
+        <name>velocity_limit</name>
+        <initializer>= 50.0</initializer>
+        <briefdescription>
+<para>Velocity limit for safety. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="37" column="8" bodyfile="src/main.cpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a18358243788f8a956ff50db015724a56" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool calibrated</definition>
+        <argsstring></argsstring>
+        <name>calibrated</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Flag indicating whether calibration is complete. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="38" column="7" bodyfile="src/main.cpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; motor_states</definition>
+        <argsstring></argsstring>
+        <name>motor_states</name>
+        <initializer>= {0.0, 0.0, 0.0, 0.0}</initializer>
+        <briefdescription>
+<para>Current motor positions (std::vector format). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="39" column="14" bodyfile="src/main.cpp" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1ab8f141b772f50e494bf0c2ca59d8f308" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; motor_torques</definition>
+        <argsstring></argsstring>
+        <name>motor_torques</name>
+        <initializer>= {0.0, 0.0, 0.0, 0.0}</initializer>
+        <briefdescription>
+<para>Computed motor torques. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="40" column="14" bodyfile="src/main.cpp" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1aa3d50d72d4c17514499781eda97e99cb" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; joint_error_sum</definition>
+        <argsstring></argsstring>
+        <name>joint_error_sum</name>
+        <initializer>= {0.0, 0.0}</initializer>
+        <briefdescription>
+<para>Accumulated joint error sum. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="41" column="14" bodyfile="src/main.cpp" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a9d15cb77cbe6fd6e64a2f1f0d6af33db" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; joint_states_desired</definition>
+        <argsstring></argsstring>
+        <name>joint_states_desired</name>
+        <initializer>= {0.0, 0.0}</initializer>
+        <briefdescription>
+<para>Desired joint states. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="42" column="14" bodyfile="src/main.cpp" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a9f670be4d519d72bc5e530303037b7e9" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; motor_velocities</definition>
+        <argsstring></argsstring>
+        <name>motor_velocities</name>
+        <initializer>= {0.0, 0.0, 0.0, 0.0}</initializer>
+        <briefdescription>
+<para>Current motor velocities. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="43" column="14" bodyfile="src/main.cpp" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a021141e4ed340d853a361edbafdc68a8" prot="public" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* packet</definition>
+        <argsstring></argsstring>
+        <name>packet</name>
+        <briefdescription>
+<para>Pointer to a serial packet. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="44" column="10" bodyfile="src/main.cpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1ab5627d8d8b095c198e2523c44ca380ac" prot="public" static="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t timeout</definition>
+        <argsstring></argsstring>
+        <name>timeout</name>
+        <initializer>= millis()</initializer>
+        <briefdescription>
+<para>Timeout marker for CAN message sending. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="45" column="18" bodyfile="src/main.cpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a0a2bc0c52048720b86d3ac3757be2a74" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int danger_mode</definition>
+        <argsstring></argsstring>
+        <name>danger_mode</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Flag indicating if danger mode is active. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="46" column="6" bodyfile="src/main.cpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1aa391c452d54cd2a2548594f45550614e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool received_joint_commands</definition>
+        <argsstring></argsstring>
+        <name>received_joint_commands</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Flag indicating if valid joint commands were received. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="49" column="7" bodyfile="src/main.cpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a59918f61772470adeabda7051b0989aa" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float j1_input</definition>
+        <argsstring></argsstring>
+        <name>j1_input</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+<para>Raw input for joint 1. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="50" column="8" bodyfile="src/main.cpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a53d34378b2db9479f9639971a3af17ae" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float j2_input</definition>
+        <argsstring></argsstring>
+        <name>j2_input</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+<para>Raw input for joint 2. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="51" column="8" bodyfile="src/main.cpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a611fecda0f687436671e9851b92e192e" prot="public" static="no" mutable="no">
+        <type>CAN_message_t</type>
+        <definition>CAN_message_t motor1_torque_cmd</definition>
+        <argsstring></argsstring>
+        <name>motor1_torque_cmd</name>
+        <initializer>= r1806_protocols.encodeTorqueCommand(1, 0.0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="55" column="16" bodyfile="src/main.cpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a9b18957b3169fc2992425d6488c08afc" prot="public" static="no" mutable="no">
+        <type>CAN_message_t</type>
+        <definition>CAN_message_t motor1_close_loop_request_cmd</definition>
+        <argsstring></argsstring>
+        <name>motor1_close_loop_request_cmd</name>
+        <initializer>= r1806_protocols.encodeRequestedStateCommand(1, <ref refid="motor__protocols_2utils_8h_1a15ee4d274ebbd72a00d1184e3aca0df2" kindref="member">ODrive.Axis.AxisState.CLOSED_LOOP_CONTROL</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="56" column="16" bodyfile="src/main.cpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a757e1bd96b23c795f03d7ff02112c52b" prot="public" static="no" mutable="no">
+        <type>CAN_message_t</type>
+        <definition>CAN_message_t motor2_torque_cmd</definition>
+        <argsstring></argsstring>
+        <name>motor2_torque_cmd</name>
+        <initializer>= r1806_protocols.encodeTorqueCommand(1, 0.0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="58" column="16" bodyfile="src/main.cpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1acde79ade2105ba5a318746769e4b75b4" prot="public" static="no" mutable="no">
+        <type>CAN_message_t</type>
+        <definition>CAN_message_t motor2_close_loop_request_cmd</definition>
+        <argsstring></argsstring>
+        <name>motor2_close_loop_request_cmd</name>
+        <initializer>= r1806_protocols.encodeRequestedStateCommand(2, <ref refid="motor__protocols_2utils_8h_1a15ee4d274ebbd72a00d1184e3aca0df2" kindref="member">ODrive.Axis.AxisState.CLOSED_LOOP_CONTROL</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="59" column="16" bodyfile="src/main.cpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a92903169297b3ab5289d4dc72b170352" prot="public" static="no" mutable="no">
+        <type>CAN_message_t</type>
+        <definition>CAN_message_t motor3_torque_cmd</definition>
+        <argsstring></argsstring>
+        <name>motor3_torque_cmd</name>
+        <initializer>= r1806_protocols.encodeTorqueCommand(1, 0.0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="61" column="16" bodyfile="src/main.cpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a566764c298010102b2468c64afb68ec9" prot="public" static="no" mutable="no">
+        <type>CAN_message_t</type>
+        <definition>CAN_message_t motor3_close_loop_request_cmd</definition>
+        <argsstring></argsstring>
+        <name>motor3_close_loop_request_cmd</name>
+        <initializer>= r1806_protocols.encodeRequestedStateCommand(3, <ref refid="motor__protocols_2utils_8h_1a15ee4d274ebbd72a00d1184e3aca0df2" kindref="member">ODrive.Axis.AxisState.CLOSED_LOOP_CONTROL</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="62" column="16" bodyfile="src/main.cpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a8713dccb56c13753e3dcbd40557f8b38" prot="public" static="no" mutable="no">
+        <type>CAN_message_t</type>
+        <definition>CAN_message_t motor4_torque_cmd</definition>
+        <argsstring></argsstring>
+        <name>motor4_torque_cmd</name>
+        <initializer>= r1806_protocols.encodeTorqueCommand(1, 0.0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="64" column="16" bodyfile="src/main.cpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a1bd6510e1a4c11d79832fc41619bcdd6" prot="public" static="no" mutable="no">
+        <type>CAN_message_t</type>
+        <definition>CAN_message_t motor4_close_loop_request_cmd</definition>
+        <argsstring></argsstring>
+        <name>motor4_close_loop_request_cmd</name>
+        <initializer>= r1806_protocols.encodeRequestedStateCommand(4, <ref refid="motor__protocols_2utils_8h_1a15ee4d274ebbd72a00d1184e3aca0df2" kindref="member">ODrive.Axis.AxisState.CLOSED_LOOP_CONTROL</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="65" column="16" bodyfile="src/main.cpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a698746f2c571003e99bc70c3730e2276" prot="public" static="no" mutable="no">
+        <type>const uint32_t</type>
+        <definition>const uint32_t POSITION_TIMEOUT_MS</definition>
+        <argsstring></argsstring>
+        <name>POSITION_TIMEOUT_MS</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+<para>Maximum allowed delay for receiving joint commands. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="68" column="17" bodyfile="src/main.cpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a8362cdf9289c711a7450ad930a6304b9" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t lastpositionCmdTime</definition>
+        <argsstring></argsstring>
+        <name>lastpositionCmdTime</name>
+        <initializer>= millis()</initializer>
+        <briefdescription>
+<para>Timestamp of the last valid joint command received. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="69" column="11" bodyfile="src/main.cpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="main_8cpp_1a8b5e6477c003c4cbfb7cf9ba724fce34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void canSniff</definition>
+        <argsstring>(const CAN_message_t &amp;msg)</argsstring>
+        <name>canSniff</name>
+        <param>
+          <type>const CAN_message_t &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Callback function for received CAN messages. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function processes incoming CAN messages by extracting the motor ID and command ID, updating motor position and velocity states, and applying calibration offsets when needed.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The received CAN message. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="79" column="7" bodyfile="src/main.cpp" bodystart="79" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1ad4a7316a51b17d0f691bb3e33b95a5ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void calibrate</definition>
+        <argsstring>()</argsstring>
+        <name>calibrate</name>
+        <briefdescription>
+<para>Calibrates motor position offsets. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends a static torque command for a short duration to settle the system, then records the current motor positions as offsets. After calibration, the system adjusts subsequent motor position readings. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="143" column="7" bodyfile="src/main.cpp" bodystart="143" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a7dfd9b79bc5a37d7df40207afbc5431f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setup</definition>
+        <argsstring>(void)</argsstring>
+        <name>setup</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initializes the system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets up Serial communication, configures the CAN bus (baud rate, RX/TX pins, FIFO, etc.), registers the CAN receive callback, sends closed-loop control requests, and initiates calibration. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="176" column="7" bodyfile="src/main.cpp" bodystart="176" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+<para>Main control loop. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Processes incoming CAN messages and serial commands, performs torque control using a PID controller, updates joint states, checks safety conditions (e.g., velocity limits), and sends feedback packets over Serial. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="209" column="7" bodyfile="src/main.cpp" bodystart="209" bodyend="300"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Main entry point for the motor control and serial feedback system. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file sets up CAN communication, motor and serial protocols, and implements the main control loop. It integrates functionalities from various modules such as motor protocols (<ref refid="classR1806" kindref="compound">R1806</ref>), serial protocols, finger kinematics, and a <ref refid="classController" kindref="compound">Controller</ref> for torque control. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/>#include<sp/>&lt;FlexCAN_T4.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/>#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/>#include<sp/>&quot;<ref refid="r1806_8h" kindref="compound">motor_protocols/r1806.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/>#include<sp/>&quot;<ref refid="motor__protocols_2utils_8h" kindref="compound">motor_protocols/utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/>#include<sp/>&quot;<ref refid="serial__protocols_8h" kindref="compound">serial_protocols/serial_protocols.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/>#include<sp/>&quot;<ref refid="serial__protocols_2utils_8h" kindref="compound">serial_protocols/utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/>#include<sp/>&quot;<ref refid="finger_8h" kindref="compound">finger/finger.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/>#include<sp/>&quot;<ref refid="controller_8h" kindref="compound">controller/controller.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>CAN<sp/>and<sp/>protocol<sp/>objects</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/>FlexCAN_T4&lt;CAN1,<sp/>RX_SIZE_256,<sp/>TX_SIZE_16&gt;<sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/>CAN_message_t<sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><ref refid="classR1806" kindref="compound">R1806</ref><sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><ref refid="classSerialProtocols" kindref="compound">SerialProtocols</ref><sp/><ref refid="main_8cpp_1a6c1a12e7433ba7b8e0403a9c8ec115ff" kindref="member">serial_protocols</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><ref refid="classFinger" kindref="compound">Finger</ref><sp/><ref refid="main_8cpp_1adee0025a48211ddc9040329deb7e2cce" kindref="member">finger</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><ref refid="classController" kindref="compound">Controller</ref><sp/><ref refid="main_8cpp_1a872eb72dc091dfc922f3461989909363" kindref="member">controller</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Global<sp/>state<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/><ref refid="main_8cpp_1a147b8003a5567f680edf4838fa5b4972" kindref="member">joint_states</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a6dcd474047ac30b63b6203f7c616d87d" kindref="member">motor_offsets</ref>[4]<sp/>=<sp/>{0.0,<sp/>0.0,<sp/>0.0,<sp/>0.0};<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a4e0bf4dcd86c3fc4661fc2f75dbf0054" kindref="member">print</ref>[2]<sp/>=<sp/>{0.0,<sp/>0.0};<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/><ref refid="main_8cpp_1a650a863e2f7800182a4f1c9f73b29f69" kindref="member">joint_commands</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[4]<sp/>=<sp/>{0.0,<sp/>0.0,<sp/>0.0,<sp/>0.0};<sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[4]<sp/>=<sp/>{0.0,<sp/>0.0,<sp/>0.0,<sp/>0.0};<sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1ae555d77b5a5f0935e5ee63b6d2a6a191" kindref="member">motor_position_offsets</ref>[4]<sp/>=<sp/>{0.0,<sp/>0.0,<sp/>0.0,<sp/>0.0};<sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a682d64c640e8b618b1e305c56f7c099a" kindref="member">joint_targets</ref>[2]<sp/>=<sp/>{0.0,<sp/>0.0};<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1ad1b3af4cc560a77793b48b8e544f380d" kindref="member">static_torque</ref><sp/>=<sp/>0.065;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1af5c20b3a568c8f616ca560e3db173396" kindref="member">velocity_limit</ref><sp/>=<sp/>50.0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a18358243788f8a956ff50db015724a56" kindref="member">calibrated</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/>std::vector&lt;double&gt;<sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref><sp/>=<sp/>{0.0,<sp/>0.0,<sp/>0.0,<sp/>0.0};<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/>std::vector&lt;double&gt;<sp/><ref refid="main_8cpp_1ab8f141b772f50e494bf0c2ca59d8f308" kindref="member">motor_torques</ref><sp/>=<sp/>{0.0,<sp/>0.0,<sp/>0.0,<sp/>0.0};<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/>std::vector&lt;double&gt;<sp/><ref refid="main_8cpp_1aa3d50d72d4c17514499781eda97e99cb" kindref="member">joint_error_sum</ref><sp/>=<sp/>{0.0,<sp/>0.0};<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/>std::vector&lt;double&gt;<sp/><ref refid="main_8cpp_1a9d15cb77cbe6fd6e64a2f1f0d6af33db" kindref="member">joint_states_desired</ref><sp/>=<sp/>{0.0,<sp/>0.0};<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/>std::vector&lt;double&gt;<sp/><ref refid="main_8cpp_1a9f670be4d519d72bc5e530303037b7e9" kindref="member">motor_velocities</ref><sp/>=<sp/>{0.0,<sp/>0.0,<sp/>0.0,<sp/>0.0};<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/>uint8_t*<sp/><ref refid="main_8cpp_1a021141e4ed340d853a361edbafdc68a8" kindref="member">packet</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32_t<sp/>timeout<sp/>=<sp/>millis();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a0a2bc0c52048720b86d3ac3757be2a74" kindref="member">danger_mode</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Joint<sp/>command<sp/>reception<sp/>flags<sp/>and<sp/>variables.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1aa391c452d54cd2a2548594f45550614e" kindref="member">received_joint_commands</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a59918f61772470adeabda7051b0989aa" kindref="member">j1_input</ref><sp/>=<sp/>0.0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a53d34378b2db9479f9639971a3af17ae" kindref="member">j2_input</ref><sp/>=<sp/>0.0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>CAN<sp/>messages<sp/>for<sp/>torque<sp/>commands<sp/>and<sp/>closed-loop<sp/>control.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>These<sp/>messages<sp/>are<sp/>initialized<sp/>using<sp/>the<sp/>R1806<sp/>protocol<sp/>functions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/>CAN_message_t<sp/>motor1_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(1,<sp/>0.0);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/>CAN_message_t<sp/>motor1_close_loop_request_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1a400662f13aa22e39f5b1d780d193c169" kindref="member">encodeRequestedStateCommand</ref>(1,<sp/><ref refid="structODrive" kindref="compound">ODrive</ref>.Axis.AxisState.CLOSED_LOOP_CONTROL);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/>CAN_message_t<sp/>motor2_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(1,<sp/>0.0);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/>CAN_message_t<sp/>motor2_close_loop_request_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1a400662f13aa22e39f5b1d780d193c169" kindref="member">encodeRequestedStateCommand</ref>(2,<sp/><ref refid="structODrive" kindref="compound">ODrive</ref>.Axis.AxisState.CLOSED_LOOP_CONTROL);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/>CAN_message_t<sp/>motor3_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(1,<sp/>0.0);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/>CAN_message_t<sp/>motor3_close_loop_request_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1a400662f13aa22e39f5b1d780d193c169" kindref="member">encodeRequestedStateCommand</ref>(3,<sp/><ref refid="structODrive" kindref="compound">ODrive</ref>.Axis.AxisState.CLOSED_LOOP_CONTROL);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/>CAN_message_t<sp/>motor4_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(1,<sp/>0.0);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/>CAN_message_t<sp/>motor4_close_loop_request_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1a400662f13aa22e39f5b1d780d193c169" kindref="member">encodeRequestedStateCommand</ref>(4,<sp/><ref refid="structODrive" kindref="compound">ODrive</ref>.Axis.AxisState.CLOSED_LOOP_CONTROL);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Timeout<sp/>parameters:<sp/>if<sp/>no<sp/>valid<sp/>torque<sp/>command<sp/>is<sp/>received<sp/>within<sp/>100<sp/>ms,<sp/>set<sp/>torques<sp/>to<sp/>0.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="main_8cpp_1a698746f2c571003e99bc70c3730e2276" kindref="member">POSITION_TIMEOUT_MS</ref><sp/>=<sp/>100;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/>uint32_t<sp/><ref refid="main_8cpp_1a8362cdf9289c711a7450ad930a6304b9" kindref="member">lastpositionCmdTime</ref><sp/>=<sp/>millis();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a8b5e6477c003c4cbfb7cf9ba724fce34" kindref="member">canSniff</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CAN_message_t<sp/>&amp;<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Extract<sp/>motor<sp/>and<sp/>command<sp/>IDs.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>motor_id<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1a116d467196ccdc10b6fa46b5c2d87e75" kindref="member">extract_node_id</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.id);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>cmd_id<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1a0db19be4b6c4e0be27d6128a8165de3e" kindref="member">extract_command_id</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.id);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>not<sp/>calibrated,<sp/>directly<sp/>update<sp/>motor<sp/>states.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8cpp_1a18358243788f8a956ff50db015724a56" kindref="member">calibrated</ref><sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(motor_id<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>cmd_id<sp/>==<sp/>9)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[0]<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1afc210aa77fbaf2a72dbe3ec34e7ca9ba" kindref="member">decodePositionFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[0]<sp/>=<sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[0];</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[0]<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1a80c75872c7390915c6ccb6f2ee12bbd5" kindref="member">decodeVelocityFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a9f670be4d519d72bc5e530303037b7e9" kindref="member">motor_velocities</ref>[0]<sp/>=<sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[0];</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(motor_id<sp/>==<sp/>2<sp/>&amp;&amp;<sp/>cmd_id<sp/>==<sp/>9)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[1]<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1afc210aa77fbaf2a72dbe3ec34e7ca9ba" kindref="member">decodePositionFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[1]<sp/>=<sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[1];</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[1]<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1a80c75872c7390915c6ccb6f2ee12bbd5" kindref="member">decodeVelocityFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a9f670be4d519d72bc5e530303037b7e9" kindref="member">motor_velocities</ref>[1]<sp/>=<sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[1];</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(motor_id<sp/>==<sp/>3<sp/>&amp;&amp;<sp/>cmd_id<sp/>==<sp/>9)<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[2]<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1afc210aa77fbaf2a72dbe3ec34e7ca9ba" kindref="member">decodePositionFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[2]<sp/>=<sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[2];</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[2]<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1a80c75872c7390915c6ccb6f2ee12bbd5" kindref="member">decodeVelocityFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a9f670be4d519d72bc5e530303037b7e9" kindref="member">motor_velocities</ref>[2]<sp/>=<sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[2];</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(motor_id<sp/>==<sp/>4<sp/>&amp;&amp;<sp/>cmd_id<sp/>==<sp/>9)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[3]<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1afc210aa77fbaf2a72dbe3ec34e7ca9ba" kindref="member">decodePositionFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[3]<sp/>=<sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[3];</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[3]<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1a80c75872c7390915c6ccb6f2ee12bbd5" kindref="member">decodeVelocityFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a9f670be4d519d72bc5e530303037b7e9" kindref="member">motor_velocities</ref>[3]<sp/>=<sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[3];</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>calibrated,<sp/>apply<sp/>position<sp/>offsets.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(motor_id<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>cmd_id<sp/>==<sp/>9)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>raw_motor1_position<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1afc210aa77fbaf2a72dbe3ec34e7ca9ba" kindref="member">decodePositionFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[0]<sp/>=<sp/>raw_motor1_position<sp/>-<sp/><ref refid="main_8cpp_1ae555d77b5a5f0935e5ee63b6d2a6a191" kindref="member">motor_position_offsets</ref>[0];</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[0]<sp/>=<sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[0];</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[0]<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1a80c75872c7390915c6ccb6f2ee12bbd5" kindref="member">decodeVelocityFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a9f670be4d519d72bc5e530303037b7e9" kindref="member">motor_velocities</ref>[0]<sp/>=<sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[0];</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(motor_id<sp/>==<sp/>2<sp/>&amp;&amp;<sp/>cmd_id<sp/>==<sp/>9)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>raw_motor2_position<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1afc210aa77fbaf2a72dbe3ec34e7ca9ba" kindref="member">decodePositionFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[1]<sp/>=<sp/>raw_motor2_position<sp/>-<sp/><ref refid="main_8cpp_1ae555d77b5a5f0935e5ee63b6d2a6a191" kindref="member">motor_position_offsets</ref>[1];</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[1]<sp/>=<sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[1];</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[1]<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1a80c75872c7390915c6ccb6f2ee12bbd5" kindref="member">decodeVelocityFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a9f670be4d519d72bc5e530303037b7e9" kindref="member">motor_velocities</ref>[1]<sp/>=<sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[1];</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(motor_id<sp/>==<sp/>3<sp/>&amp;&amp;<sp/>cmd_id<sp/>==<sp/>9)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>raw_motor3_position<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1afc210aa77fbaf2a72dbe3ec34e7ca9ba" kindref="member">decodePositionFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[2]<sp/>=<sp/>raw_motor3_position<sp/>-<sp/><ref refid="main_8cpp_1ae555d77b5a5f0935e5ee63b6d2a6a191" kindref="member">motor_position_offsets</ref>[2];</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[2]<sp/>=<sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[2];</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[2]<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1a80c75872c7390915c6ccb6f2ee12bbd5" kindref="member">decodeVelocityFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a9f670be4d519d72bc5e530303037b7e9" kindref="member">motor_velocities</ref>[2]<sp/>=<sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[2];</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(motor_id<sp/>==<sp/>4<sp/>&amp;&amp;<sp/>cmd_id<sp/>==<sp/>9)<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>raw_motor4_position<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1afc210aa77fbaf2a72dbe3ec34e7ca9ba" kindref="member">decodePositionFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[3]<sp/>=<sp/>raw_motor4_position<sp/>-<sp/><ref refid="main_8cpp_1ae555d77b5a5f0935e5ee63b6d2a6a191" kindref="member">motor_position_offsets</ref>[3];</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[3]<sp/>=<sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[3];</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[3]<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1a80c75872c7390915c6ccb6f2ee12bbd5" kindref="member">decodeVelocityFeedback</ref>(<ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a9f670be4d519d72bc5e530303037b7e9" kindref="member">motor_velocities</ref>[3]<sp/>=<sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[3];</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1ad4a7316a51b17d0f691bb3e33b95a5ad" kindref="member">calibrate</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Send<sp/>static<sp/>torque<sp/>commands<sp/>for<sp/>calibration.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>motor1_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(1,<sp/>-<ref refid="main_8cpp_1ad1b3af4cc560a77793b48b8e544f380d" kindref="member">static_torque</ref>);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>motor2_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(2,<sp/>-<ref refid="main_8cpp_1ad1b3af4cc560a77793b48b8e544f380d" kindref="member">static_torque</ref>);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>motor3_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(3,<sp/>-<ref refid="main_8cpp_1ad1b3af4cc560a77793b48b8e544f380d" kindref="member">static_torque</ref>);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>motor4_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(4,<sp/>-<ref refid="main_8cpp_1ad1b3af4cc560a77793b48b8e544f380d" kindref="member">static_torque</ref>);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Send<sp/>torque<sp/>commands<sp/>at<sp/>roughly<sp/>50<sp/>Hz<sp/>for<sp/>a<sp/>fixed<sp/>period.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(c<sp/>&lt;<sp/>150)<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(millis()<sp/>-<sp/>timeout<sp/>&gt;<sp/>20)<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.events();</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.write(motor1_torque_cmd);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.write(motor2_torque_cmd);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.write(motor3_torque_cmd);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.write(motor4_torque_cmd);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timeout<sp/>=<sp/>millis();</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c<sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>current<sp/>motor<sp/>positions<sp/>as<sp/>calibration<sp/>offsets.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>4;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ae555d77b5a5f0935e5ee63b6d2a6a191" kindref="member">motor_position_offsets</ref>[i]<sp/>=<sp/><ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>[i];</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a18358243788f8a956ff50db015724a56" kindref="member">calibrated</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a7dfd9b79bc5a37d7df40207afbc5431f" kindref="member">setup</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>Serial.begin(115200);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>delay(500);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.begin();</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.setBaudRate(250000);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.setRX(ALT);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>CRX<sp/>for<sp/>CAN1<sp/>is<sp/>actually<sp/>Pin<sp/>13<sp/>for<sp/>the<sp/>ME472<sp/>Dev<sp/>Board<sp/>V3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.setTX(ALT);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.setMaxMB(16);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.enableFIFO();</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.enableFIFOInterrupt();</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.onReceive(<ref refid="main_8cpp_1a8b5e6477c003c4cbfb7cf9ba724fce34" kindref="member">canSniff</ref>);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.mailboxStatus();</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>delay(500);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.events();</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.write(motor1_close_loop_request_cmd);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.write(motor2_close_loop_request_cmd);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.write(motor3_close_loop_request_cmd);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.write(motor4_close_loop_request_cmd);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>delay(500);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ad4a7316a51b17d0f691bb3e33b95a5ad" kindref="member">calibrate</ref>();</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Uncomment<sp/>and<sp/>modify<sp/>the<sp/>following<sp/>if<sp/>joint_states<sp/>initialization<sp/>is<sp/>required.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>joint_states<sp/>=<sp/>{0,<sp/>0};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>delay(500);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" kindref="member">loop</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.events();</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8cpp_1a0a2bc0c52048720b86d3ac3757be2a74" kindref="member">danger_mode</ref><sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Joint<sp/>Position<sp/>Command<sp/>Reception<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Serial.available()<sp/>&gt;=<sp/><ref refid="serial__protocols_2utils_8h_1a60e48a418bc0b66b574f5ee4abb296e2" kindref="member">JOINT_COMMAND_PACKET_SIZE</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>joint_command_buffer[<ref refid="serial__protocols_2utils_8h_1a60e48a418bc0b66b574f5ee4abb296e2" kindref="member">JOINT_COMMAND_PACKET_SIZE</ref>];</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>incoming<sp/>serial<sp/>joint<sp/>command<sp/>packet.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Serial.readBytes((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)joint_command_buffer,<sp/><ref refid="serial__protocols_2utils_8h_1a60e48a418bc0b66b574f5ee4abb296e2" kindref="member">JOINT_COMMAND_PACKET_SIZE</ref>);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a650a863e2f7800182a4f1c9f73b29f69" kindref="member">joint_commands</ref><sp/>=<sp/><ref refid="main_8cpp_1a6c1a12e7433ba7b8e0403a9c8ec115ff" kindref="member">serial_protocols</ref>.<ref refid="classSerialProtocols_1aec800812be41156be7e0a1e0374a03fd" kindref="member">decodeJointCommandPacket</ref>(joint_command_buffer);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8cpp_1a650a863e2f7800182a4f1c9f73b29f69" kindref="member">joint_commands</ref><sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1aa391c452d54cd2a2548594f45550614e" kindref="member">received_joint_commands</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Update<sp/>the<sp/>last<sp/>valid<sp/>command<sp/>timestamp.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a8362cdf9289c711a7450ad930a6304b9" kindref="member">lastpositionCmdTime</ref><sp/>=<sp/>millis();</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Timeout<sp/>Check:<sp/>Reset<sp/>torques<sp/>to<sp/>0<sp/>if<sp/>no<sp/>command<sp/>received<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(millis()<sp/>-<sp/><ref refid="main_8cpp_1a8362cdf9289c711a7450ad930a6304b9" kindref="member">lastpositionCmdTime</ref><sp/>&gt;<sp/><ref refid="main_8cpp_1a698746f2c571003e99bc70c3730e2276" kindref="member">POSITION_TIMEOUT_MS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor1_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(1,<sp/>0.0);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor2_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(2,<sp/>0.0);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor3_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(3,<sp/>0.0);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor4_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(4,<sp/>0.0);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Override<sp/>torque<sp/>command<sp/>for<sp/>testing<sp/>purposes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor1_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(1,<sp/>-<ref refid="main_8cpp_1ad1b3af4cc560a77793b48b8e544f380d" kindref="member">static_torque</ref>);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor2_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(2,<sp/>-<ref refid="main_8cpp_1ad1b3af4cc560a77793b48b8e544f380d" kindref="member">static_torque</ref>);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor3_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(3,<sp/>-<ref refid="main_8cpp_1ad1b3af4cc560a77793b48b8e544f380d" kindref="member">static_torque</ref>);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor4_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(4,<sp/>-<ref refid="main_8cpp_1ad1b3af4cc560a77793b48b8e544f380d" kindref="member">static_torque</ref>);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Update<sp/>Joint<sp/>States<sp/>Feedback<sp/>Data<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a147b8003a5567f680edf4838fa5b4972" kindref="member">joint_states</ref><sp/>=<sp/><ref refid="main_8cpp_1adee0025a48211ddc9040329deb7e2cce" kindref="member">finger</ref>.<ref refid="classFinger_1aefe9b0417b1bdc93bce95df895520b5e" kindref="member">getJointStates</ref>(<ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8cpp_1aa391c452d54cd2a2548594f45550614e" kindref="member">received_joint_commands</ref><sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Convert<sp/>joint<sp/>states<sp/>to<sp/>std::vector<sp/>format<sp/>for<sp/>the<sp/>controller.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>js<sp/>=<sp/>{<ref refid="main_8cpp_1a147b8003a5567f680edf4838fa5b4972" kindref="member">joint_states</ref>[0],<sp/><ref refid="main_8cpp_1a147b8003a5567f680edf4838fa5b4972" kindref="member">joint_states</ref>[1]};</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>js_d<sp/>=<sp/>{<ref refid="main_8cpp_1a9d15cb77cbe6fd6e64a2f1f0d6af33db" kindref="member">joint_states_desired</ref>[0],<sp/><ref refid="main_8cpp_1a9d15cb77cbe6fd6e64a2f1f0d6af33db" kindref="member">joint_states_desired</ref>[1]};</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Update<sp/>desired<sp/>joint<sp/>states<sp/>from<sp/>received<sp/>commands.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>js_d[0]<sp/>=<sp/><ref refid="main_8cpp_1a650a863e2f7800182a4f1c9f73b29f69" kindref="member">joint_commands</ref>[0];</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>js_d[1]<sp/>=<sp/><ref refid="main_8cpp_1a650a863e2f7800182a4f1c9f73b29f69" kindref="member">joint_commands</ref>[1];</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Compute<sp/>torque<sp/>control<sp/>using<sp/>PID<sp/>controller.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::pair&lt;std::vector&lt;double&gt;,<sp/>std::vector&lt;double&gt;&gt;<sp/>result<sp/>=<sp/></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a872eb72dc091dfc922f3461989909363" kindref="member">controller</ref>.<ref refid="classController_1aadf118b6025c2045262e05c68b227328" kindref="member">torque_control</ref>(js,<sp/>js_d,<sp/><ref refid="main_8cpp_1aa3d50d72d4c17514499781eda97e99cb" kindref="member">joint_error_sum</ref>,<sp/><ref refid="main_8cpp_1a9f670be4d519d72bc5e530303037b7e9" kindref="member">motor_velocities</ref>);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ab8f141b772f50e494bf0c2ca59d8f308" kindref="member">motor_torques</ref><sp/>=<sp/>result.first;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1aa3d50d72d4c17514499781eda97e99cb" kindref="member">joint_error_sum</ref><sp/>=<sp/>result.second;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Determine<sp/>maximum<sp/>torque<sp/>value.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>max<sp/>=<sp/><ref refid="main_8cpp_1ab8f141b772f50e494bf0c2ca59d8f308" kindref="member">motor_torques</ref>[0];</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>4;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8cpp_1ab8f141b772f50e494bf0c2ca59d8f308" kindref="member">motor_torques</ref>[i]<sp/>&gt;=<sp/>max)<sp/>{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max<sp/>=<sp/><ref refid="main_8cpp_1ab8f141b772f50e494bf0c2ca59d8f308" kindref="member">motor_torques</ref>[i];</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Adjust<sp/>individual<sp/>motor<sp/>torque<sp/>commands<sp/>based<sp/>on<sp/>computed<sp/>values.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor1_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(1,<sp/>-max<sp/>+<sp/><ref refid="main_8cpp_1ab8f141b772f50e494bf0c2ca59d8f308" kindref="member">motor_torques</ref>[0]);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor2_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(2,<sp/>-max<sp/>+<sp/><ref refid="main_8cpp_1ab8f141b772f50e494bf0c2ca59d8f308" kindref="member">motor_torques</ref>[1]);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor3_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(3,<sp/>-max<sp/>+<sp/><ref refid="main_8cpp_1ab8f141b772f50e494bf0c2ca59d8f308" kindref="member">motor_torques</ref>[2]);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor4_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(4,<sp/>-max<sp/>+<sp/><ref refid="main_8cpp_1ab8f141b772f50e494bf0c2ca59d8f308" kindref="member">motor_torques</ref>[3]);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Check<sp/>for<sp/>Danger<sp/>Mode:<sp/>Disable<sp/>commands<sp/>if<sp/>velocity<sp/>exceeds<sp/>limits<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="finger_8h_1a52b56a381e777b55e1b59019d9ee072e" kindref="member">NUM_MOTORS</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[i]<sp/>&gt;<sp/><ref refid="main_8cpp_1af5c20b3a568c8f616ca560e3db173396" kindref="member">velocity_limit</ref><sp/>||<sp/><ref refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kindref="member">motor_velocity_states</ref>[i]<sp/>&lt;<sp/>-<ref refid="main_8cpp_1af5c20b3a568c8f616ca560e3db173396" kindref="member">velocity_limit</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a0a2bc0c52048720b86d3ac3757be2a74" kindref="member">danger_mode</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>danger<sp/>mode,<sp/>reset<sp/>all<sp/>torque<sp/>commands<sp/>to<sp/>zero.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor1_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(1,<sp/>0.0);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor2_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(2,<sp/>0.0);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor3_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(3,<sp/>0.0);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor4_torque_cmd<sp/>=<sp/><ref refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kindref="member">r1806_protocols</ref>.<ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(4,<sp/>0.0);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Periodically<sp/>send<sp/>CAN<sp/>messages<sp/>with<sp/>torque<sp/>commands<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(millis()<sp/>-<sp/>timeout<sp/>&gt;<sp/>20)<sp/>{</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.write(motor1_torque_cmd);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.write(motor2_torque_cmd);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.write(motor3_torque_cmd);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kindref="member">can1</ref>.write(motor4_torque_cmd);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timeout<sp/>=<sp/>millis();</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Update<sp/>joint<sp/>states<sp/>feedback<sp/>and<sp/>prepare<sp/>serial<sp/>feedback<sp/>data<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a147b8003a5567f680edf4838fa5b4972" kindref="member">joint_states</ref><sp/>=<sp/><ref refid="main_8cpp_1adee0025a48211ddc9040329deb7e2cce" kindref="member">finger</ref>.<ref refid="classFinger_1aefe9b0417b1bdc93bce95df895520b5e" kindref="member">getJointStates</ref>(<ref refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kindref="member">motor_position_states</ref>);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a4e0bf4dcd86c3fc4661fc2f75dbf0054" kindref="member">print</ref>[0]<sp/>=<sp/>-<ref refid="main_8cpp_1ad1b3af4cc560a77793b48b8e544f380d" kindref="member">static_torque</ref><sp/>+<sp/><ref refid="main_8cpp_1ab8f141b772f50e494bf0c2ca59d8f308" kindref="member">motor_torques</ref>[2];</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a4e0bf4dcd86c3fc4661fc2f75dbf0054" kindref="member">print</ref>[1]<sp/>=<sp/>-<ref refid="main_8cpp_1ad1b3af4cc560a77793b48b8e544f380d" kindref="member">static_torque</ref><sp/>+<sp/><ref refid="main_8cpp_1ab8f141b772f50e494bf0c2ca59d8f308" kindref="member">motor_torques</ref>[3];</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Encode<sp/>and<sp/>send<sp/>feedback<sp/>packet<sp/>over<sp/>Serial<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a021141e4ed340d853a361edbafdc68a8" kindref="member">packet</ref><sp/>=<sp/><ref refid="main_8cpp_1a6c1a12e7433ba7b8e0403a9c8ec115ff" kindref="member">serial_protocols</ref>.<ref refid="classSerialProtocols_1a967d508f968bd1d09f41db97ea97b432" kindref="member">encodeFeedbackPacket</ref>(<ref refid="main_8cpp_1a4e0bf4dcd86c3fc4661fc2f75dbf0054" kindref="member">print</ref>);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>Serial.write(<ref refid="main_8cpp_1a021141e4ed340d853a361edbafdc68a8" kindref="member">packet</ref>,<sp/><ref refid="serial__protocols_2utils_8h_1a9880be088cab58dc6d9782bc31258ca8" kindref="member">FEEDBACK_PACKET_SIZE</ref>);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/></highlight></codeline>
+    </programlisting>
+    <location file="src/main.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,30 @@
+\doxysection{utils.\+h}
+\hypertarget{serial__protocols_2utils_8h_source}{}\label{serial__protocols_2utils_8h_source}\index{include/serial\_protocols/utils.h@{include/serial\_protocols/utils.h}}
+\mbox{\hyperlink{serial__protocols_2utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SERIAL\_PROTOCOLS\_UTILS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SERIAL\_PROTOCOLS\_UTILS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ NUM\_MOTORS\ 4}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ START\_BYTE\ 0xAA}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ END\_BYTE\ \ \ 0xBB}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ MSG\_FEEDBACK\ 0x01}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ FEEDBACK\_PAYLOAD\_LENGTH\ 8\ }\textcolor{comment}{//\ 2\ floats}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ FEEDBACK\_PACKET\_SIZE\ 13\ }\textcolor{comment}{//\ 1\ +\ 1\ +\ 1\ +\ FEEDBACK\_PAYLOAD\_LENGTH\ +\ 1\ +\ 1}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ MSG\_JOINT\_COMMAND\ 0x02}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ JOINT\_COMMAND\_PAYLOAD\_LENGTH\ 8\ }\textcolor{comment}{//\ 2\ floats}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ JOINT\_COMMAND\_PACKET\_SIZE\ 13\ }\textcolor{comment}{//\ 1\ +\ 1\ +\ 1\ +\ JOINT\_COMMAND\_PAYLOAD\_LENGTH\ +\ 1\ +\ 1}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SERIAL\_PROTOCOLS\_UTILS\_H}}
+
+\end{DoxyCode}

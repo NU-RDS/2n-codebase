@@ -1,0 +1,204 @@
+\doxysection{src/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+
+
+Main entry point for the motor control and serial feedback system.  
+
+
+{\ttfamily \#include $<$Flex\+CAN\+\_\+\+T4.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include "{}motor\+\_\+protocols/r1806.\+h"{}}\newline
+{\ttfamily \#include "{}motor\+\_\+protocols/utils.\+h"{}}\newline
+{\ttfamily \#include "{}serial\+\_\+protocols/serial\+\_\+protocols.\+h"{}}\newline
+{\ttfamily \#include "{}serial\+\_\+protocols/utils.\+h"{}}\newline
+{\ttfamily \#include "{}finger/finger.\+h"{}}\newline
+{\ttfamily \#include "{}controller/controller.\+h"{}}\newline
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a8b5e6477c003c4cbfb7cf9ba724fce34}{can\+Sniff}} (const CAN\+\_\+message\+\_\+t \&\mbox{\hyperlink{main_8cpp_a7b7e0c51c97a7d2837c3aef9953192f1}{msg}})
+\begin{DoxyCompactList}\small\item\em Callback function for received CAN messages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_ad4a7316a51b17d0f691bb3e33b95a5ad}{calibrate}} ()
+\begin{DoxyCompactList}\small\item\em Calibrates motor position offsets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a7dfd9b79bc5a37d7df40207afbc5431f}{setup}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Main control loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cpp_af491bc470adef8b258c75dafed0077b9}\label{main_8cpp_af491bc470adef8b258c75dafed0077b9} 
+Flex\+CAN\+\_\+\+T4$<$ CAN1, RX\+\_\+\+SIZE\+\_\+256, TX\+\_\+\+SIZE\+\_\+16 $>$ {\bfseries can1}
+\begin{DoxyCompactList}\small\item\em CAN bus object. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a7b7e0c51c97a7d2837c3aef9953192f1}\label{main_8cpp_a7b7e0c51c97a7d2837c3aef9953192f1} 
+CAN\+\_\+message\+\_\+t {\bfseries msg}
+\begin{DoxyCompactList}\small\item\em Temporary CAN message storage. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a40cbacc0d1c8008497eb1eee2e2b176f}\label{main_8cpp_a40cbacc0d1c8008497eb1eee2e2b176f} 
+\mbox{\hyperlink{classR1806}{R1806}} {\bfseries r1806\+\_\+protocols}
+\begin{DoxyCompactList}\small\item\em \doxylink{classR1806}{R1806} motor protocol handler. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a6c1a12e7433ba7b8e0403a9c8ec115ff}\label{main_8cpp_a6c1a12e7433ba7b8e0403a9c8ec115ff} 
+\mbox{\hyperlink{classSerialProtocols}{Serial\+Protocols}} {\bfseries serial\+\_\+protocols}
+\begin{DoxyCompactList}\small\item\em Serial protocol handler. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_adee0025a48211ddc9040329deb7e2cce}\label{main_8cpp_adee0025a48211ddc9040329deb7e2cce} 
+\mbox{\hyperlink{classFinger}{Finger}} {\bfseries finger}
+\begin{DoxyCompactList}\small\item\em \doxylink{classFinger}{Finger} kinematics handler. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a872eb72dc091dfc922f3461989909363}\label{main_8cpp_a872eb72dc091dfc922f3461989909363} 
+\mbox{\hyperlink{classController}{Controller}} {\bfseries controller}
+\begin{DoxyCompactList}\small\item\em \doxylink{classController}{Controller} for torque control. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a147b8003a5567f680edf4838fa5b4972}\label{main_8cpp_a147b8003a5567f680edf4838fa5b4972} 
+float \texorpdfstring{$\ast$}{*} {\bfseries joint\+\_\+states}
+\begin{DoxyCompactList}\small\item\em Pointer to the current joint states. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a6dcd474047ac30b63b6203f7c616d87d}\label{main_8cpp_a6dcd474047ac30b63b6203f7c616d87d} 
+float {\bfseries motor\+\_\+offsets} \mbox{[}4\mbox{]} = \{0.\+0, 0.\+0, 0.\+0, 0.\+0\}
+\begin{DoxyCompactList}\small\item\em Offsets for motor positions. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a4e0bf4dcd86c3fc4661fc2f75dbf0054}\label{main_8cpp_a4e0bf4dcd86c3fc4661fc2f75dbf0054} 
+float {\bfseries print} \mbox{[}2\mbox{]} = \{0.\+0, 0.\+0\}
+\begin{DoxyCompactList}\small\item\em Array used for serial feedback (positions). \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a650a863e2f7800182a4f1c9f73b29f69}\label{main_8cpp_a650a863e2f7800182a4f1c9f73b29f69} 
+float \texorpdfstring{$\ast$}{*} {\bfseries joint\+\_\+commands}
+\begin{DoxyCompactList}\small\item\em Pointer to decoded joint command values. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a3ebd040882873f33ba4ca79846ecd37b}\label{main_8cpp_a3ebd040882873f33ba4ca79846ecd37b} 
+float {\bfseries motor\+\_\+position\+\_\+states} \mbox{[}4\mbox{]} = \{0.\+0, 0.\+0, 0.\+0, 0.\+0\}
+\begin{DoxyCompactList}\small\item\em Current motor position states. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_ada5550d3516005d96a11c936ee550114}\label{main_8cpp_ada5550d3516005d96a11c936ee550114} 
+float {\bfseries motor\+\_\+velocity\+\_\+states} \mbox{[}4\mbox{]} = \{0.\+0, 0.\+0, 0.\+0, 0.\+0\}
+\begin{DoxyCompactList}\small\item\em Current motor velocity states. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_ae555d77b5a5f0935e5ee63b6d2a6a191}\label{main_8cpp_ae555d77b5a5f0935e5ee63b6d2a6a191} 
+float {\bfseries motor\+\_\+position\+\_\+offsets} \mbox{[}4\mbox{]} = \{0.\+0, 0.\+0, 0.\+0, 0.\+0\}
+\begin{DoxyCompactList}\small\item\em Calibration offsets for motor positions. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a682d64c640e8b618b1e305c56f7c099a}\label{main_8cpp_a682d64c640e8b618b1e305c56f7c099a} 
+float {\bfseries joint\+\_\+targets} \mbox{[}2\mbox{]} = \{0.\+0, 0.\+0\}
+\begin{DoxyCompactList}\small\item\em Desired joint targets. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_ad1b3af4cc560a77793b48b8e544f380d}\label{main_8cpp_ad1b3af4cc560a77793b48b8e544f380d} 
+float {\bfseries static\+\_\+torque} = 0.\+065
+\begin{DoxyCompactList}\small\item\em Static torque used during calibration. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_af5c20b3a568c8f616ca560e3db173396}\label{main_8cpp_af5c20b3a568c8f616ca560e3db173396} 
+float {\bfseries velocity\+\_\+limit} = 50.\+0
+\begin{DoxyCompactList}\small\item\em Velocity limit for safety. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a18358243788f8a956ff50db015724a56}\label{main_8cpp_a18358243788f8a956ff50db015724a56} 
+bool {\bfseries calibrated} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating whether calibration is complete. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_ad5fc2c067a5d275ec1d6f4eed478b335}\label{main_8cpp_ad5fc2c067a5d275ec1d6f4eed478b335} 
+std\+::vector$<$ double $>$ {\bfseries motor\+\_\+states} = \{0.\+0, 0.\+0, 0.\+0, 0.\+0\}
+\begin{DoxyCompactList}\small\item\em Current motor positions (std\+::vector format). \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_ab8f141b772f50e494bf0c2ca59d8f308}\label{main_8cpp_ab8f141b772f50e494bf0c2ca59d8f308} 
+std\+::vector$<$ double $>$ {\bfseries motor\+\_\+torques} = \{0.\+0, 0.\+0, 0.\+0, 0.\+0\}
+\begin{DoxyCompactList}\small\item\em Computed motor torques. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_aa3d50d72d4c17514499781eda97e99cb}\label{main_8cpp_aa3d50d72d4c17514499781eda97e99cb} 
+std\+::vector$<$ double $>$ {\bfseries joint\+\_\+error\+\_\+sum} = \{0.\+0, 0.\+0\}
+\begin{DoxyCompactList}\small\item\em Accumulated joint error sum. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a9d15cb77cbe6fd6e64a2f1f0d6af33db}\label{main_8cpp_a9d15cb77cbe6fd6e64a2f1f0d6af33db} 
+std\+::vector$<$ double $>$ {\bfseries joint\+\_\+states\+\_\+desired} = \{0.\+0, 0.\+0\}
+\begin{DoxyCompactList}\small\item\em Desired joint states. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a9f670be4d519d72bc5e530303037b7e9}\label{main_8cpp_a9f670be4d519d72bc5e530303037b7e9} 
+std\+::vector$<$ double $>$ {\bfseries motor\+\_\+velocities} = \{0.\+0, 0.\+0, 0.\+0, 0.\+0\}
+\begin{DoxyCompactList}\small\item\em Current motor velocities. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a021141e4ed340d853a361edbafdc68a8}\label{main_8cpp_a021141e4ed340d853a361edbafdc68a8} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries packet}
+\begin{DoxyCompactList}\small\item\em Pointer to a serial packet. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a0a2bc0c52048720b86d3ac3757be2a74}\label{main_8cpp_a0a2bc0c52048720b86d3ac3757be2a74} 
+int {\bfseries danger\+\_\+mode} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if danger mode is active. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_aa391c452d54cd2a2548594f45550614e}\label{main_8cpp_aa391c452d54cd2a2548594f45550614e} 
+bool {\bfseries received\+\_\+joint\+\_\+commands} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if valid joint commands were received. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a59918f61772470adeabda7051b0989aa}\label{main_8cpp_a59918f61772470adeabda7051b0989aa} 
+float {\bfseries j1\+\_\+input} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Raw input for joint 1. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a53d34378b2db9479f9639971a3af17ae}\label{main_8cpp_a53d34378b2db9479f9639971a3af17ae} 
+float {\bfseries j2\+\_\+input} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Raw input for joint 2. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a611fecda0f687436671e9851b92e192e}\label{main_8cpp_a611fecda0f687436671e9851b92e192e} 
+CAN\+\_\+message\+\_\+t {\bfseries motor1\+\_\+torque\+\_\+cmd} = r1806\+\_\+protocols.\+encode\+Torque\+Command(1, 0.\+0)
+\item 
+\Hypertarget{main_8cpp_a9b18957b3169fc2992425d6488c08afc}\label{main_8cpp_a9b18957b3169fc2992425d6488c08afc} 
+CAN\+\_\+message\+\_\+t {\bfseries motor1\+\_\+close\+\_\+loop\+\_\+request\+\_\+cmd} = r1806\+\_\+protocols.\+encode\+Requested\+State\+Command(1, \mbox{\hyperlink{motor__protocols_2utils_8h_a15ee4d274ebbd72a00d1184e3aca0df2}{ODrive.\+Axis.\+Axis\+State.\+CLOSED\+\_\+\+LOOP\+\_\+\+CONTROL}})
+\item 
+\Hypertarget{main_8cpp_a757e1bd96b23c795f03d7ff02112c52b}\label{main_8cpp_a757e1bd96b23c795f03d7ff02112c52b} 
+CAN\+\_\+message\+\_\+t {\bfseries motor2\+\_\+torque\+\_\+cmd} = r1806\+\_\+protocols.\+encode\+Torque\+Command(1, 0.\+0)
+\item 
+\Hypertarget{main_8cpp_acde79ade2105ba5a318746769e4b75b4}\label{main_8cpp_acde79ade2105ba5a318746769e4b75b4} 
+CAN\+\_\+message\+\_\+t {\bfseries motor2\+\_\+close\+\_\+loop\+\_\+request\+\_\+cmd} = r1806\+\_\+protocols.\+encode\+Requested\+State\+Command(2, \mbox{\hyperlink{motor__protocols_2utils_8h_a15ee4d274ebbd72a00d1184e3aca0df2}{ODrive.\+Axis.\+Axis\+State.\+CLOSED\+\_\+\+LOOP\+\_\+\+CONTROL}})
+\item 
+\Hypertarget{main_8cpp_a92903169297b3ab5289d4dc72b170352}\label{main_8cpp_a92903169297b3ab5289d4dc72b170352} 
+CAN\+\_\+message\+\_\+t {\bfseries motor3\+\_\+torque\+\_\+cmd} = r1806\+\_\+protocols.\+encode\+Torque\+Command(1, 0.\+0)
+\item 
+\Hypertarget{main_8cpp_a566764c298010102b2468c64afb68ec9}\label{main_8cpp_a566764c298010102b2468c64afb68ec9} 
+CAN\+\_\+message\+\_\+t {\bfseries motor3\+\_\+close\+\_\+loop\+\_\+request\+\_\+cmd} = r1806\+\_\+protocols.\+encode\+Requested\+State\+Command(3, \mbox{\hyperlink{motor__protocols_2utils_8h_a15ee4d274ebbd72a00d1184e3aca0df2}{ODrive.\+Axis.\+Axis\+State.\+CLOSED\+\_\+\+LOOP\+\_\+\+CONTROL}})
+\item 
+\Hypertarget{main_8cpp_a8713dccb56c13753e3dcbd40557f8b38}\label{main_8cpp_a8713dccb56c13753e3dcbd40557f8b38} 
+CAN\+\_\+message\+\_\+t {\bfseries motor4\+\_\+torque\+\_\+cmd} = r1806\+\_\+protocols.\+encode\+Torque\+Command(1, 0.\+0)
+\item 
+\Hypertarget{main_8cpp_a1bd6510e1a4c11d79832fc41619bcdd6}\label{main_8cpp_a1bd6510e1a4c11d79832fc41619bcdd6} 
+CAN\+\_\+message\+\_\+t {\bfseries motor4\+\_\+close\+\_\+loop\+\_\+request\+\_\+cmd} = r1806\+\_\+protocols.\+encode\+Requested\+State\+Command(4, \mbox{\hyperlink{motor__protocols_2utils_8h_a15ee4d274ebbd72a00d1184e3aca0df2}{ODrive.\+Axis.\+Axis\+State.\+CLOSED\+\_\+\+LOOP\+\_\+\+CONTROL}})
+\item 
+\Hypertarget{main_8cpp_a698746f2c571003e99bc70c3730e2276}\label{main_8cpp_a698746f2c571003e99bc70c3730e2276} 
+const uint32\+\_\+t {\bfseries POSITION\+\_\+\+TIMEOUT\+\_\+\+MS} = 100
+\begin{DoxyCompactList}\small\item\em Maximum allowed delay for receiving joint commands. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a8362cdf9289c711a7450ad930a6304b9}\label{main_8cpp_a8362cdf9289c711a7450ad930a6304b9} 
+uint32\+\_\+t {\bfseries lastposition\+Cmd\+Time} = millis()
+\begin{DoxyCompactList}\small\item\em Timestamp of the last valid joint command received. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main entry point for the motor control and serial feedback system. 
+
+This file sets up CAN communication, motor and serial protocols, and implements the main control loop. It integrates functionalities from various modules such as motor protocols (\doxylink{classR1806}{R1806}), serial protocols, finger kinematics, and a \doxylink{classController}{Controller} for torque control. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_ad4a7316a51b17d0f691bb3e33b95a5ad}\label{main_8cpp_ad4a7316a51b17d0f691bb3e33b95a5ad} 
+\index{main.cpp@{main.cpp}!calibrate@{calibrate}}
+\index{calibrate@{calibrate}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{calibrate()}{calibrate()}}
+{\footnotesize\ttfamily void calibrate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calibrates motor position offsets. 
+
+Sends a static torque command for a short duration to settle the system, then records the current motor positions as offsets. After calibration, the system adjusts subsequent motor position readings. \Hypertarget{main_8cpp_a8b5e6477c003c4cbfb7cf9ba724fce34}\label{main_8cpp_a8b5e6477c003c4cbfb7cf9ba724fce34} 
+\index{main.cpp@{main.cpp}!canSniff@{canSniff}}
+\index{canSniff@{canSniff}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{canSniff()}{canSniff()}}
+{\footnotesize\ttfamily void can\+Sniff (\begin{DoxyParamCaption}\item[{const CAN\+\_\+message\+\_\+t \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+Callback function for received CAN messages. 
+
+This function processes incoming CAN messages by extracting the motor ID and command ID, updating motor position and velocity states, and applying calibration offsets when needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The received CAN message. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_afe461d27b9c48d5921c00d521181f12f}\label{main_8cpp_afe461d27b9c48d5921c00d521181f12f} 
+\index{main.cpp@{main.cpp}!loop@{loop}}
+\index{loop@{loop}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main control loop. 
+
+Processes incoming CAN messages and serial commands, performs torque control using a PID controller, updates joint states, checks safety conditions (e.\+g., velocity limits), and sends feedback packets over Serial. \Hypertarget{main_8cpp_a7dfd9b79bc5a37d7df40207afbc5431f}\label{main_8cpp_a7dfd9b79bc5a37d7df40207afbc5431f} 
+\index{main.cpp@{main.cpp}!setup@{setup}}
+\index{setup@{setup}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the system. 
+
+Sets up Serial communication, configures the CAN bus (baud rate, RX/\+TX pins, FIFO, etc.), registers the CAN receive callback, sends closed-\/loop control requests, and initiates calibration. 

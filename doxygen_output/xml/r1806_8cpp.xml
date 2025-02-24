@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="r1806_8cpp" kind="file" language="C++">
+    <compoundname>r1806.cpp</compoundname>
+    <includes local="no">cmath</includes>
+    <includes local="no">cstring</includes>
+    <includes refid="r1806_8h" local="yes">motor_protocols/r1806.h</includes>
+    <includes refid="motor__protocols_2utils_8h" local="yes">motor_protocols/utils.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>motor_protocols/r1806.h</label>
+        <link refid="r1806_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>motor_protocols/utils.h</label>
+        <link refid="motor__protocols_2utils_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/motor_protocols/r1806.cpp</label>
+        <link refid="r1806_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>FlexCAN_T4.h</label>
+      </node>
+      <node id="2">
+        <label>cmath</label>
+      </node>
+      <node id="3">
+        <label>cstring</label>
+      </node>
+      <node id="7">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="r1806_8h" kindref="compound">motor_protocols/r1806.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="motor__protocols_2utils_8h" kindref="compound">motor_protocols/utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><ref refid="classR1806_1ac24ac7af211be841111d150808fdd2f7" kindref="member">R1806::R1806</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>_gear_reduction_ratio<sp/>=<sp/><ref refid="r1806_8h_1a890ee506c2f2d76aa67bae8d9c9507f5" kindref="member">GEAR_REDUCION_RATIO</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">uint32_t<sp/><ref refid="classR1806_1a116d467196ccdc10b6fa46b5c2d87e75" kindref="member">R1806::extract_node_id</ref>(uint32_t<sp/>can_id)<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(can_id<sp/>&gt;&gt;<sp/>5)<sp/>&amp;<sp/>0x3F;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">uint32_t<sp/><ref refid="classR1806_1a0db19be4b6c4e0be27d6128a8165de3e" kindref="member">R1806::extract_command_id</ref>(uint32_t<sp/>can_id)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>can_id<sp/>&amp;<sp/>0x1F;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">CAN_message_t<sp/><ref refid="classR1806_1a400662f13aa22e39f5b1d780d193c169" kindref="member">R1806::encodeRequestedStateCommand</ref>(uint32_t<sp/>node_id,<sp/>uint32_t<sp/>requested_state)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>CAN_message_t<sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>a<sp/>CAN<sp/>ID<sp/>from<sp/>node_id<sp/>(bits<sp/>[10..5])<sp/>and<sp/>the<sp/>command<sp/>ID<sp/>(bits<sp/>[4..0]).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.id<sp/>=<sp/>((node_id<sp/>&amp;<sp/>0x3F)<sp/>&lt;&lt;<sp/>5)<sp/>|<sp/>(0x07<sp/>&amp;<sp/>0x1F);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Overriding<sp/>requested_state<sp/>to<sp/>CLOSED_LOOP_CONTROL<sp/>(for<sp/>demonstration).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>requested_state<sp/>=<sp/><ref refid="structODrive" kindref="compound">ODrive</ref>.Axis.AxisState.CLOSED_LOOP_CONTROL;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Fill<sp/>the<sp/>payload<sp/>with<sp/>the<sp/>requested<sp/>axis<sp/>state<sp/>in<sp/>little-endian<sp/>byte<sp/>order.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[0]<sp/>=<sp/>requested_state<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[1]<sp/>=<sp/>(requested_state<sp/>&gt;&gt;<sp/>8)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[2]<sp/>=<sp/>(requested_state<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[3]<sp/>=<sp/>(requested_state<sp/>&gt;&gt;<sp/>24)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Unused<sp/>bytes<sp/>are<sp/>set<sp/>to<sp/>zero.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[4]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[5]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[6]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[7]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">CAN_message_t<sp/><ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">R1806::encodeTorqueCommand</ref>(uint32_t<sp/>node_id,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>torque)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>CAN_message_t<sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>a<sp/>CAN<sp/>ID<sp/>from<sp/>node_id<sp/>(bits<sp/>[10..5])<sp/>and<sp/>the<sp/>command<sp/>ID<sp/>(bits<sp/>[4..0]).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.id<sp/>=<sp/>((node_id<sp/>&amp;<sp/>0x3F)<sp/>&lt;&lt;<sp/>5)<sp/>|<sp/>(0x0E<sp/>&amp;<sp/>0x1F);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Adjust<sp/>torque<sp/>by<sp/>the<sp/>gear<sp/>reduction<sp/>ratio.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>torque<sp/>/<sp/>_gear_reduction_ratio;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>torque_int;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>std::memcpy(&amp;torque_int,<sp/>&amp;value,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(torque_int));</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Write<sp/>the<sp/>float<sp/>to<sp/>the<sp/>first<sp/>4<sp/>bytes<sp/>of<sp/>the<sp/>buffer<sp/>in<sp/>little-endian<sp/>order.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[0]<sp/>=<sp/>torque_int<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[1]<sp/>=<sp/>(torque_int<sp/>&gt;&gt;<sp/>8)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[2]<sp/>=<sp/>(torque_int<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[3]<sp/>=<sp/>(torque_int<sp/>&gt;&gt;<sp/>24)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Unused<sp/>bytes<sp/>are<sp/>set<sp/>to<sp/>zero.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[4]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[5]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[6]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>.buf[7]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kindref="member">msg</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classR1806_1afc210aa77fbaf2a72dbe3ec34e7ca9ba" kindref="member">R1806::decodePositionFeedback</ref>(CAN_message_t<sp/>frame)<sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Interpret<sp/>bytes<sp/>[0..3]<sp/>as<sp/>a<sp/>float<sp/>containing<sp/>number<sp/>of<sp/>revolutions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>num_rounds<sp/>=<sp/>*(</highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="keyword">const<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(frame.buf));</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Convert<sp/>to<sp/>radians,<sp/>accounting<sp/>for<sp/>gear<sp/>reduction.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>position<sp/>=<sp/>num_rounds<sp/>*<sp/>M_PI<sp/>*<sp/>2.0f<sp/>/<sp/>_gear_reduction_ratio;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>position;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classR1806_1a80c75872c7390915c6ccb6f2ee12bbd5" kindref="member">R1806::decodeVelocityFeedback</ref>(CAN_message_t<sp/>frame)<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Interpret<sp/>bytes<sp/>[4..7]<sp/>as<sp/>a<sp/>float<sp/>containing<sp/>revolutions<sp/>per<sp/>second.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>num_rounds_per_sec<sp/>=<sp/>*(</highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="keyword">const<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(frame.buf<sp/>+<sp/>4));</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Convert<sp/>to<sp/>rad/s,<sp/>factoring<sp/>in<sp/>gear<sp/>reduction.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>velocity<sp/>=<sp/>num_rounds_per_sec<sp/>*<sp/>M_PI<sp/>*<sp/>2.0f<sp/>/<sp/>_gear_reduction_ratio;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>velocity;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/motor_protocols/r1806.cpp"/>
+  </compounddef>
+</doxygen>

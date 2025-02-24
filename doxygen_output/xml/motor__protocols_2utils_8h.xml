@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="motor__protocols_2utils_8h" kind="file" language="C++">
+    <compoundname>utils.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <includedby refid="r1806_8cpp" local="yes">src/motor_protocols/r1806.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/motor_protocols/utils.h</label>
+        <link refid="motor__protocols_2utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/motor_protocols/utils.h</label>
+        <link refid="motor__protocols_2utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1a714603a926a5a8ef7ac92b7639e296df" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t UNDEFINED</definition>
+        <argsstring></argsstring>
+        <name>UNDEFINED</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Undefined state. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="29" column="22" bodyfile="include/motor_protocols/utils.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1a3430db71581c017e7a6a91bc5b0062cb" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t IDLE</definition>
+        <argsstring></argsstring>
+        <name>IDLE</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Idle state. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="30" column="22" bodyfile="include/motor_protocols/utils.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1a700c8e2c1a99a3c793da7f0b40524b9d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t STARTUP_SEQUENCE</definition>
+        <argsstring></argsstring>
+        <name>STARTUP_SEQUENCE</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Startup sequence in progress. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="31" column="22" bodyfile="include/motor_protocols/utils.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1a83a1fbd0642c0b56b0c526a606a1f019" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t FULL_CALIBRATION_SEQUENCE</definition>
+        <argsstring></argsstring>
+        <name>FULL_CALIBRATION_SEQUENCE</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Full calibration sequence. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="32" column="22" bodyfile="include/motor_protocols/utils.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1a1798321130fd876b6d01b6e1abea2e1b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t MOTOR_CALIBRATION</definition>
+        <argsstring></argsstring>
+        <name>MOTOR_CALIBRATION</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Motor calibration. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="33" column="22" bodyfile="include/motor_protocols/utils.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1a0ba5431476691c9d1d75f00786a3d518" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ENCODER_INDEX_SEARCH</definition>
+        <argsstring></argsstring>
+        <name>ENCODER_INDEX_SEARCH</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Encoder index search. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="34" column="22" bodyfile="include/motor_protocols/utils.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1af85d45d12286e7163a830a704462f2d2" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ENCODER_OFFSET_CALIBRATION</definition>
+        <argsstring></argsstring>
+        <name>ENCODER_OFFSET_CALIBRATION</name>
+        <initializer>= 7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Encoder offset calibration. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="35" column="22" bodyfile="include/motor_protocols/utils.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1a15ee4d274ebbd72a00d1184e3aca0df2" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t CLOSED_LOOP_CONTROL</definition>
+        <argsstring></argsstring>
+        <name>CLOSED_LOOP_CONTROL</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Closed-loop control. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="36" column="22" bodyfile="include/motor_protocols/utils.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1a3504f2fcd5a8c030c5f3d8f8d5b15cb1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t LOCKIN_SPIN</definition>
+        <argsstring></argsstring>
+        <name>LOCKIN_SPIN</name>
+        <initializer>= 9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Lock-in spin. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="37" column="22" bodyfile="include/motor_protocols/utils.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1a6b544adec6a340cb0132a6d2ed8af1ca" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ENCODER_DIR_FIND</definition>
+        <argsstring></argsstring>
+        <name>ENCODER_DIR_FIND</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Encoder direction find. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="38" column="22" bodyfile="include/motor_protocols/utils.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1a296aa8ca8681ca73f8aa365844a66aa5" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t HOMING</definition>
+        <argsstring></argsstring>
+        <name>HOMING</name>
+        <initializer>= 11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Homing procedure. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="39" column="22" bodyfile="include/motor_protocols/utils.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1a9e7e76429a71009654c6559a3b58f0bb" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ENCODER_HALL_POLARITY_CALIBRATION</definition>
+        <argsstring></argsstring>
+        <name>ENCODER_HALL_POLARITY_CALIBRATION</name>
+        <initializer>= 12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hall polarity calibration. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="40" column="22" bodyfile="include/motor_protocols/utils.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1aabfb649bd896ad4f20ca30d2d16ef8b6" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ENCODER_HALL_PHASE_CALIBRATION</definition>
+        <argsstring></argsstring>
+        <name>ENCODER_HALL_PHASE_CALIBRATION</name>
+        <initializer>= 13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hall phase calibration. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="41" column="22" bodyfile="include/motor_protocols/utils.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1af1f5a4a2c11532e49da4795f852799a6" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ANTICOGGING_CALIBRATION</definition>
+        <argsstring></argsstring>
+        <name>ANTICOGGING_CALIBRATION</name>
+        <initializer>= 14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Anti-cogging calibration. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="42" column="22" bodyfile="include/motor_protocols/utils.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1ab04b353d772447282c981fc87d3cc095" prot="public" static="no" mutable="no">
+        <type>struct </type>
+        <definition>struct  AxisState</definition>
+        <argsstring></argsstring>
+        <name>AxisState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="43" column="19"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1af4b70613bb93bd333fe30a4ff5f11c8b" prot="public" static="no" mutable="no">
+        <type>struct </type>
+        <definition>struct  Axis</definition>
+        <argsstring></argsstring>
+        <name>Axis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="44" column="10"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__protocols_2utils_8h_1a3015bd6af60dc3af90ccc4603e186216" prot="public" static="no" mutable="no">
+        <type>struct </type>
+        <definition>struct  ODrive</definition>
+        <argsstring></argsstring>
+        <name>ODrive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/utils.h" line="45" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Contains utility data structures and definitions for motor protocols. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>MOTOR_PROTOCOLS_UTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MOTOR_PROTOCOLS_UTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29" refid="motor__protocols_2utils_8h_1a714603a926a5a8ef7ac92b7639e296df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="motor__protocols_2utils_8h_1a714603a926a5a8ef7ac92b7639e296df" kindref="member">UNDEFINED</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30" refid="motor__protocols_2utils_8h_1a3430db71581c017e7a6a91bc5b0062cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="motor__protocols_2utils_8h_1a3430db71581c017e7a6a91bc5b0062cb" kindref="member">IDLE</ref><sp/>=<sp/>1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31" refid="motor__protocols_2utils_8h_1a700c8e2c1a99a3c793da7f0b40524b9d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="motor__protocols_2utils_8h_1a700c8e2c1a99a3c793da7f0b40524b9d" kindref="member">STARTUP_SEQUENCE</ref><sp/>=<sp/>2;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32" refid="motor__protocols_2utils_8h_1a83a1fbd0642c0b56b0c526a606a1f019" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="motor__protocols_2utils_8h_1a83a1fbd0642c0b56b0c526a606a1f019" kindref="member">FULL_CALIBRATION_SEQUENCE</ref><sp/>=<sp/>3;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33" refid="motor__protocols_2utils_8h_1a1798321130fd876b6d01b6e1abea2e1b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="motor__protocols_2utils_8h_1a1798321130fd876b6d01b6e1abea2e1b" kindref="member">MOTOR_CALIBRATION</ref><sp/>=<sp/>4;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34" refid="motor__protocols_2utils_8h_1a0ba5431476691c9d1d75f00786a3d518" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="motor__protocols_2utils_8h_1a0ba5431476691c9d1d75f00786a3d518" kindref="member">ENCODER_INDEX_SEARCH</ref><sp/>=<sp/>6;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35" refid="motor__protocols_2utils_8h_1af85d45d12286e7163a830a704462f2d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="motor__protocols_2utils_8h_1af85d45d12286e7163a830a704462f2d2" kindref="member">ENCODER_OFFSET_CALIBRATION</ref><sp/>=<sp/>7;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36" refid="motor__protocols_2utils_8h_1a15ee4d274ebbd72a00d1184e3aca0df2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="motor__protocols_2utils_8h_1a15ee4d274ebbd72a00d1184e3aca0df2" kindref="member">CLOSED_LOOP_CONTROL</ref><sp/>=<sp/>8;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37" refid="motor__protocols_2utils_8h_1a3504f2fcd5a8c030c5f3d8f8d5b15cb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="motor__protocols_2utils_8h_1a3504f2fcd5a8c030c5f3d8f8d5b15cb1" kindref="member">LOCKIN_SPIN</ref><sp/>=<sp/>9;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38" refid="motor__protocols_2utils_8h_1a6b544adec6a340cb0132a6d2ed8af1ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="motor__protocols_2utils_8h_1a6b544adec6a340cb0132a6d2ed8af1ca" kindref="member">ENCODER_DIR_FIND</ref><sp/>=<sp/>10;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39" refid="motor__protocols_2utils_8h_1a296aa8ca8681ca73f8aa365844a66aa5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="motor__protocols_2utils_8h_1a296aa8ca8681ca73f8aa365844a66aa5" kindref="member">HOMING</ref><sp/>=<sp/>11;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40" refid="motor__protocols_2utils_8h_1a9e7e76429a71009654c6559a3b58f0bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="motor__protocols_2utils_8h_1a9e7e76429a71009654c6559a3b58f0bb" kindref="member">ENCODER_HALL_POLARITY_CALIBRATION</ref><sp/>=<sp/>12;<sp/></highlight></codeline>
+<codeline lineno="41" refid="motor__protocols_2utils_8h_1aabfb649bd896ad4f20ca30d2d16ef8b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="motor__protocols_2utils_8h_1aabfb649bd896ad4f20ca30d2d16ef8b6" kindref="member">ENCODER_HALL_PHASE_CALIBRATION</ref><sp/>=<sp/>13;<sp/><sp/></highlight></codeline>
+<codeline lineno="42" refid="motor__protocols_2utils_8h_1af1f5a4a2c11532e49da4795f852799a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="motor__protocols_2utils_8h_1af1f5a4a2c11532e49da4795f852799a6" kindref="member">ANTICOGGING_CALIBRATION</ref><sp/>=<sp/>14;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><ref refid="structAxisState" kindref="compound">AxisState</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="structAxis" kindref="compound">Axis</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}<sp/><ref refid="structODrive" kindref="compound">ODrive</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MOTOR_PROTOCOLS_UTILS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/motor_protocols/utils.h"/>
+  </compounddef>
+</doxygen>

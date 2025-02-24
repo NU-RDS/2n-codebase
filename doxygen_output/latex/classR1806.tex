@@ -1,0 +1,249 @@
+\doxysection{R1806 Class Reference}
+\hypertarget{classR1806}{}\label{classR1806}\index{R1806@{R1806}}
+
+
+Provides methods to encode and decode CAN messages for controlling an \doxylink{classR1806}{R1806} motor via \doxylink{structODrive}{ODrive}.  
+
+
+
+
+{\ttfamily \#include $<$r1806.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classR1806_ac24ac7af211be841111d150808fdd2f7}{R1806}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classR1806}{R1806} object. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classR1806_a116d467196ccdc10b6fa46b5c2d87e75}{extract\+\_\+node\+\_\+id}} (uint32\+\_\+t can\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Extract the node ID from a given CAN identifier. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classR1806_a0db19be4b6c4e0be27d6128a8165de3e}{extract\+\_\+command\+\_\+id}} (uint32\+\_\+t can\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Extract the command ID from a given CAN identifier. \end{DoxyCompactList}\item 
+CAN\+\_\+message\+\_\+t \mbox{\hyperlink{classR1806_a400662f13aa22e39f5b1d780d193c169}{encode\+Requested\+State\+Command}} (uint32\+\_\+t node\+\_\+id, uint32\+\_\+t requested\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Encode a "{}requested state"{} command for \doxylink{structODrive}{ODrive}. \end{DoxyCompactList}\item 
+CAN\+\_\+message\+\_\+t \mbox{\hyperlink{classR1806_ac0f7a4e9e1d0aa7481a79217c75ea104}{encode\+Torque\+Command}} (uint32\+\_\+t node\+\_\+id, float torque)
+\begin{DoxyCompactList}\small\item\em Encode a torque command for the \doxylink{structODrive}{ODrive}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classR1806_afc210aa77fbaf2a72dbe3ec34e7ca9ba}{decode\+Position\+Feedback}} (CAN\+\_\+message\+\_\+t frame)
+\begin{DoxyCompactList}\small\item\em Decode position feedback from a CAN message. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classR1806_a80c75872c7390915c6ccb6f2ee12bbd5}{decode\+Velocity\+Feedback}} (CAN\+\_\+message\+\_\+t frame)
+\begin{DoxyCompactList}\small\item\em Decode velocity feedback from a CAN message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides methods to encode and decode CAN messages for controlling an \doxylink{classR1806}{R1806} motor via \doxylink{structODrive}{ODrive}. 
+
+This class contains utility functions to extract node/command IDs, encode state and torque commands, and decode feedback such as position and velocity. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classR1806_ac24ac7af211be841111d150808fdd2f7}\label{classR1806_ac24ac7af211be841111d150808fdd2f7} 
+\index{R1806@{R1806}!R1806@{R1806}}
+\index{R1806@{R1806}!R1806@{R1806}}
+\doxysubsubsection{\texorpdfstring{R1806()}{R1806()}}
+{\footnotesize\ttfamily R1806\+::\+R1806 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{classR1806}{R1806} object. 
+
+Constructs a new \doxylink{classR1806}{R1806} object and sets the gear reduction ratio.
+
+Initializes internal parameters, including the gear reduction ratio. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classR1806_afc210aa77fbaf2a72dbe3ec34e7ca9ba}\label{classR1806_afc210aa77fbaf2a72dbe3ec34e7ca9ba} 
+\index{R1806@{R1806}!decodePositionFeedback@{decodePositionFeedback}}
+\index{decodePositionFeedback@{decodePositionFeedback}!R1806@{R1806}}
+\doxysubsubsection{\texorpdfstring{decodePositionFeedback()}{decodePositionFeedback()}}
+{\footnotesize\ttfamily float R1806\+::decode\+Position\+Feedback (\begin{DoxyParamCaption}\item[{CAN\+\_\+message\+\_\+t}]{frame }\end{DoxyParamCaption})}
+
+
+
+Decode position feedback from a CAN message. 
+
+Interprets the first 4 bytes of the CAN message payload as a float for the number of revolutions, then converts it to a position (radians) factoring in the gear reduction ratio.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & A CAN\+\_\+message\+\_\+t containing position feedback data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Position in radians.
+\end{DoxyReturn}
+The first 4 bytes of the CAN frame are interpreted as a float representing the number of revolutions. This is then converted to radians, factoring in the gear reduction ratio.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & A CAN\+\_\+message\+\_\+t containing position data in its first 4 bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Position in radians. 
+\end{DoxyReturn}
+\Hypertarget{classR1806_a80c75872c7390915c6ccb6f2ee12bbd5}\label{classR1806_a80c75872c7390915c6ccb6f2ee12bbd5} 
+\index{R1806@{R1806}!decodeVelocityFeedback@{decodeVelocityFeedback}}
+\index{decodeVelocityFeedback@{decodeVelocityFeedback}!R1806@{R1806}}
+\doxysubsubsection{\texorpdfstring{decodeVelocityFeedback()}{decodeVelocityFeedback()}}
+{\footnotesize\ttfamily float R1806\+::decode\+Velocity\+Feedback (\begin{DoxyParamCaption}\item[{CAN\+\_\+message\+\_\+t}]{frame }\end{DoxyParamCaption})}
+
+
+
+Decode velocity feedback from a CAN message. 
+
+Interprets bytes \mbox{[}4..7\mbox{]} of the CAN message payload as a float for the number of revolutions per second, then converts it to a velocity (rad/s), factoring in the gear reduction ratio.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & A CAN\+\_\+message\+\_\+t containing velocity feedback data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Velocity in rad/s.
+\end{DoxyReturn}
+Bytes \mbox{[}4..7\mbox{]} of the CAN frame are interpreted as a float representing the number of revolutions per second, then converted to rad/s with gear reduction considered.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & A CAN\+\_\+message\+\_\+t containing velocity data in bytes \mbox{[}4..7\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Velocity in rad/s. 
+\end{DoxyReturn}
+\Hypertarget{classR1806_a400662f13aa22e39f5b1d780d193c169}\label{classR1806_a400662f13aa22e39f5b1d780d193c169} 
+\index{R1806@{R1806}!encodeRequestedStateCommand@{encodeRequestedStateCommand}}
+\index{encodeRequestedStateCommand@{encodeRequestedStateCommand}!R1806@{R1806}}
+\doxysubsubsection{\texorpdfstring{encodeRequestedStateCommand()}{encodeRequestedStateCommand()}}
+{\footnotesize\ttfamily CAN\+\_\+message\+\_\+t R1806\+::encode\+Requested\+State\+Command (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{node\+\_\+id,  }\item[{uint32\+\_\+t}]{requested\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+Encode a "{}requested state"{} command for \doxylink{structODrive}{ODrive}. 
+
+Encode a "{}requested state"{} command into a CAN message.
+
+Creates a CAN message instructing \doxylink{structODrive}{ODrive} to enter a specific axis state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+\_\+id} & ID of the node (motor) on the CAN bus. \\
+\hline
+{\em requested\+\_\+state} & The requested axis state (e.\+g., CLOSED\+\_\+\+LOOP\+\_\+\+CONTROL). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A CAN\+\_\+message\+\_\+t struct with the encoded command.
+\end{DoxyReturn}
+This implementation forces the state to CLOSED\+\_\+\+LOOP\+\_\+\+CONTROL for demonstration. You can modify it to use the passed-\/in requested\+\_\+state argument fully.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+\_\+id} & The target node (motor) ID. \\
+\hline
+{\em requested\+\_\+state} & The desired axis state (not fully used in this example). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A CAN\+\_\+message\+\_\+t configured with the appropriate ID and payload. 
+\end{DoxyReturn}
+\Hypertarget{classR1806_ac0f7a4e9e1d0aa7481a79217c75ea104}\label{classR1806_ac0f7a4e9e1d0aa7481a79217c75ea104} 
+\index{R1806@{R1806}!encodeTorqueCommand@{encodeTorqueCommand}}
+\index{encodeTorqueCommand@{encodeTorqueCommand}!R1806@{R1806}}
+\doxysubsubsection{\texorpdfstring{encodeTorqueCommand()}{encodeTorqueCommand()}}
+{\footnotesize\ttfamily CAN\+\_\+message\+\_\+t R1806\+::encode\+Torque\+Command (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{node\+\_\+id,  }\item[{float}]{torque }\end{DoxyParamCaption})}
+
+
+
+Encode a torque command for the \doxylink{structODrive}{ODrive}. 
+
+Encode a torque command into a CAN message.
+
+Creates a CAN message to set a torque value for a given node. The torque is automatically adjusted by the gear reduction ratio.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+\_\+id} & ID of the node (motor) on the CAN bus. \\
+\hline
+{\em torque} & Desired torque in Nm (or consistent units). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A CAN\+\_\+message\+\_\+t struct with the encoded torque command.
+\end{DoxyReturn}
+The gear reduction ratio is factored into the torque command so that the motor sees the correct torque value. The 4-\/byte float is written in little-\/endian format into the CAN frame buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+\_\+id} & The target node (motor) ID. \\
+\hline
+{\em torque} & Desired torque before gear reduction is accounted for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A CAN\+\_\+message\+\_\+t with the correct ID and payload to set torque on \doxylink{structODrive}{ODrive}. 
+\end{DoxyReturn}
+\Hypertarget{classR1806_a0db19be4b6c4e0be27d6128a8165de3e}\label{classR1806_a0db19be4b6c4e0be27d6128a8165de3e} 
+\index{R1806@{R1806}!extract\_command\_id@{extract\_command\_id}}
+\index{extract\_command\_id@{extract\_command\_id}!R1806@{R1806}}
+\doxysubsubsection{\texorpdfstring{extract\_command\_id()}{extract\_command\_id()}}
+{\footnotesize\ttfamily uint32\+\_\+t R1806\+::extract\+\_\+command\+\_\+id (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{can\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Extract the command ID from a given CAN identifier. 
+
+Extract the command ID from a CAN ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em can\+\_\+id} & 29-\/bit or 11-\/bit CAN identifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Command ID (extracted bits from can\+\_\+id).
+\end{DoxyReturn}
+Command ID occupies bits \mbox{[}4..0\mbox{]} of the CAN identifier. We mask out the lower 5 bits to retrieve it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em can\+\_\+id} & The raw CAN identifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Extracted command ID. 
+\end{DoxyReturn}
+\Hypertarget{classR1806_a116d467196ccdc10b6fa46b5c2d87e75}\label{classR1806_a116d467196ccdc10b6fa46b5c2d87e75} 
+\index{R1806@{R1806}!extract\_node\_id@{extract\_node\_id}}
+\index{extract\_node\_id@{extract\_node\_id}!R1806@{R1806}}
+\doxysubsubsection{\texorpdfstring{extract\_node\_id()}{extract\_node\_id()}}
+{\footnotesize\ttfamily uint32\+\_\+t R1806\+::extract\+\_\+node\+\_\+id (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{can\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Extract the node ID from a given CAN identifier. 
+
+Extract the node ID from a CAN ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em can\+\_\+id} & 29-\/bit or 11-\/bit CAN identifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node ID (extracted bits from can\+\_\+id).
+\end{DoxyReturn}
+Node ID occupies bits \mbox{[}10..5\mbox{]} of a standard 11-\/bit ID. We mask and shift to retrieve it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em can\+\_\+id} & The raw CAN identifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Extracted node ID. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/motor\+\_\+protocols/\mbox{\hyperlink{r1806_8h}{r1806.\+h}}\item 
+src/motor\+\_\+protocols/r1806.\+cpp\end{DoxyCompactItemize}

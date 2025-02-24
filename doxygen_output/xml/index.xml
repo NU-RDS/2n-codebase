@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="en-US">
+  <compound refid="structAxis" kind="struct"><name>Axis</name>
+  </compound>
+  <compound refid="structAxisState" kind="struct"><name>AxisState</name>
+  </compound>
+  <compound refid="classController" kind="class"><name>Controller</name>
+    <member refid="classController_1a6ba667bed4b9ce292986b4e13d74dce1" kind="variable"><name>finger</name></member>
+    <member refid="classController_1ac0ec6432f5352ea8fda3c4e95a2396c2" kind="variable"><name>low_kp</name></member>
+    <member refid="classController_1ae155dc6c371769d119608d9a472165e0" kind="variable"><name>high_kp</name></member>
+    <member refid="classController_1ab237bb6fe0212691e5d04f69aab51528" kind="variable"><name>low_kd</name></member>
+    <member refid="classController_1a78a40c61c862a81279b052ef45ddf5f2" kind="variable"><name>high_kd</name></member>
+    <member refid="classController_1aed65e19cd6aaad4e781556789ae444d0" kind="variable"><name>low_ki</name></member>
+    <member refid="classController_1affad21bf0b3714abe33e0d4139b49607" kind="variable"><name>high_ki</name></member>
+    <member refid="classController_1a42bbdcd708d335c5a3ee36328c2e433f" kind="variable"><name>r</name></member>
+    <member refid="classController_1ac4b294e00b9a08b01f34003208ace9fe" kind="variable"><name>R1</name></member>
+    <member refid="classController_1a854e5e6386594693be149d09221ebc40" kind="variable"><name>R2</name></member>
+    <member refid="classController_1a83699f45f580ca1174240ca9bd9ea381" kind="variable"><name>kp</name></member>
+    <member refid="classController_1aed93f508b2d020780d9042ec8143f4ff" kind="variable"><name>kd</name></member>
+    <member refid="classController_1ab62072d5c082bedd4a6aba770b436a62" kind="variable"><name>ki</name></member>
+    <member refid="classController_1ad587204ca05a62a200065529fd426e0d" kind="variable"><name>trans_mat</name></member>
+    <member refid="classController_1a95c56822d667e94b031451729ce069a9" kind="function"><name>Controller</name></member>
+    <member refid="classController_1aadf118b6025c2045262e05c68b227328" kind="function"><name>torque_control</name></member>
+    <member refid="classController_1ad24b67ab07743a84a7a93e82e7025924" kind="function"><name>check_error</name></member>
+  </compound>
+  <compound refid="classFinger" kind="class"><name>Finger</name>
+    <member refid="classFinger_1a6e43c6c13ac9a8da993ef5a0070490ab" kind="variable"><name>_joint_states</name></member>
+    <member refid="classFinger_1a0fef6fcf2e141ee17d3224a1cffcb316" kind="variable"><name>_motor_commands</name></member>
+    <member refid="classFinger_1aa71829d5592249136d8f8c3128bc757b" kind="function"><name>Finger</name></member>
+    <member refid="classFinger_1aefe9b0417b1bdc93bce95df895520b5e" kind="function"><name>getJointStates</name></member>
+    <member refid="classFinger_1a680479a754818275e9f46a0c220c5fd6" kind="function"><name>getMotorCommands</name></member>
+  </compound>
+  <compound refid="structODrive" kind="struct"><name>ODrive</name>
+  </compound>
+  <compound refid="classR1806" kind="class"><name>R1806</name>
+    <member refid="classR1806_1acff280648eb3c889f6df6fd83bdd6ffe" kind="variable"><name>_gear_reduction_ratio</name></member>
+    <member refid="classR1806_1ac24ac7af211be841111d150808fdd2f7" kind="function"><name>R1806</name></member>
+    <member refid="classR1806_1a116d467196ccdc10b6fa46b5c2d87e75" kind="function"><name>extract_node_id</name></member>
+    <member refid="classR1806_1a0db19be4b6c4e0be27d6128a8165de3e" kind="function"><name>extract_command_id</name></member>
+    <member refid="classR1806_1a400662f13aa22e39f5b1d780d193c169" kind="function"><name>encodeRequestedStateCommand</name></member>
+    <member refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kind="function"><name>encodeTorqueCommand</name></member>
+    <member refid="classR1806_1afc210aa77fbaf2a72dbe3ec34e7ca9ba" kind="function"><name>decodePositionFeedback</name></member>
+    <member refid="classR1806_1a80c75872c7390915c6ccb6f2ee12bbd5" kind="function"><name>decodeVelocityFeedback</name></member>
+  </compound>
+  <compound refid="classSerialProtocols" kind="class"><name>SerialProtocols</name>
+    <member refid="classSerialProtocols_1a73d6aef97380724db91957f5db7cd3a8" kind="variable"><name>_encoder_feedback_packet</name></member>
+    <member refid="classSerialProtocols_1a559e52f0c98d7a0e596daea307cc37ce" kind="variable"><name>_joint_command_packet</name></member>
+    <member refid="classSerialProtocols_1a0b2a324b12c948797b327363fe7b7bca" kind="variable"><name>_joint_command</name></member>
+    <member refid="classSerialProtocols_1ae4b9453d604f377e34b520b8f58a7e11" kind="function"><name>SerialProtocols</name></member>
+    <member refid="classSerialProtocols_1a4aa379fe04b74f8b0807e9b552f00cc0" kind="function"><name>computeChecksum</name></member>
+    <member refid="classSerialProtocols_1a967d508f968bd1d09f41db97ea97b432" kind="function"><name>encodeFeedbackPacket</name></member>
+    <member refid="classSerialProtocols_1aec800812be41156be7e0a1e0374a03fd" kind="function"><name>decodeJointCommandPacket</name></member>
+  </compound>
+  <compound refid="controller_8h" kind="file"><name>controller.h</name>
+  </compound>
+  <compound refid="finger_8h" kind="file"><name>finger.h</name>
+    <member refid="finger_8h_1af742980593d698725375a7d12711c24f" kind="define"><name>NUM_JOINTS</name></member>
+    <member refid="finger_8h_1a52b56a381e777b55e1b59019d9ee072e" kind="define"><name>NUM_MOTORS</name></member>
+    <member refid="finger_8h_1abff68362f6a3518d826036342723ff99" kind="define"><name>D_MOTOR_PULLEY</name></member>
+    <member refid="finger_8h_1a88a43911f0e9357330e3a24beb6e39d4" kind="define"><name>D_FINGER_PULLEY_1</name></member>
+    <member refid="finger_8h_1abc25c804485d85e98841ce908ec1746c" kind="define"><name>D_FINGER_PULLEY_2</name></member>
+  </compound>
+  <compound refid="r1806_8h" kind="file"><name>r1806.h</name>
+    <member refid="r1806_8h_1a890ee506c2f2d76aa67bae8d9c9507f5" kind="define"><name>GEAR_REDUCION_RATIO</name></member>
+  </compound>
+  <compound refid="motor__protocols_2utils_8h" kind="file"><name>utils.h</name>
+    <member refid="motor__protocols_2utils_8h_1a714603a926a5a8ef7ac92b7639e296df" kind="variable"><name>UNDEFINED</name></member>
+    <member refid="motor__protocols_2utils_8h_1a3430db71581c017e7a6a91bc5b0062cb" kind="variable"><name>IDLE</name></member>
+    <member refid="motor__protocols_2utils_8h_1a700c8e2c1a99a3c793da7f0b40524b9d" kind="variable"><name>STARTUP_SEQUENCE</name></member>
+    <member refid="motor__protocols_2utils_8h_1a83a1fbd0642c0b56b0c526a606a1f019" kind="variable"><name>FULL_CALIBRATION_SEQUENCE</name></member>
+    <member refid="motor__protocols_2utils_8h_1a1798321130fd876b6d01b6e1abea2e1b" kind="variable"><name>MOTOR_CALIBRATION</name></member>
+    <member refid="motor__protocols_2utils_8h_1a0ba5431476691c9d1d75f00786a3d518" kind="variable"><name>ENCODER_INDEX_SEARCH</name></member>
+    <member refid="motor__protocols_2utils_8h_1af85d45d12286e7163a830a704462f2d2" kind="variable"><name>ENCODER_OFFSET_CALIBRATION</name></member>
+    <member refid="motor__protocols_2utils_8h_1a15ee4d274ebbd72a00d1184e3aca0df2" kind="variable"><name>CLOSED_LOOP_CONTROL</name></member>
+    <member refid="motor__protocols_2utils_8h_1a3504f2fcd5a8c030c5f3d8f8d5b15cb1" kind="variable"><name>LOCKIN_SPIN</name></member>
+    <member refid="motor__protocols_2utils_8h_1a6b544adec6a340cb0132a6d2ed8af1ca" kind="variable"><name>ENCODER_DIR_FIND</name></member>
+    <member refid="motor__protocols_2utils_8h_1a296aa8ca8681ca73f8aa365844a66aa5" kind="variable"><name>HOMING</name></member>
+    <member refid="motor__protocols_2utils_8h_1a9e7e76429a71009654c6559a3b58f0bb" kind="variable"><name>ENCODER_HALL_POLARITY_CALIBRATION</name></member>
+    <member refid="motor__protocols_2utils_8h_1aabfb649bd896ad4f20ca30d2d16ef8b6" kind="variable"><name>ENCODER_HALL_PHASE_CALIBRATION</name></member>
+    <member refid="motor__protocols_2utils_8h_1af1f5a4a2c11532e49da4795f852799a6" kind="variable"><name>ANTICOGGING_CALIBRATION</name></member>
+    <member refid="motor__protocols_2utils_8h_1ab04b353d772447282c981fc87d3cc095" kind="variable"><name>AxisState</name></member>
+    <member refid="motor__protocols_2utils_8h_1af4b70613bb93bd333fe30a4ff5f11c8b" kind="variable"><name>Axis</name></member>
+    <member refid="motor__protocols_2utils_8h_1a3015bd6af60dc3af90ccc4603e186216" kind="variable"><name>ODrive</name></member>
+  </compound>
+  <compound refid="serial__protocols_2utils_8h" kind="file"><name>utils.h</name>
+    <member refid="serial__protocols_2utils_8h_1a52b56a381e777b55e1b59019d9ee072e" kind="define"><name>NUM_MOTORS</name></member>
+    <member refid="serial__protocols_2utils_8h_1a30d2043ca397843e08c43ade3aaee5b2" kind="define"><name>START_BYTE</name></member>
+    <member refid="serial__protocols_2utils_8h_1a5126c1e2dc63cec63fc73710e48a9b5d" kind="define"><name>END_BYTE</name></member>
+    <member refid="serial__protocols_2utils_8h_1ac4d65ccae3f423f70139217495e2cd98" kind="define"><name>MSG_FEEDBACK</name></member>
+    <member refid="serial__protocols_2utils_8h_1acd2ea0fb131cece2099c97e29c34c659" kind="define"><name>FEEDBACK_PAYLOAD_LENGTH</name></member>
+    <member refid="serial__protocols_2utils_8h_1a9880be088cab58dc6d9782bc31258ca8" kind="define"><name>FEEDBACK_PACKET_SIZE</name></member>
+    <member refid="serial__protocols_2utils_8h_1a3b9841196ad5c5ec384168d6caf6db3e" kind="define"><name>MSG_JOINT_COMMAND</name></member>
+    <member refid="serial__protocols_2utils_8h_1a178af33f4519cf8d44cc290463600f88" kind="define"><name>JOINT_COMMAND_PAYLOAD_LENGTH</name></member>
+    <member refid="serial__protocols_2utils_8h_1a60e48a418bc0b66b574f5ee4abb296e2" kind="define"><name>JOINT_COMMAND_PACKET_SIZE</name></member>
+  </compound>
+  <compound refid="serial__protocols_8h" kind="file"><name>serial_protocols.h</name>
+    <member refid="serial__protocols_8h_1af742980593d698725375a7d12711c24f" kind="define"><name>NUM_JOINTS</name></member>
+  </compound>
+  <compound refid="controller_8cpp" kind="file"><name>controller.cpp</name>
+  </compound>
+  <compound refid="finger_8cpp" kind="file"><name>finger.cpp</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1af491bc470adef8b258c75dafed0077b9" kind="variable"><name>can1</name></member>
+    <member refid="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1" kind="variable"><name>msg</name></member>
+    <member refid="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f" kind="variable"><name>r1806_protocols</name></member>
+    <member refid="main_8cpp_1a6c1a12e7433ba7b8e0403a9c8ec115ff" kind="variable"><name>serial_protocols</name></member>
+    <member refid="main_8cpp_1adee0025a48211ddc9040329deb7e2cce" kind="variable"><name>finger</name></member>
+    <member refid="main_8cpp_1a872eb72dc091dfc922f3461989909363" kind="variable"><name>controller</name></member>
+    <member refid="main_8cpp_1a147b8003a5567f680edf4838fa5b4972" kind="variable"><name>joint_states</name></member>
+    <member refid="main_8cpp_1a6dcd474047ac30b63b6203f7c616d87d" kind="variable"><name>motor_offsets</name></member>
+    <member refid="main_8cpp_1a4e0bf4dcd86c3fc4661fc2f75dbf0054" kind="variable"><name>print</name></member>
+    <member refid="main_8cpp_1a650a863e2f7800182a4f1c9f73b29f69" kind="variable"><name>joint_commands</name></member>
+    <member refid="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b" kind="variable"><name>motor_position_states</name></member>
+    <member refid="main_8cpp_1ada5550d3516005d96a11c936ee550114" kind="variable"><name>motor_velocity_states</name></member>
+    <member refid="main_8cpp_1ae555d77b5a5f0935e5ee63b6d2a6a191" kind="variable"><name>motor_position_offsets</name></member>
+    <member refid="main_8cpp_1a682d64c640e8b618b1e305c56f7c099a" kind="variable"><name>joint_targets</name></member>
+    <member refid="main_8cpp_1ad1b3af4cc560a77793b48b8e544f380d" kind="variable"><name>static_torque</name></member>
+    <member refid="main_8cpp_1af5c20b3a568c8f616ca560e3db173396" kind="variable"><name>velocity_limit</name></member>
+    <member refid="main_8cpp_1a18358243788f8a956ff50db015724a56" kind="variable"><name>calibrated</name></member>
+    <member refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kind="variable"><name>motor_states</name></member>
+    <member refid="main_8cpp_1ab8f141b772f50e494bf0c2ca59d8f308" kind="variable"><name>motor_torques</name></member>
+    <member refid="main_8cpp_1aa3d50d72d4c17514499781eda97e99cb" kind="variable"><name>joint_error_sum</name></member>
+    <member refid="main_8cpp_1a9d15cb77cbe6fd6e64a2f1f0d6af33db" kind="variable"><name>joint_states_desired</name></member>
+    <member refid="main_8cpp_1a9f670be4d519d72bc5e530303037b7e9" kind="variable"><name>motor_velocities</name></member>
+    <member refid="main_8cpp_1a021141e4ed340d853a361edbafdc68a8" kind="variable"><name>packet</name></member>
+    <member refid="main_8cpp_1ab5627d8d8b095c198e2523c44ca380ac" kind="variable"><name>timeout</name></member>
+    <member refid="main_8cpp_1a0a2bc0c52048720b86d3ac3757be2a74" kind="variable"><name>danger_mode</name></member>
+    <member refid="main_8cpp_1aa391c452d54cd2a2548594f45550614e" kind="variable"><name>received_joint_commands</name></member>
+    <member refid="main_8cpp_1a59918f61772470adeabda7051b0989aa" kind="variable"><name>j1_input</name></member>
+    <member refid="main_8cpp_1a53d34378b2db9479f9639971a3af17ae" kind="variable"><name>j2_input</name></member>
+    <member refid="main_8cpp_1a611fecda0f687436671e9851b92e192e" kind="variable"><name>motor1_torque_cmd</name></member>
+    <member refid="main_8cpp_1a9b18957b3169fc2992425d6488c08afc" kind="variable"><name>motor1_close_loop_request_cmd</name></member>
+    <member refid="main_8cpp_1a757e1bd96b23c795f03d7ff02112c52b" kind="variable"><name>motor2_torque_cmd</name></member>
+    <member refid="main_8cpp_1acde79ade2105ba5a318746769e4b75b4" kind="variable"><name>motor2_close_loop_request_cmd</name></member>
+    <member refid="main_8cpp_1a92903169297b3ab5289d4dc72b170352" kind="variable"><name>motor3_torque_cmd</name></member>
+    <member refid="main_8cpp_1a566764c298010102b2468c64afb68ec9" kind="variable"><name>motor3_close_loop_request_cmd</name></member>
+    <member refid="main_8cpp_1a8713dccb56c13753e3dcbd40557f8b38" kind="variable"><name>motor4_torque_cmd</name></member>
+    <member refid="main_8cpp_1a1bd6510e1a4c11d79832fc41619bcdd6" kind="variable"><name>motor4_close_loop_request_cmd</name></member>
+    <member refid="main_8cpp_1a698746f2c571003e99bc70c3730e2276" kind="variable"><name>POSITION_TIMEOUT_MS</name></member>
+    <member refid="main_8cpp_1a8362cdf9289c711a7450ad930a6304b9" kind="variable"><name>lastpositionCmdTime</name></member>
+    <member refid="main_8cpp_1a8b5e6477c003c4cbfb7cf9ba724fce34" kind="function"><name>canSniff</name></member>
+    <member refid="main_8cpp_1ad4a7316a51b17d0f691bb3e33b95a5ad" kind="function"><name>calibrate</name></member>
+    <member refid="main_8cpp_1a7dfd9b79bc5a37d7df40207afbc5431f" kind="function"><name>setup</name></member>
+    <member refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" kind="function"><name>loop</name></member>
+  </compound>
+  <compound refid="r1806_8cpp" kind="file"><name>r1806.cpp</name>
+  </compound>
+  <compound refid="serial__protocols_8cpp" kind="file"><name>serial_protocols.cpp</name>
+  </compound>
+  <compound refid="dir_39b9d54b040febeebc00140e5c10ba61" kind="dir"><name>include/controller</name>
+  </compound>
+  <compound refid="dir_41ef5d8a90b9cc03a02949a5c062e6f0" kind="dir"><name>src/controller</name>
+  </compound>
+  <compound refid="dir_831d85dbdf859731adc2316f45fa3535" kind="dir"><name>include/finger</name>
+  </compound>
+  <compound refid="dir_4fc349792385a19944149360642eea54" kind="dir"><name>src/finger</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_442fda6247240e5b68514f32d9ee8e0d" kind="dir"><name>include/motor_protocols</name>
+  </compound>
+  <compound refid="dir_4135090132a559989da7f3f532f06f0f" kind="dir"><name>src/motor_protocols</name>
+  </compound>
+  <compound refid="dir_619e292b90bcfca1e3756f57fa800061" kind="dir"><name>include/serial_protocols</name>
+  </compound>
+  <compound refid="dir_605c83cd5e8aa7930b76376c97b75646" kind="dir"><name>src/serial_protocols</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>

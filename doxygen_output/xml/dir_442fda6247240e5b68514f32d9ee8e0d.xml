@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_442fda6247240e5b68514f32d9ee8e0d" kind="dir">
+    <compoundname>include/motor_protocols</compoundname>
+    <innerfile refid="r1806_8h">r1806.h</innerfile>
+    <innerfile refid="motor__protocols_2utils_8h">utils.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/motor_protocols/"/>
+  </compounddef>
+</doxygen>

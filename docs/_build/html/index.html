@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to RDS Team 2N’s documentation! &mdash; RDS Team 2N  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=86f27845" />
+
+  
+    <link rel="canonical" href="https://0nhc.github.io/rds2025_team2n/index.html" />
+  
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            RDS Team 2N
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to RDS Team 2N’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#doxygen-documentation">Doxygen Documentation</a><ul>
+<li><a class="reference internal" href="#_CPPv44Axis"><code class="docutils literal notranslate"><span class="pre">Axis</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv49AxisState"><code class="docutils literal notranslate"><span class="pre">AxisState</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv410Controller"><code class="docutils literal notranslate"><span class="pre">Controller</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N10Controller10ControllerEv"><code class="docutils literal notranslate"><span class="pre">Controller::Controller()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller14torque_controlENSt6vectorIdEENSt6vectorIdEENSt6vectorIdEENSt6vectorIdEE"><code class="docutils literal notranslate"><span class="pre">Controller::torque_control()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller11check_errorENSt6vectorIdEE"><code class="docutils literal notranslate"><span class="pre">Controller::check_error()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller6fingerE"><code class="docutils literal notranslate"><span class="pre">Controller::finger</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller6low_kpE"><code class="docutils literal notranslate"><span class="pre">Controller::low_kp</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller7high_kpE"><code class="docutils literal notranslate"><span class="pre">Controller::high_kp</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller6low_kdE"><code class="docutils literal notranslate"><span class="pre">Controller::low_kd</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller7high_kdE"><code class="docutils literal notranslate"><span class="pre">Controller::high_kd</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller6low_kiE"><code class="docutils literal notranslate"><span class="pre">Controller::low_ki</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller7high_kiE"><code class="docutils literal notranslate"><span class="pre">Controller::high_ki</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller1rE"><code class="docutils literal notranslate"><span class="pre">Controller::r</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller2R1E"><code class="docutils literal notranslate"><span class="pre">Controller::R1</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller2R2E"><code class="docutils literal notranslate"><span class="pre">Controller::R2</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller2kpE"><code class="docutils literal notranslate"><span class="pre">Controller::kp</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller2kdE"><code class="docutils literal notranslate"><span class="pre">Controller::kd</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller2kiE"><code class="docutils literal notranslate"><span class="pre">Controller::ki</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10Controller9trans_matE"><code class="docutils literal notranslate"><span class="pre">Controller::trans_mat</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv46Finger"><code class="docutils literal notranslate"><span class="pre">Finger</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N6Finger6FingerEv"><code class="docutils literal notranslate"><span class="pre">Finger::Finger()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N6Finger14getJointStatesEA10NUM_MOTORS_Kf"><code class="docutils literal notranslate"><span class="pre">Finger::getJointStates()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N6Finger16getMotorCommandsEA10NUM_JOINTS_Kf"><code class="docutils literal notranslate"><span class="pre">Finger::getMotorCommands()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N6Finger13_joint_statesE"><code class="docutils literal notranslate"><span class="pre">Finger::_joint_states</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N6Finger15_motor_commandsE"><code class="docutils literal notranslate"><span class="pre">Finger::_motor_commands</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv46ODrive"><code class="docutils literal notranslate"><span class="pre">ODrive</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv45R1806"><code class="docutils literal notranslate"><span class="pre">R1806</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N5R18065R1806Ev"><code class="docutils literal notranslate"><span class="pre">R1806::R1806()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5R180615extract_node_idE8uint32_t"><code class="docutils literal notranslate"><span class="pre">R1806::extract_node_id()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5R180618extract_command_idE8uint32_t"><code class="docutils literal notranslate"><span class="pre">R1806::extract_command_id()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5R180627encodeRequestedStateCommandE8uint32_t8uint32_t"><code class="docutils literal notranslate"><span class="pre">R1806::encodeRequestedStateCommand()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5R180619encodeTorqueCommandE8uint32_tf"><code class="docutils literal notranslate"><span class="pre">R1806::encodeTorqueCommand()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5R180622decodePositionFeedbackE13CAN_message_t"><code class="docutils literal notranslate"><span class="pre">R1806::decodePositionFeedback()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5R180622decodeVelocityFeedbackE13CAN_message_t"><code class="docutils literal notranslate"><span class="pre">R1806::decodeVelocityFeedback()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5R180621_gear_reduction_ratioE"><code class="docutils literal notranslate"><span class="pre">R1806::_gear_reduction_ratio</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv415SerialProtocols"><code class="docutils literal notranslate"><span class="pre">SerialProtocols</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N15SerialProtocols15SerialProtocolsEv"><code class="docutils literal notranslate"><span class="pre">SerialProtocols::SerialProtocols()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N15SerialProtocols15computeChecksumE7uint8_t7uint8_tPK7uint8_t"><code class="docutils literal notranslate"><span class="pre">SerialProtocols::computeChecksum()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N15SerialProtocols20encodeFeedbackPacketEA10NUM_JOINTS_Kf"><code class="docutils literal notranslate"><span class="pre">SerialProtocols::encodeFeedbackPacket()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N15SerialProtocols24decodeJointCommandPacketEPK7uint8_t"><code class="docutils literal notranslate"><span class="pre">SerialProtocols::decodeJointCommandPacket()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N15SerialProtocols24_encoder_feedback_packetE"><code class="docutils literal notranslate"><span class="pre">SerialProtocols::_encoder_feedback_packet</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N15SerialProtocols21_joint_command_packetE"><code class="docutils literal notranslate"><span class="pre">SerialProtocols::_joint_command_packet</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N15SerialProtocols14_joint_commandE"><code class="docutils literal notranslate"><span class="pre">SerialProtocols::_joint_command</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv49UNDEFINED"><code class="docutils literal notranslate"><span class="pre">UNDEFINED</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv44IDLE"><code class="docutils literal notranslate"><span class="pre">IDLE</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv416STARTUP_SEQUENCE"><code class="docutils literal notranslate"><span class="pre">STARTUP_SEQUENCE</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv425FULL_CALIBRATION_SEQUENCE"><code class="docutils literal notranslate"><span class="pre">FULL_CALIBRATION_SEQUENCE</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv417MOTOR_CALIBRATION"><code class="docutils literal notranslate"><span class="pre">MOTOR_CALIBRATION</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv420ENCODER_INDEX_SEARCH"><code class="docutils literal notranslate"><span class="pre">ENCODER_INDEX_SEARCH</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv426ENCODER_OFFSET_CALIBRATION"><code class="docutils literal notranslate"><span class="pre">ENCODER_OFFSET_CALIBRATION</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv419CLOSED_LOOP_CONTROL"><code class="docutils literal notranslate"><span class="pre">CLOSED_LOOP_CONTROL</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv411LOCKIN_SPIN"><code class="docutils literal notranslate"><span class="pre">LOCKIN_SPIN</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv416ENCODER_DIR_FIND"><code class="docutils literal notranslate"><span class="pre">ENCODER_DIR_FIND</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv46HOMING"><code class="docutils literal notranslate"><span class="pre">HOMING</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv433ENCODER_HALL_POLARITY_CALIBRATION"><code class="docutils literal notranslate"><span class="pre">ENCODER_HALL_POLARITY_CALIBRATION</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv430ENCODER_HALL_PHASE_CALIBRATION"><code class="docutils literal notranslate"><span class="pre">ENCODER_HALL_PHASE_CALIBRATION</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv423ANTICOGGING_CALIBRATION"><code class="docutils literal notranslate"><span class="pre">ANTICOGGING_CALIBRATION</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv48canSniffRK13CAN_message_t"><code class="docutils literal notranslate"><span class="pre">canSniff()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv49calibratev"><code class="docutils literal notranslate"><span class="pre">calibrate()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv45setupv"><code class="docutils literal notranslate"><span class="pre">setup()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv44loopv"><code class="docutils literal notranslate"><span class="pre">loop()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv44can1"><code class="docutils literal notranslate"><span class="pre">can1</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv43msg"><code class="docutils literal notranslate"><span class="pre">msg</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv415r1806_protocols"><code class="docutils literal notranslate"><span class="pre">r1806_protocols</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv416serial_protocols"><code class="docutils literal notranslate"><span class="pre">serial_protocols</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv46finger"><code class="docutils literal notranslate"><span class="pre">finger</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv410controller"><code class="docutils literal notranslate"><span class="pre">controller</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv412joint_states"><code class="docutils literal notranslate"><span class="pre">joint_states</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv413motor_offsets"><code class="docutils literal notranslate"><span class="pre">motor_offsets</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv45print"><code class="docutils literal notranslate"><span class="pre">print</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv414joint_commands"><code class="docutils literal notranslate"><span class="pre">joint_commands</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv421motor_position_states"><code class="docutils literal notranslate"><span class="pre">motor_position_states</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv421motor_velocity_states"><code class="docutils literal notranslate"><span class="pre">motor_velocity_states</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv422motor_position_offsets"><code class="docutils literal notranslate"><span class="pre">motor_position_offsets</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv413joint_targets"><code class="docutils literal notranslate"><span class="pre">joint_targets</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv413static_torque"><code class="docutils literal notranslate"><span class="pre">static_torque</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv414velocity_limit"><code class="docutils literal notranslate"><span class="pre">velocity_limit</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv410calibrated"><code class="docutils literal notranslate"><span class="pre">calibrated</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv412motor_states"><code class="docutils literal notranslate"><span class="pre">motor_states</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv413motor_torques"><code class="docutils literal notranslate"><span class="pre">motor_torques</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv415joint_error_sum"><code class="docutils literal notranslate"><span class="pre">joint_error_sum</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv420joint_states_desired"><code class="docutils literal notranslate"><span class="pre">joint_states_desired</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv416motor_velocities"><code class="docutils literal notranslate"><span class="pre">motor_velocities</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv46packet"><code class="docutils literal notranslate"><span class="pre">packet</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv47timeout"><code class="docutils literal notranslate"><span class="pre">timeout</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv411danger_mode"><code class="docutils literal notranslate"><span class="pre">danger_mode</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv423received_joint_commands"><code class="docutils literal notranslate"><span class="pre">received_joint_commands</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv48j1_input"><code class="docutils literal notranslate"><span class="pre">j1_input</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv48j2_input"><code class="docutils literal notranslate"><span class="pre">j2_input</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv417motor1_torque_cmd"><code class="docutils literal notranslate"><span class="pre">motor1_torque_cmd</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv429motor1_close_loop_request_cmd"><code class="docutils literal notranslate"><span class="pre">motor1_close_loop_request_cmd</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv417motor2_torque_cmd"><code class="docutils literal notranslate"><span class="pre">motor2_torque_cmd</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv429motor2_close_loop_request_cmd"><code class="docutils literal notranslate"><span class="pre">motor2_close_loop_request_cmd</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv417motor3_torque_cmd"><code class="docutils literal notranslate"><span class="pre">motor3_torque_cmd</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv429motor3_close_loop_request_cmd"><code class="docutils literal notranslate"><span class="pre">motor3_close_loop_request_cmd</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv417motor4_torque_cmd"><code class="docutils literal notranslate"><span class="pre">motor4_torque_cmd</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv429motor4_close_loop_request_cmd"><code class="docutils literal notranslate"><span class="pre">motor4_close_loop_request_cmd</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv419POSITION_TIMEOUT_MS"><code class="docutils literal notranslate"><span class="pre">POSITION_TIMEOUT_MS</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv419lastpositionCmdTime"><code class="docutils literal notranslate"><span class="pre">lastpositionCmdTime</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">RDS Team 2N</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to RDS Team 2N’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-rds-team-2n-s-documentation">
+<h1>Welcome to RDS Team 2N’s documentation!<a class="headerlink" href="#welcome-to-rds-team-2n-s-documentation" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+<section id="doxygen-documentation">
+<h1>Doxygen Documentation<a class="headerlink" href="#doxygen-documentation" title="Link to this heading">¶</a></h1>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv44Axis">
+<span id="_CPPv34Axis"></span><span id="_CPPv24Axis"></span><span id="Axis"></span><span class="target" id="structAxis"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Axis</span></span></span><a class="headerlink" href="#_CPPv44Axis" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="#motor__protocols_2utils_8h"><span class="std std-ref">utils.h</span></a>&gt;</em></div>
+<p>Nested struct for handling axis-based data and states. </p>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv49AxisState">
+<span id="_CPPv39AxisState"></span><span id="_CPPv29AxisState"></span><span id="AxisState"></span><span class="target" id="structAxisState"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AxisState</span></span></span><a class="headerlink" href="#_CPPv49AxisState" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="#motor__protocols_2utils_8h"><span class="std std-ref">utils.h</span></a>&gt;</em></div>
+<p>Holds constants representing possible <a class="reference internal" href="#structODrive"><span class="std std-ref">ODrive</span></a> axis states. </p>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv410Controller">
+<span id="_CPPv310Controller"></span><span id="_CPPv210Controller"></span><span id="Controller"></span><span class="target" id="classController"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Controller</span></span></span><a class="headerlink" href="#_CPPv410Controller" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="#controller_8h"><span class="std std-ref">controller.h</span></a>&gt;</em></div>
+<p>Provides torque control functionality using a PID algorithm. </p>
+<p>This class calculates joint torques by comparing current and desired joint states, accumulating joint errors, and adjusting PID gains accordingly. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller10ControllerEv">
+<span id="_CPPv3N10Controller10ControllerEv"></span><span id="_CPPv2N10Controller10ControllerEv"></span><span id="Controller::Controller"></span><span class="target" id="classController_1a95c56822d667e94b031451729ce069a9"></span><span class="sig-name descname"><span class="n"><span class="pre">Controller</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Controller10ControllerEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Constructs a new <a class="reference internal" href="#classController"><span class="std std-ref">Controller</span></a> object. </p>
+<p>Initializes the PID gains and transformation matrix used for converting joint torques to motor torques.</p>
+<p>Initializes the PID gains, pulley dimensions, and transformation matrix used for motor torque conversion. Note: D_MOTOR_PULLEY, D_FINGER_PULLEY_1, and D_FINGER_PULLEY_2 should be defined elsewhere. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller14torque_controlENSt6vectorIdEENSt6vectorIdEENSt6vectorIdEENSt6vectorIdEE">
+<span id="_CPPv3N10Controller14torque_controlENSt6vectorIdEENSt6vectorIdEENSt6vectorIdEENSt6vectorIdEE"></span><span id="_CPPv2N10Controller14torque_controlENSt6vectorIdEENSt6vectorIdEENSt6vectorIdEENSt6vectorIdEE"></span><span id="Controller::torque_control__std::vector:double:.std::vector:double:.std::vector:double:.std::vector:double:"></span><span class="target" id="classController_1aadf118b6025c2045262e05c68b227328"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">torque_control</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">joint_states</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">joint_states_desired</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">joint_error_sum</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">motor_velocities</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Controller14torque_controlENSt6vectorIdEENSt6vectorIdEENSt6vectorIdEENSt6vectorIdEE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Computes motor torques based on PID control. </p>
+<p>Computes motor torques using PID control.</p>
+<p>Calculates the difference between the desired and current joint states, updates the error sum, and computes the derivative of the error from motor velocities. It then applies a PID control algorithm to determine the joint torques, which are transformed into motor torques.</p>
+<p>
+This method calculates the error between desired and current joint states, updates the accumulated error, and computes the derivative of the error from the motor velocities. Then, it applies a PID algorithm to compute the joint torques and converts these into motor torques using a transformation matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>joint_states</strong> – Vector of current joint states. </p></li>
+<li><p><strong>joint_states_desired</strong> – Vector of desired joint states. </p></li>
+<li><p><strong>joint_error_sum</strong> – Vector containing the accumulated joint error over time. </p></li>
+<li><p><strong>motor_velocities</strong> – Vector of current motor velocities. </p></li>
+<li><p><strong>joint_states</strong> – Vector of current joint states. </p></li>
+<li><p><strong>joint_states_desired</strong> – Vector of desired joint states. </p></li>
+<li><p><strong>joint_error_sum</strong> – Vector containing the accumulated joint error. </p></li>
+<li><p><strong>motor_velocities</strong> – Vector of current motor velocities. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A std::pair consisting of:<ul class="simple">
+<li><p>A vector of computed motor torques.</p></li>
+<li><p>The updated joint error sum vector.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A std::pair containing:<ul class="simple">
+<li><p>A vector of computed motor torques.</p></li>
+<li><p>The updated joint error sum vector. </p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller11check_errorENSt6vectorIdEE">
+<span id="_CPPv3N10Controller11check_errorENSt6vectorIdEE"></span><span id="_CPPv2N10Controller11check_errorENSt6vectorIdEE"></span><span id="Controller::check_error__std::vector:double:"></span><span class="target" id="classController_1ad24b67ab07743a84a7a93e82e7025924"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">check_error</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">joint_error</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Controller11check_errorENSt6vectorIdEE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Adjusts PID gains based on the current joint error. </p>
+<p>Adjusts the PID gains based on the current joint error.</p>
+<p>Depending on whether the joint errors are negative or positive, the PID gains (kp, ki, kd) are updated to use either lower or higher predefined values.</p>
+<p>
+The function selects between low and high PID gains depending on whether each joint error is positive or negative.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>joint_error</strong> – Vector containing the error for each joint.</p></li>
+<li><p><strong>joint_error</strong> – Vector containing the error for each joint. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller6fingerE">
+<span id="_CPPv3N10Controller6fingerE"></span><span id="_CPPv2N10Controller6fingerE"></span><span id="Controller::finger__Finger"></span><span class="target" id="classController_1a6ba667bed4b9ce292986b4e13d74dce1"></span><a class="reference internal" href="#_CPPv46Finger" title="Finger"><span class="n"><span class="pre">Finger</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">finger</span></span></span><a class="headerlink" href="#_CPPv4N10Controller6fingerE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Instance of the <a class="reference internal" href="#classFinger"><span class="std std-ref">Finger</span></a> class used for finger control. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller6low_kpE">
+<span id="_CPPv3N10Controller6low_kpE"></span><span id="_CPPv2N10Controller6low_kpE"></span><span id="Controller::low_kp__double"></span><span class="target" id="classController_1ac0ec6432f5352ea8fda3c4e95a2396c2"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">low_kp</span></span></span><a class="headerlink" href="#_CPPv4N10Controller6low_kpE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Low and high proportional gains. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller7high_kpE">
+<span id="_CPPv3N10Controller7high_kpE"></span><span id="_CPPv2N10Controller7high_kpE"></span><span id="Controller::high_kp__double"></span><span class="target" id="classController_1ae155dc6c371769d119608d9a472165e0"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">high_kp</span></span></span><a class="headerlink" href="#_CPPv4N10Controller7high_kpE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller6low_kdE">
+<span id="_CPPv3N10Controller6low_kdE"></span><span id="_CPPv2N10Controller6low_kdE"></span><span id="Controller::low_kd__double"></span><span class="target" id="classController_1ab237bb6fe0212691e5d04f69aab51528"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">low_kd</span></span></span><a class="headerlink" href="#_CPPv4N10Controller6low_kdE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Low and high derivative gains. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller7high_kdE">
+<span id="_CPPv3N10Controller7high_kdE"></span><span id="_CPPv2N10Controller7high_kdE"></span><span id="Controller::high_kd__double"></span><span class="target" id="classController_1a78a40c61c862a81279b052ef45ddf5f2"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">high_kd</span></span></span><a class="headerlink" href="#_CPPv4N10Controller7high_kdE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller6low_kiE">
+<span id="_CPPv3N10Controller6low_kiE"></span><span id="_CPPv2N10Controller6low_kiE"></span><span id="Controller::low_ki__double"></span><span class="target" id="classController_1aed65e19cd6aaad4e781556789ae444d0"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">low_ki</span></span></span><a class="headerlink" href="#_CPPv4N10Controller6low_kiE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Low and high integral gains. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller7high_kiE">
+<span id="_CPPv3N10Controller7high_kiE"></span><span id="_CPPv2N10Controller7high_kiE"></span><span id="Controller::high_ki__double"></span><span class="target" id="classController_1affad21bf0b3714abe33e0d4139b49607"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">high_ki</span></span></span><a class="headerlink" href="#_CPPv4N10Controller7high_kiE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller1rE">
+<span id="_CPPv3N10Controller1rE"></span><span id="_CPPv2N10Controller1rE"></span><span id="Controller::r__double"></span><span class="target" id="classController_1a42bbdcd708d335c5a3ee36328c2e433f"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">r</span></span></span><a class="headerlink" href="#_CPPv4N10Controller1rE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Motor and finger pulley dimensions (expected to be defined elsewhere). </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller2R1E">
+<span id="_CPPv3N10Controller2R1E"></span><span id="_CPPv2N10Controller2R1E"></span><span id="Controller::R1__double"></span><span class="target" id="classController_1ac4b294e00b9a08b01f34003208ace9fe"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">R1</span></span></span><a class="headerlink" href="#_CPPv4N10Controller2R1E" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller2R2E">
+<span id="_CPPv3N10Controller2R2E"></span><span id="_CPPv2N10Controller2R2E"></span><span id="Controller::R2__double"></span><span class="target" id="classController_1a854e5e6386594693be149d09221ebc40"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">R2</span></span></span><a class="headerlink" href="#_CPPv4N10Controller2R2E" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller2kpE">
+<span id="_CPPv3N10Controller2kpE"></span><span id="_CPPv2N10Controller2kpE"></span><span id="Controller::kp__std::array:std::array:double.2:.2:"></span><span class="target" id="classController_1a83699f45f580ca1174240ca9bd9ea381"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">kp</span></span></span><a class="headerlink" href="#_CPPv4N10Controller2kpE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>2x2 matrices for PID gains. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller2kdE">
+<span id="_CPPv3N10Controller2kdE"></span><span id="_CPPv2N10Controller2kdE"></span><span id="Controller::kd__std::array:std::array:double.2:.2:"></span><span class="target" id="classController_1aed93f508b2d020780d9042ec8143f4ff"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">kd</span></span></span><a class="headerlink" href="#_CPPv4N10Controller2kdE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller2kiE">
+<span id="_CPPv3N10Controller2kiE"></span><span id="_CPPv2N10Controller2kiE"></span><span id="Controller::ki__std::array:std::array:double.2:.2:"></span><span class="target" id="classController_1ab62072d5c082bedd4a6aba770b436a62"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ki</span></span></span><a class="headerlink" href="#_CPPv4N10Controller2kiE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10Controller9trans_matE">
+<span id="_CPPv3N10Controller9trans_matE"></span><span id="_CPPv2N10Controller9trans_matE"></span><span id="Controller::trans_mat__std::array:std::array:double.4:.2:"></span><span class="target" id="classController_1ad587204ca05a62a200065529fd426e0d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">trans_mat</span></span></span><a class="headerlink" href="#_CPPv4N10Controller9trans_matE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>2x4 transformation matrix converting joint torques to motor torques. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv46Finger">
+<span id="_CPPv36Finger"></span><span id="_CPPv26Finger"></span><span id="Finger"></span><span class="target" id="classFinger"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Finger</span></span></span><a class="headerlink" href="#_CPPv46Finger" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="#finger_8h"><span class="std std-ref">finger.h</span></a>&gt;</em></div>
+<p>Provides functionality to convert between motor states and finger joint states. </p>
+<p>This class defines methods to compute joint states from motor states and vice versa. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6Finger6FingerEv">
+<span id="_CPPv3N6Finger6FingerEv"></span><span id="_CPPv2N6Finger6FingerEv"></span><span id="Finger::Finger"></span><span class="target" id="classFinger_1aa71829d5592249136d8f8c3128bc757b"></span><span class="sig-name descname"><span class="n"><span class="pre">Finger</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6Finger6FingerEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Constructs a new <a class="reference internal" href="#classFinger"><span class="std std-ref">Finger</span></a> object. </p>
+<p>The constructor currently does not perform additional initialization. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6Finger14getJointStatesEA10NUM_MOTORS_Kf">
+<span id="_CPPv3N6Finger14getJointStatesEA10NUM_MOTORS_Kf"></span><span id="_CPPv2N6Finger14getJointStatesEANUM_MOTORS_Kf"></span><span id="Finger::getJointStates__floatCA"></span><span class="target" id="classFinger_1aefe9b0417b1bdc93bce95df895520b5e"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getJointStates</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">motor_states</span></span><span class="p"><span class="pre">[</span></span><span class="n"><span class="pre">NUM_MOTORS</span></span><span class="p"><span class="pre">]</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6Finger14getJointStatesEA10NUM_MOTORS_Kf" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Computes the finger joint states based on motor states. </p>
+<p>Computes the finger joint states from motor states.</p>
+<p>Given an array of motor states, this function calculates the positions of the finger joints.</p>
+<p>
+This function calculates the positions of two joints by converting motor states using the specified pulley diameters. The first joint is computed as the difference between two positions (averaged), while the second joint is a combination of four positions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>motor_states</strong> – An array of motor states with length NUM_MOTORS. </p></li>
+<li><p><strong>motor_states</strong> – An array of motor states (length NUM_MOTORS). </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pointer to an array of computed joint states (length NUM_JOINTS).</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pointer to an array containing the computed joint states (length NUM_JOINTS). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6Finger16getMotorCommandsEA10NUM_JOINTS_Kf">
+<span id="_CPPv3N6Finger16getMotorCommandsEA10NUM_JOINTS_Kf"></span><span id="_CPPv2N6Finger16getMotorCommandsEANUM_JOINTS_Kf"></span><span id="Finger::getMotorCommands__floatCA"></span><span class="target" id="classFinger_1a680479a754818275e9f46a0c220c5fd6"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getMotorCommands</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">joint_inputs</span></span><span class="p"><span class="pre">[</span></span><span class="n"><span class="pre">NUM_JOINTS</span></span><span class="p"><span class="pre">]</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6Finger16getMotorCommandsEA10NUM_JOINTS_Kf" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Computes motor commands based on desired joint inputs. </p>
+<p>Given an array of desired joint inputs, this function calculates the motor commands required.</p>
+<p>
+This function derives motor commands from the provided joint inputs. For now, it only uses the first joint input to compute commands for motor 0 and motor 2, with motor 1 and motor 3 set to zero.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>joint_inputs</strong> – An array of desired joint inputs with length NUM_JOINTS. </p></li>
+<li><p><strong>joint_inputs</strong> – An array of desired joint inputs (length NUM_JOINTS). </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pointer to an array of computed motor commands (length NUM_MOTORS).</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pointer to an array containing the computed motor commands (length NUM_MOTORS). </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6Finger13_joint_statesE">
+<span id="_CPPv3N6Finger13_joint_statesE"></span><span id="_CPPv2N6Finger13_joint_statesE"></span><span id="Finger::_joint_states__floatA"></span><span class="target" id="classFinger_1a6e43c6c13ac9a8da993ef5a0070490ab"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_joint_states</span></span></span><span class="p"><span class="pre">[</span></span><span class="n"><span class="pre">NUM_JOINTS</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N6Finger13_joint_statesE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Array storing the current joint states. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6Finger15_motor_commandsE">
+<span id="_CPPv3N6Finger15_motor_commandsE"></span><span id="_CPPv2N6Finger15_motor_commandsE"></span><span id="Finger::_motor_commands__floatA"></span><span class="target" id="classFinger_1a0fef6fcf2e141ee17d3224a1cffcb316"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_motor_commands</span></span></span><span class="p"><span class="pre">[</span></span><span class="n"><span class="pre">NUM_MOTORS</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N6Finger15_motor_commandsE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Array storing the computed motor commands. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv46ODrive">
+<span id="_CPPv36ODrive"></span><span id="_CPPv26ODrive"></span><span id="ODrive"></span><span class="target" id="structODrive"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ODrive</span></span></span><a class="headerlink" href="#_CPPv46ODrive" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="#motor__protocols_2utils_8h"><span class="std std-ref">utils.h</span></a>&gt;</em></div>
+<p>Namespace-like struct containing <a class="reference internal" href="#structODrive"><span class="std std-ref">ODrive</span></a> axis state values. </p>
+<p>The <a class="reference internal" href="#structODrive"><span class="std std-ref">ODrive</span></a> struct is used to hold various enumerations that represent different axis states in an <a class="reference internal" href="#structODrive"><span class="std std-ref">ODrive</span></a> motor driver. </p>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv45R1806">
+<span id="_CPPv35R1806"></span><span id="_CPPv25R1806"></span><span id="R1806"></span><span class="target" id="classR1806"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">R1806</span></span></span><a class="headerlink" href="#_CPPv45R1806" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="#r1806_8h"><span class="std std-ref">r1806.h</span></a>&gt;</em></div>
+<p>Provides methods to encode and decode CAN messages for controlling an <a class="reference internal" href="#classR1806"><span class="std std-ref">R1806</span></a> motor via <a class="reference internal" href="#structODrive"><span class="std std-ref">ODrive</span></a>. </p>
+<p>This class contains utility functions to extract node/command IDs, encode state and torque commands, and decode feedback such as position and velocity. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5R18065R1806Ev">
+<span id="_CPPv3N5R18065R1806Ev"></span><span id="_CPPv2N5R18065R1806Ev"></span><span id="R1806::R1806"></span><span class="target" id="classR1806_1ac24ac7af211be841111d150808fdd2f7"></span><span class="sig-name descname"><span class="n"><span class="pre">R1806</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5R18065R1806Ev" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Constructs a new <a class="reference internal" href="#classR1806"><span class="std std-ref">R1806</span></a> object. </p>
+<p>Constructs a new <a class="reference internal" href="#classR1806"><span class="std std-ref">R1806</span></a> object and sets the gear reduction ratio.</p>
+<p>Initializes internal parameters, including the gear reduction ratio. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5R180615extract_node_idE8uint32_t">
+<span id="_CPPv3N5R180615extract_node_idE8uint32_t"></span><span id="_CPPv2N5R180615extract_node_idE8uint32_t"></span><span id="R1806::extract_node_id__uint32_t"></span><span class="target" id="classR1806_1a116d467196ccdc10b6fa46b5c2d87e75"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">extract_node_id</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">can_id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5R180615extract_node_idE8uint32_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Extract the node ID from a given CAN identifier. </p>
+<p>Extract the node ID from a CAN ID.</p>
+<p>
+Node ID occupies bits [10..5] of a standard 11-bit ID. We mask and shift to retrieve it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>can_id</strong> – 29-bit or 11-bit CAN identifier. </p></li>
+<li><p><strong>can_id</strong> – The raw CAN identifier. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Node ID (extracted bits from can_id).</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Extracted node ID. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5R180618extract_command_idE8uint32_t">
+<span id="_CPPv3N5R180618extract_command_idE8uint32_t"></span><span id="_CPPv2N5R180618extract_command_idE8uint32_t"></span><span id="R1806::extract_command_id__uint32_t"></span><span class="target" id="classR1806_1a0db19be4b6c4e0be27d6128a8165de3e"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">extract_command_id</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">can_id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5R180618extract_command_idE8uint32_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Extract the command ID from a given CAN identifier. </p>
+<p>Extract the command ID from a CAN ID.</p>
+<p>
+Command ID occupies bits [4..0] of the CAN identifier. We mask out the lower 5 bits to retrieve it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>can_id</strong> – 29-bit or 11-bit CAN identifier. </p></li>
+<li><p><strong>can_id</strong> – The raw CAN identifier. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Command ID (extracted bits from can_id).</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Extracted command ID. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5R180627encodeRequestedStateCommandE8uint32_t8uint32_t">
+<span id="_CPPv3N5R180627encodeRequestedStateCommandE8uint32_t8uint32_t"></span><span id="_CPPv2N5R180627encodeRequestedStateCommandE8uint32_t8uint32_t"></span><span id="R1806::encodeRequestedStateCommand__uint32_t.uint32_t"></span><span class="target" id="classR1806_1a400662f13aa22e39f5b1d780d193c169"></span><span class="n"><span class="pre">CAN_message_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encodeRequestedStateCommand</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">node_id</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">requested_state</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5R180627encodeRequestedStateCommandE8uint32_t8uint32_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Encode a “requested state” command for <a class="reference internal" href="#structODrive"><span class="std std-ref">ODrive</span></a>. </p>
+<p>Encode a “requested state” command into a CAN message.</p>
+<p>Creates a CAN message instructing <a class="reference internal" href="#structODrive"><span class="std std-ref">ODrive</span></a> to enter a specific axis state.</p>
+<p>
+This implementation forces the state to CLOSED_LOOP_CONTROL for demonstration. You can modify it to use the passed-in requested_state argument fully.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node_id</strong> – ID of the node (motor) on the CAN bus. </p></li>
+<li><p><strong>requested_state</strong> – The requested axis state (e.g., CLOSED_LOOP_CONTROL). </p></li>
+<li><p><strong>node_id</strong> – The target node (motor) ID. </p></li>
+<li><p><strong>requested_state</strong> – The desired axis state (not fully used in this example). </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A CAN_message_t struct with the encoded command.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A CAN_message_t configured with the appropriate ID and payload. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5R180619encodeTorqueCommandE8uint32_tf">
+<span id="_CPPv3N5R180619encodeTorqueCommandE8uint32_tf"></span><span id="_CPPv2N5R180619encodeTorqueCommandE8uint32_tf"></span><span id="R1806::encodeTorqueCommand__uint32_t.float"></span><span class="target" id="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104"></span><span class="n"><span class="pre">CAN_message_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">encodeTorqueCommand</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">node_id</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">torque</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5R180619encodeTorqueCommandE8uint32_tf" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Encode a torque command for the <a class="reference internal" href="#structODrive"><span class="std std-ref">ODrive</span></a>. </p>
+<p>Encode a torque command into a CAN message.</p>
+<p>Creates a CAN message to set a torque value for a given node. The torque is automatically adjusted by the gear reduction ratio.</p>
+<p>
+The gear reduction ratio is factored into the torque command so that the motor sees the correct torque value. The 4-byte float is written in little-endian format into the CAN frame buffer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node_id</strong> – ID of the node (motor) on the CAN bus. </p></li>
+<li><p><strong>torque</strong> – Desired torque in Nm (or consistent units). </p></li>
+<li><p><strong>node_id</strong> – The target node (motor) ID. </p></li>
+<li><p><strong>torque</strong> – Desired torque before gear reduction is accounted for. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A CAN_message_t struct with the encoded torque command.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A CAN_message_t with the correct ID and payload to set torque on <a class="reference internal" href="#structODrive"><span class="std std-ref">ODrive</span></a>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5R180622decodePositionFeedbackE13CAN_message_t">
+<span id="_CPPv3N5R180622decodePositionFeedbackE13CAN_message_t"></span><span id="_CPPv2N5R180622decodePositionFeedbackE13CAN_message_t"></span><span id="R1806::decodePositionFeedback__CAN_message_t"></span><span class="target" id="classR1806_1afc210aa77fbaf2a72dbe3ec34e7ca9ba"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">decodePositionFeedback</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">CAN_message_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">frame</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5R180622decodePositionFeedbackE13CAN_message_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Decode position feedback from a CAN message. </p>
+<p>Interprets the first 4 bytes of the CAN message payload as a float for the number of revolutions, then converts it to a position (radians) factoring in the gear reduction ratio.</p>
+<p>
+The first 4 bytes of the CAN frame are interpreted as a float representing the number of revolutions. This is then converted to radians, factoring in the gear reduction ratio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame</strong> – A CAN_message_t containing position feedback data. </p></li>
+<li><p><strong>frame</strong> – A CAN_message_t containing position data in its first 4 bytes. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Position in radians.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Position in radians. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5R180622decodeVelocityFeedbackE13CAN_message_t">
+<span id="_CPPv3N5R180622decodeVelocityFeedbackE13CAN_message_t"></span><span id="_CPPv2N5R180622decodeVelocityFeedbackE13CAN_message_t"></span><span id="R1806::decodeVelocityFeedback__CAN_message_t"></span><span class="target" id="classR1806_1a80c75872c7390915c6ccb6f2ee12bbd5"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">decodeVelocityFeedback</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">CAN_message_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">frame</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5R180622decodeVelocityFeedbackE13CAN_message_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Decode velocity feedback from a CAN message. </p>
+<p>Interprets bytes [4..7] of the CAN message payload as a float for the number of revolutions per second, then converts it to a velocity (rad/s), factoring in the gear reduction ratio.</p>
+<p>
+Bytes [4..7] of the CAN frame are interpreted as a float representing the number of revolutions per second, then converted to rad/s with gear reduction considered.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame</strong> – A CAN_message_t containing velocity feedback data. </p></li>
+<li><p><strong>frame</strong> – A CAN_message_t containing velocity data in bytes [4..7]. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Velocity in rad/s.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Velocity in rad/s. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5R180621_gear_reduction_ratioE">
+<span id="_CPPv3N5R180621_gear_reduction_ratioE"></span><span id="_CPPv2N5R180621_gear_reduction_ratioE"></span><span id="R1806::_gear_reduction_ratio__float"></span><span class="target" id="classR1806_1acff280648eb3c889f6df6fd83bdd6ffe"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_gear_reduction_ratio</span></span></span><a class="headerlink" href="#_CPPv4N5R180621_gear_reduction_ratioE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Internal gear reduction ratio used for torque and feedback calculations. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv415SerialProtocols">
+<span id="_CPPv315SerialProtocols"></span><span id="_CPPv215SerialProtocols"></span><span id="SerialProtocols"></span><span class="target" id="classSerialProtocols"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SerialProtocols</span></span></span><a class="headerlink" href="#_CPPv415SerialProtocols" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="#serial__protocols_8h"><span class="std std-ref">serial_protocols.h</span></a>&gt;</em></div>
+<p>Provides functions to encode and decode serial packets for feedback and joint commands. </p>
+<p>This class includes methods to compute packet checksums, encode feedback packets, and decode joint command packets received via serial communication. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15SerialProtocols15SerialProtocolsEv">
+<span id="_CPPv3N15SerialProtocols15SerialProtocolsEv"></span><span id="_CPPv2N15SerialProtocols15SerialProtocolsEv"></span><span id="SerialProtocols::SerialProtocols"></span><span class="target" id="classSerialProtocols_1ae4b9453d604f377e34b520b8f58a7e11"></span><span class="sig-name descname"><span class="n"><span class="pre">SerialProtocols</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15SerialProtocols15SerialProtocolsEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Constructs a new <a class="reference internal" href="#classSerialProtocols"><span class="std std-ref">SerialProtocols</span></a> object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15SerialProtocols15computeChecksumE7uint8_t7uint8_tPK7uint8_t">
+<span id="_CPPv3N15SerialProtocols15computeChecksumE7uint8_t7uint8_tPK7uint8_t"></span><span id="_CPPv2N15SerialProtocols15computeChecksumE7uint8_t7uint8_tPK7uint8_t"></span><span id="SerialProtocols::computeChecksum__uint8_t.uint8_t.uint8_tCP"></span><span class="target" id="classSerialProtocols_1a4aa379fe04b74f8b0807e9b552f00cc0"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeChecksum</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">msgType</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">payloadLen</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">payload</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15SerialProtocols15computeChecksumE7uint8_t7uint8_tPK7uint8_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Computes a checksum for a serial packet. </p>
+<p>The checksum is computed as the 8-bit sum of the message type, payload length, and each byte of the payload.</p>
+<p>
+The checksum is calculated by summing the message type, payload length, and every byte in the payload. The result is truncated to an 8-bit value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>msgType</strong> – The message type byte. </p></li>
+<li><p><strong>payloadLen</strong> – The length of the payload. </p></li>
+<li><p><strong>payload</strong> – Pointer to the payload data. </p></li>
+<li><p><strong>msgType</strong> – The message type. </p></li>
+<li><p><strong>payloadLen</strong> – Length of the payload. </p></li>
+<li><p><strong>payload</strong> – Pointer to the payload data. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Computed 8-bit checksum.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An 8-bit checksum value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15SerialProtocols20encodeFeedbackPacketEA10NUM_JOINTS_Kf">
+<span id="_CPPv3N15SerialProtocols20encodeFeedbackPacketEA10NUM_JOINTS_Kf"></span><span id="_CPPv2N15SerialProtocols20encodeFeedbackPacketEANUM_JOINTS_Kf"></span><span id="SerialProtocols::encodeFeedbackPacket__floatCA"></span><span class="target" id="classSerialProtocols_1a967d508f968bd1d09f41db97ea97b432"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">encodeFeedbackPacket</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">positions</span></span><span class="p"><span class="pre">[</span></span><span class="n"><span class="pre">NUM_JOINTS</span></span><span class="p"><span class="pre">]</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15SerialProtocols20encodeFeedbackPacketEA10NUM_JOINTS_Kf" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Encodes a feedback packet from joint positions. </p>
+<p>The feedback packet is constructed using a start byte, message type, payload length, the payload containing two float positions, a checksum, and an end byte.</p>
+<p>
+The packet is structured as follows:<ul class="simple">
+<li><p>Byte 0: START_BYTE</p></li>
+<li><p>Byte 1: MSG_FEEDBACK</p></li>
+<li><p>Byte 2: FEEDBACK_PAYLOAD_LENGTH</p></li>
+<li><p>Bytes 3-10: Payload (2 floats representing positions)</p></li>
+<li><p>Byte 11: Checksum (computed over bytes 1-10)</p></li>
+<li><p>Byte 12: END_BYTE</p></li>
+</ul>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>positions</strong> – An array of joint positions (2 floats). </p></li>
+<li><p><strong>positions</strong> – An array of two float positions. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Pointer to the encoded feedback packet.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pointer to the encoded feedback packet. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15SerialProtocols24decodeJointCommandPacketEPK7uint8_t">
+<span id="_CPPv3N15SerialProtocols24decodeJointCommandPacketEPK7uint8_t"></span><span id="_CPPv2N15SerialProtocols24decodeJointCommandPacketEPK7uint8_t"></span><span id="SerialProtocols::decodeJointCommandPacket__uint8_tCP"></span><span class="target" id="classSerialProtocols_1aec800812be41156be7e0a1e0374a03fd"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">decodeJointCommandPacket</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15SerialProtocols24decodeJointCommandPacketEPK7uint8_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Decodes a joint command packet. </p>
+<p>This method validates the packet structure (start byte, message type, payload length, checksum, and end byte) and decodes the payload into joint command values.</p>
+<p>
+The expected packet layout is:<ul class="simple">
+<li><p>Byte 0: START_BYTE</p></li>
+<li><p>Byte 1: MSG_JOINT_COMMAND</p></li>
+<li><p>Byte 2: JOINT_COMMAND_PAYLOAD_LENGTH</p></li>
+<li><p>Bytes 3-10: Payload (4 float position commands, 16 bytes total)</p></li>
+<li><p>Byte 11: Checksum (computed over bytes 1-10)</p></li>
+<li><p>Byte 12: END_BYTE</p></li>
+</ul>
+</p>
+<p>The method validates each part of the packet and returns a pointer to the decoded joint commands. If any validation fails, the method returns nullptr.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Pointer to the received packet data. </p></li>
+<li><p><strong>data</strong> – Pointer to the received packet data. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Pointer to the decoded joint command array, or nullptr if validation fails.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pointer to the decoded joint command array, or nullptr if the packet is invalid. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15SerialProtocols24_encoder_feedback_packetE">
+<span id="_CPPv3N15SerialProtocols24_encoder_feedback_packetE"></span><span id="_CPPv2N15SerialProtocols24_encoder_feedback_packetE"></span><span id="SerialProtocols::_encoder_feedback_packet__uint8_tA"></span><span class="target" id="classSerialProtocols_1a73d6aef97380724db91957f5db7cd3a8"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_encoder_feedback_packet</span></span></span><span class="p"><span class="pre">[</span></span><span class="n"><span class="pre">FEEDBACK_PACKET_SIZE</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N15SerialProtocols24_encoder_feedback_packetE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Buffer for storing the encoded feedback packet. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15SerialProtocols21_joint_command_packetE">
+<span id="_CPPv3N15SerialProtocols21_joint_command_packetE"></span><span id="_CPPv2N15SerialProtocols21_joint_command_packetE"></span><span id="SerialProtocols::_joint_command_packet__uint8_tA"></span><span class="target" id="classSerialProtocols_1a559e52f0c98d7a0e596daea307cc37ce"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_joint_command_packet</span></span></span><span class="p"><span class="pre">[</span></span><span class="n"><span class="pre">JOINT_COMMAND_PACKET_SIZE</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N15SerialProtocols21_joint_command_packetE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Buffer for storing the received joint command packet. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15SerialProtocols14_joint_commandE">
+<span id="_CPPv3N15SerialProtocols14_joint_commandE"></span><span id="_CPPv2N15SerialProtocols14_joint_commandE"></span><span id="SerialProtocols::_joint_command__floatA"></span><span class="target" id="classSerialProtocols_1a0b2a324b12c948797b327363fe7b7bca"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_joint_command</span></span></span><span class="p"><span class="pre">[</span></span><span class="n"><span class="pre">NUM_MOTORS</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N15SerialProtocols14_joint_commandE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Array to hold decoded joint commands (size NUM_MOTORS). </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="controller_8h"></span><em><span class="pre">file</span></em> <span class="sig-name descname"><span class="pre">controller.h</span></span></dt>
+<dd><div class="docutils container">
+<em>#include &lt;stdint.h&gt;</em></div>
+<div class="docutils container">
+<em>#include “<a class="reference internal" href="#finger_8h"><span class="std std-ref">finger/finger.h</span></a>”</em></div>
+<div class="docutils container">
+<em>#include &lt;iostream&gt;</em></div>
+<div class="docutils container">
+<em>#include &lt;vector&gt;</em></div>
+<div class="docutils container">
+<em>#include &lt;array&gt;</em></div>
+<div class="docutils container">
+<em>#include &lt;chrono&gt;</em></div>
+<div class="docutils container">
+<em>#include &lt;math.h&gt;</em></div>
+<p>Declaration of the <a class="reference internal" href="#classController"><span class="std std-ref">Controller</span></a> class for torque control. </p>
+</dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="finger_8h"></span><em><span class="pre">file</span></em> <span class="sig-name descname"><span class="pre">finger.h</span></span></dt>
+<dd><div class="docutils container">
+<em>#include &lt;stdint.h&gt;</em></div>
+<p>Declaration of the <a class="reference internal" href="#classFinger"><span class="std std-ref">Finger</span></a> class and related constants. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.NUM_JOINTS">
+<span class="target" id="finger_8h_1af742980593d698725375a7d12711c24f"></span><span class="sig-name descname"><span class="n"><span class="pre">NUM_JOINTS</span></span></span><a class="headerlink" href="#c.NUM_JOINTS" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Number of finger joints. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.NUM_MOTORS">
+<span class="target" id="finger_8h_1a52b56a381e777b55e1b59019d9ee072e"></span><span class="sig-name descname"><span class="n"><span class="pre">NUM_MOTORS</span></span></span><a class="headerlink" href="#c.NUM_MOTORS" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Number of motors controlling the finger. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.D_MOTOR_PULLEY">
+<span class="target" id="finger_8h_1abff68362f6a3518d826036342723ff99"></span><span class="sig-name descname"><span class="n"><span class="pre">D_MOTOR_PULLEY</span></span></span><a class="headerlink" href="#c.D_MOTOR_PULLEY" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Diameter of the motor pulley in millimeters. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.D_FINGER_PULLEY_1">
+<span class="target" id="finger_8h_1a88a43911f0e9357330e3a24beb6e39d4"></span><span class="sig-name descname"><span class="n"><span class="pre">D_FINGER_PULLEY_1</span></span></span><a class="headerlink" href="#c.D_FINGER_PULLEY_1" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Diameter of the first finger pulley in millimeters. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.D_FINGER_PULLEY_2">
+<span class="target" id="finger_8h_1abc25c804485d85e98841ce908ec1746c"></span><span class="sig-name descname"><span class="n"><span class="pre">D_FINGER_PULLEY_2</span></span></span><a class="headerlink" href="#c.D_FINGER_PULLEY_2" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Diameter of the second finger pulley in millimeters. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="r1806_8h"></span><em><span class="pre">file</span></em> <span class="sig-name descname"><span class="pre">r1806.h</span></span></dt>
+<dd><div class="docutils container">
+<em>#include &lt;FlexCAN_T4.h&gt;</em></div>
+<p>Motor protocols for the <a class="reference internal" href="#classR1806"><span class="std std-ref">R1806</span></a> motor used with <a class="reference internal" href="#structODrive"><span class="std std-ref">ODrive</span></a> Pro. </p>
+<p>The <a class="reference internal" href="#classR1806"><span class="std std-ref">R1806</span></a> motor is fabricated by Repeat Robotics, and this file defines the <a class="reference internal" href="#classR1806"><span class="std std-ref">R1806</span></a> class for CAN-based communication with <a class="reference internal" href="#structODrive"><span class="std std-ref">ODrive</span></a>.</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="#classR1806"><span class="std std-ref">R1806</span></a> motor details: <a class="reference external" href="https://repeat-robotics.com/buy/repeat-compact-1806">https://repeat-robotics.com/buy/repeat-compact-1806</a></p></li>
+<li><p><a class="reference internal" href="#structODrive"><span class="std std-ref">ODrive</span></a> CAN Protocol Details: <a class="reference external" href="https://docs.odriverobotics.com/v/latest/manual/can-protocol.html">https://docs.odriverobotics.com/v/latest/manual/can-protocol.html</a></p></li>
+</ul>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.GEAR_REDUCION_RATIO">
+<span class="target" id="r1806_8h_1a890ee506c2f2d76aa67bae8d9c9507f5"></span><span class="sig-name descname"><span class="n"><span class="pre">GEAR_REDUCION_RATIO</span></span></span><a class="headerlink" href="#c.GEAR_REDUCION_RATIO" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Gear reduction ratio for the <a class="reference internal" href="#classR1806"><span class="std std-ref">R1806</span></a> motor. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="motor__protocols_2utils_8h"></span><em><span class="pre">file</span></em> <span class="sig-name descname"><span class="pre">utils.h</span></span></dt>
+<dd><div class="docutils container">
+<em>#include &lt;stdint.h&gt;</em></div>
+<p>Contains utility data structures and definitions for motor protocols. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv49UNDEFINED">
+<span id="_CPPv39UNDEFINED"></span><span id="_CPPv29UNDEFINED"></span><span id="UNDEFINED__uint32_t"></span><span class="target" id="motor__protocols_2utils_8h_1a714603a926a5a8ef7ac92b7639e296df"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UNDEFINED</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv49UNDEFINED" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Undefined state. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv44IDLE">
+<span id="_CPPv34IDLE"></span><span id="_CPPv24IDLE"></span><span id="IDLE__uint32_t"></span><span class="target" id="motor__protocols_2utils_8h_1a3430db71581c017e7a6a91bc5b0062cb"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IDLE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv44IDLE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Idle state. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv416STARTUP_SEQUENCE">
+<span id="_CPPv316STARTUP_SEQUENCE"></span><span id="_CPPv216STARTUP_SEQUENCE"></span><span id="STARTUP_SEQUENCE__uint32_t"></span><span class="target" id="motor__protocols_2utils_8h_1a700c8e2c1a99a3c793da7f0b40524b9d"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">STARTUP_SEQUENCE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><a class="headerlink" href="#_CPPv416STARTUP_SEQUENCE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Startup sequence in progress. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv425FULL_CALIBRATION_SEQUENCE">
+<span id="_CPPv325FULL_CALIBRATION_SEQUENCE"></span><span id="_CPPv225FULL_CALIBRATION_SEQUENCE"></span><span id="FULL_CALIBRATION_SEQUENCE__uint32_t"></span><span class="target" id="motor__protocols_2utils_8h_1a83a1fbd0642c0b56b0c526a606a1f019"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FULL_CALIBRATION_SEQUENCE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">3</span></span><a class="headerlink" href="#_CPPv425FULL_CALIBRATION_SEQUENCE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Full calibration sequence. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv417MOTOR_CALIBRATION">
+<span id="_CPPv317MOTOR_CALIBRATION"></span><span id="_CPPv217MOTOR_CALIBRATION"></span><span id="MOTOR_CALIBRATION__uint32_t"></span><span class="target" id="motor__protocols_2utils_8h_1a1798321130fd876b6d01b6e1abea2e1b"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MOTOR_CALIBRATION</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">4</span></span><a class="headerlink" href="#_CPPv417MOTOR_CALIBRATION" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Motor calibration. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv420ENCODER_INDEX_SEARCH">
+<span id="_CPPv320ENCODER_INDEX_SEARCH"></span><span id="_CPPv220ENCODER_INDEX_SEARCH"></span><span id="ENCODER_INDEX_SEARCH__uint32_t"></span><span class="target" id="motor__protocols_2utils_8h_1a0ba5431476691c9d1d75f00786a3d518"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ENCODER_INDEX_SEARCH</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><a class="headerlink" href="#_CPPv420ENCODER_INDEX_SEARCH" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Encoder index search. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv426ENCODER_OFFSET_CALIBRATION">
+<span id="_CPPv326ENCODER_OFFSET_CALIBRATION"></span><span id="_CPPv226ENCODER_OFFSET_CALIBRATION"></span><span id="ENCODER_OFFSET_CALIBRATION__uint32_t"></span><span class="target" id="motor__protocols_2utils_8h_1af85d45d12286e7163a830a704462f2d2"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ENCODER_OFFSET_CALIBRATION</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">7</span></span><a class="headerlink" href="#_CPPv426ENCODER_OFFSET_CALIBRATION" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Encoder offset calibration. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv419CLOSED_LOOP_CONTROL">
+<span id="_CPPv319CLOSED_LOOP_CONTROL"></span><span id="_CPPv219CLOSED_LOOP_CONTROL"></span><span id="CLOSED_LOOP_CONTROL__uint32_t"></span><span class="target" id="motor__protocols_2utils_8h_1a15ee4d274ebbd72a00d1184e3aca0df2"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLOSED_LOOP_CONTROL</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">8</span></span><a class="headerlink" href="#_CPPv419CLOSED_LOOP_CONTROL" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Closed-loop control. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv411LOCKIN_SPIN">
+<span id="_CPPv311LOCKIN_SPIN"></span><span id="_CPPv211LOCKIN_SPIN"></span><span id="LOCKIN_SPIN__uint32_t"></span><span class="target" id="motor__protocols_2utils_8h_1a3504f2fcd5a8c030c5f3d8f8d5b15cb1"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LOCKIN_SPIN</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">9</span></span><a class="headerlink" href="#_CPPv411LOCKIN_SPIN" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Lock-in spin. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv416ENCODER_DIR_FIND">
+<span id="_CPPv316ENCODER_DIR_FIND"></span><span id="_CPPv216ENCODER_DIR_FIND"></span><span id="ENCODER_DIR_FIND__uint32_t"></span><span class="target" id="motor__protocols_2utils_8h_1a6b544adec6a340cb0132a6d2ed8af1ca"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ENCODER_DIR_FIND</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">10</span></span><a class="headerlink" href="#_CPPv416ENCODER_DIR_FIND" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Encoder direction find. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv46HOMING">
+<span id="_CPPv36HOMING"></span><span id="_CPPv26HOMING"></span><span id="HOMING__uint32_t"></span><span class="target" id="motor__protocols_2utils_8h_1a296aa8ca8681ca73f8aa365844a66aa5"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HOMING</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">11</span></span><a class="headerlink" href="#_CPPv46HOMING" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Homing procedure. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv433ENCODER_HALL_POLARITY_CALIBRATION">
+<span id="_CPPv333ENCODER_HALL_POLARITY_CALIBRATION"></span><span id="_CPPv233ENCODER_HALL_POLARITY_CALIBRATION"></span><span id="ENCODER_HALL_POLARITY_CALIBRATION__uint32_t"></span><span class="target" id="motor__protocols_2utils_8h_1a9e7e76429a71009654c6559a3b58f0bb"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ENCODER_HALL_POLARITY_CALIBRATION</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">12</span></span><a class="headerlink" href="#_CPPv433ENCODER_HALL_POLARITY_CALIBRATION" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Hall polarity calibration. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv430ENCODER_HALL_PHASE_CALIBRATION">
+<span id="_CPPv330ENCODER_HALL_PHASE_CALIBRATION"></span><span id="_CPPv230ENCODER_HALL_PHASE_CALIBRATION"></span><span id="ENCODER_HALL_PHASE_CALIBRATION__uint32_t"></span><span class="target" id="motor__protocols_2utils_8h_1aabfb649bd896ad4f20ca30d2d16ef8b6"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ENCODER_HALL_PHASE_CALIBRATION</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">13</span></span><a class="headerlink" href="#_CPPv430ENCODER_HALL_PHASE_CALIBRATION" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Hall phase calibration. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv423ANTICOGGING_CALIBRATION">
+<span id="_CPPv323ANTICOGGING_CALIBRATION"></span><span id="_CPPv223ANTICOGGING_CALIBRATION"></span><span id="ANTICOGGING_CALIBRATION__uint32_t"></span><span class="target" id="motor__protocols_2utils_8h_1af1f5a4a2c11532e49da4795f852799a6"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ANTICOGGING_CALIBRATION</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">14</span></span><a class="headerlink" href="#_CPPv423ANTICOGGING_CALIBRATION" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Anti-cogging calibration. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp">
+<span class="target" id="motor__protocols_2utils_8h_1ab04b353d772447282c981fc87d3cc095"></span><span class="sig-name descname"><span class="pre">struct</span>&#160; <span class="pre">AxisState</span></span></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp">
+<span class="target" id="motor__protocols_2utils_8h_1af4b70613bb93bd333fe30a4ff5f11c8b"></span><span class="sig-name descname"><span class="pre">struct</span>&#160; <span class="pre">Axis</span></span></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp">
+<span class="target" id="motor__protocols_2utils_8h_1a3015bd6af60dc3af90ccc4603e186216"></span><span class="sig-name descname"><span class="pre">struct</span>&#160; <span class="pre">ODrive</span></span></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="serial__protocols_2utils_8h"></span><em><span class="pre">file</span></em> <span class="sig-name descname"><span class="pre">utils.h</span></span></dt>
+<dd><div class="docutils container">
+<em>#include &lt;stdint.h&gt;</em></div>
+<p>Defines constants used in the serial communication protocols. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp">
+<span class="target" id="serial__protocols_2utils_8h_1a52b56a381e777b55e1b59019d9ee072e"></span><span class="sig-name descname"><span class="n"><span class="pre">NUM_MOTORS</span></span></span><br /></dt>
+<dd><p>Number of motors controlled via the serial protocol. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.START_BYTE">
+<span class="target" id="serial__protocols_2utils_8h_1a30d2043ca397843e08c43ade3aaee5b2"></span><span class="sig-name descname"><span class="n"><span class="pre">START_BYTE</span></span></span><a class="headerlink" href="#c.START_BYTE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Special byte indicating the start of a packet. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.END_BYTE">
+<span class="target" id="serial__protocols_2utils_8h_1a5126c1e2dc63cec63fc73710e48a9b5d"></span><span class="sig-name descname"><span class="n"><span class="pre">END_BYTE</span></span></span><a class="headerlink" href="#c.END_BYTE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Special byte indicating the end of a packet. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.MSG_FEEDBACK">
+<span class="target" id="serial__protocols_2utils_8h_1ac4d65ccae3f423f70139217495e2cd98"></span><span class="sig-name descname"><span class="n"><span class="pre">MSG_FEEDBACK</span></span></span><a class="headerlink" href="#c.MSG_FEEDBACK" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Message type for feedback packets. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.FEEDBACK_PAYLOAD_LENGTH">
+<span class="target" id="serial__protocols_2utils_8h_1acd2ea0fb131cece2099c97e29c34c659"></span><span class="sig-name descname"><span class="n"><span class="pre">FEEDBACK_PAYLOAD_LENGTH</span></span></span><a class="headerlink" href="#c.FEEDBACK_PAYLOAD_LENGTH" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Payload length for feedback packets (contains 2 floats). </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.FEEDBACK_PACKET_SIZE">
+<span class="target" id="serial__protocols_2utils_8h_1a9880be088cab58dc6d9782bc31258ca8"></span><span class="sig-name descname"><span class="n"><span class="pre">FEEDBACK_PACKET_SIZE</span></span></span><a class="headerlink" href="#c.FEEDBACK_PACKET_SIZE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Total packet size for feedback packets. </p>
+<p>Calculated as: START_BYTE + MSG_FEEDBACK + payload length + checksum + END_BYTE. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.MSG_JOINT_COMMAND">
+<span class="target" id="serial__protocols_2utils_8h_1a3b9841196ad5c5ec384168d6caf6db3e"></span><span class="sig-name descname"><span class="n"><span class="pre">MSG_JOINT_COMMAND</span></span></span><a class="headerlink" href="#c.MSG_JOINT_COMMAND" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Message type for joint command packets. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.JOINT_COMMAND_PAYLOAD_LENGTH">
+<span class="target" id="serial__protocols_2utils_8h_1a178af33f4519cf8d44cc290463600f88"></span><span class="sig-name descname"><span class="n"><span class="pre">JOINT_COMMAND_PAYLOAD_LENGTH</span></span></span><a class="headerlink" href="#c.JOINT_COMMAND_PAYLOAD_LENGTH" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Payload length for joint command packets (contains 2 floats). </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.JOINT_COMMAND_PACKET_SIZE">
+<span class="target" id="serial__protocols_2utils_8h_1a60e48a418bc0b66b574f5ee4abb296e2"></span><span class="sig-name descname"><span class="n"><span class="pre">JOINT_COMMAND_PACKET_SIZE</span></span></span><a class="headerlink" href="#c.JOINT_COMMAND_PACKET_SIZE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Total packet size for joint command packets. </p>
+<p>Calculated as: START_BYTE + MSG_JOINT_COMMAND + payload length + checksum + END_BYTE. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="serial__protocols_8h"></span><em><span class="pre">file</span></em> <span class="sig-name descname"><span class="pre">serial_protocols.h</span></span></dt>
+<dd><div class="docutils container">
+<em>#include &lt;stdint.h&gt;</em></div>
+<div class="docutils container">
+<em>#include “<a class="reference internal" href="#serial__protocols_2utils_8h"><span class="std std-ref">serial_protocols/utils.h</span></a>”</em></div>
+<p>Declaration of the <a class="reference internal" href="#classSerialProtocols"><span class="std std-ref">SerialProtocols</span></a> class for handling serial communication. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp">
+<span class="target" id="serial__protocols_8h_1af742980593d698725375a7d12711c24f"></span><span class="sig-name descname"><span class="n"><span class="pre">NUM_JOINTS</span></span></span><br /></dt>
+<dd><p>Number of joints used in the serial communication protocol. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="controller_8cpp"></span><em><span class="pre">file</span></em> <span class="sig-name descname"><span class="pre">controller.cpp</span></span></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="#controller_8h"><span class="std std-ref">controller/controller.h</span></a>&gt;</em></div>
+</dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="finger_8cpp"></span><em><span class="pre">file</span></em> <span class="sig-name descname"><span class="pre">finger.cpp</span></span></dt>
+<dd><div class="docutils container">
+<em>#include &lt;string.h&gt;</em></div>
+<div class="docutils container">
+<em>#include “<a class="reference internal" href="#finger_8h"><span class="std std-ref">finger/finger.h</span></a>”</em></div>
+</dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="main_8cpp"></span><em><span class="pre">file</span></em> <span class="sig-name descname"><span class="pre">main.cpp</span></span></dt>
+<dd><div class="docutils container">
+<em>#include &lt;FlexCAN_T4.h&gt;</em></div>
+<div class="docutils container">
+<em>#include &lt;math.h&gt;</em></div>
+<div class="docutils container">
+<em>#include “<a class="reference internal" href="#r1806_8h"><span class="std std-ref">motor_protocols/r1806.h</span></a>”</em></div>
+<div class="docutils container">
+<em>#include “<a class="reference internal" href="#motor__protocols_2utils_8h"><span class="std std-ref">motor_protocols/utils.h</span></a>”</em></div>
+<div class="docutils container">
+<em>#include “<a class="reference internal" href="#serial__protocols_8h"><span class="std std-ref">serial_protocols/serial_protocols.h</span></a>”</em></div>
+<div class="docutils container">
+<em>#include “<a class="reference internal" href="#serial__protocols_2utils_8h"><span class="std std-ref">serial_protocols/utils.h</span></a>”</em></div>
+<div class="docutils container">
+<em>#include “<a class="reference internal" href="#finger_8h"><span class="std std-ref">finger/finger.h</span></a>”</em></div>
+<div class="docutils container">
+<em>#include “<a class="reference internal" href="#controller_8h"><span class="std std-ref">controller/controller.h</span></a>”</em></div>
+<p>Main entry point for the motor control and serial feedback system. </p>
+<p>This file sets up CAN communication, motor and serial protocols, and implements the main control loop. It integrates functionalities from various modules such as motor protocols (<a class="reference internal" href="#classR1806"><span class="std std-ref">R1806</span></a>), serial protocols, finger kinematics, and a <a class="reference internal" href="#classController"><span class="std std-ref">Controller</span></a> for torque control. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv48canSniffRK13CAN_message_t">
+<span id="_CPPv38canSniffRK13CAN_message_t"></span><span id="_CPPv28canSniffRK13CAN_message_t"></span><span id="canSniff__CAN_message_tCR"></span><span class="target" id="main_8cpp_1a8b5e6477c003c4cbfb7cf9ba724fce34"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">canSniff</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">CAN_message_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48canSniffRK13CAN_message_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Callback function for received CAN messages. </p>
+<p>This function processes incoming CAN messages by extracting the motor ID and command ID, updating motor position and velocity states, and applying calibration offsets when needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg</strong> – The received CAN message. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv49calibratev">
+<span id="_CPPv39calibratev"></span><span id="_CPPv29calibratev"></span><span id="calibrate"></span><span class="target" id="main_8cpp_1ad4a7316a51b17d0f691bb3e33b95a5ad"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calibrate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49calibratev" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Calibrates motor position offsets. </p>
+<p>Sends a static torque command for a short duration to settle the system, then records the current motor positions as offsets. After calibration, the system adjusts subsequent motor position readings. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv45setupv">
+<span id="_CPPv35setupv"></span><span id="_CPPv25setupv"></span><span id="setup__void"></span><span class="target" id="main_8cpp_1a7dfd9b79bc5a37d7df40207afbc5431f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setup</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv45setupv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Initializes the system. </p>
+<p>Sets up Serial communication, configures the CAN bus (baud rate, RX/TX pins, FIFO, etc.), registers the CAN receive callback, sends closed-loop control requests, and initiates calibration. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv44loopv">
+<span id="_CPPv34loopv"></span><span id="_CPPv24loopv"></span><span id="loop"></span><span class="target" id="main_8cpp_1afe461d27b9c48d5921c00d521181f12f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loop</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44loopv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Main control loop. </p>
+<p>Processes incoming CAN messages and serial commands, performs torque control using a PID controller, updates joint states, checks safety conditions (e.g., velocity limits), and sends feedback packets over Serial. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv44can1">
+<span id="_CPPv34can1"></span><span id="_CPPv24can1"></span><span id="can1__FlexCAN_T4:CAN1.RX_SIZE_256.TX_SIZE_16:"></span><span class="target" id="main_8cpp_1af491bc470adef8b258c75dafed0077b9"></span><span class="n"><span class="pre">FlexCAN_T4</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">CAN1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">RX_SIZE_256</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">TX_SIZE_16</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">can1</span></span></span><a class="headerlink" href="#_CPPv44can1" title="Link to this definition">¶</a><br /></dt>
+<dd><p>CAN bus object. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv43msg">
+<span id="_CPPv33msg"></span><span id="_CPPv23msg"></span><span id="msg__CAN_message_t"></span><span class="target" id="main_8cpp_1a7b7e0c51c97a7d2837c3aef9953192f1"></span><span class="n"><span class="pre">CAN_message_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">msg</span></span></span><a class="headerlink" href="#_CPPv43msg" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Temporary CAN message storage. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv415r1806_protocols">
+<span id="_CPPv315r1806_protocols"></span><span id="_CPPv215r1806_protocols"></span><span id="r1806_protocols__R1806"></span><span class="target" id="main_8cpp_1a40cbacc0d1c8008497eb1eee2e2b176f"></span><a class="reference internal" href="#_CPPv45R1806" title="R1806"><span class="n"><span class="pre">R1806</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">r1806_protocols</span></span></span><a class="headerlink" href="#_CPPv415r1806_protocols" title="Link to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="#classR1806"><span class="std std-ref">R1806</span></a> motor protocol handler. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv416serial_protocols">
+<span id="_CPPv316serial_protocols"></span><span id="_CPPv216serial_protocols"></span><span id="serial_protocols__SerialProtocols"></span><span class="target" id="main_8cpp_1a6c1a12e7433ba7b8e0403a9c8ec115ff"></span><a class="reference internal" href="#_CPPv415SerialProtocols" title="SerialProtocols"><span class="n"><span class="pre">SerialProtocols</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">serial_protocols</span></span></span><a class="headerlink" href="#_CPPv416serial_protocols" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Serial protocol handler. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv46finger">
+<span id="_CPPv36finger"></span><span id="_CPPv26finger"></span><span id="finger__Finger"></span><span class="target" id="main_8cpp_1adee0025a48211ddc9040329deb7e2cce"></span><a class="reference internal" href="#_CPPv46Finger" title="Finger"><span class="n"><span class="pre">Finger</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">finger</span></span></span><a class="headerlink" href="#_CPPv46finger" title="Link to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="#classFinger"><span class="std std-ref">Finger</span></a> kinematics handler. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv410controller">
+<span id="_CPPv310controller"></span><span id="_CPPv210controller"></span><span id="controller__Controller"></span><span class="target" id="main_8cpp_1a872eb72dc091dfc922f3461989909363"></span><a class="reference internal" href="#_CPPv410Controller" title="Controller"><span class="n"><span class="pre">Controller</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">controller</span></span></span><a class="headerlink" href="#_CPPv410controller" title="Link to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="#classController"><span class="std std-ref">Controller</span></a> for torque control. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv412joint_states">
+<span id="_CPPv312joint_states"></span><span id="_CPPv212joint_states"></span><span id="joint_states__floatP"></span><span class="target" id="main_8cpp_1a147b8003a5567f680edf4838fa5b4972"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">joint_states</span></span></span><a class="headerlink" href="#_CPPv412joint_states" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Pointer to the current joint states. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv413motor_offsets">
+<span id="_CPPv313motor_offsets"></span><span id="_CPPv213motor_offsets"></span><span id="motor_offsets__floatA"></span><span class="target" id="main_8cpp_1a6dcd474047ac30b63b6203f7c616d87d"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motor_offsets</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv413motor_offsets" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Offsets for motor positions. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv45print">
+<span id="_CPPv35print"></span><span id="_CPPv25print"></span><span id="print__floatA"></span><span class="target" id="main_8cpp_1a4e0bf4dcd86c3fc4661fc2f75dbf0054"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">print</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv45print" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Array used for serial feedback (positions). </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv414joint_commands">
+<span id="_CPPv314joint_commands"></span><span id="_CPPv214joint_commands"></span><span id="joint_commands__floatP"></span><span class="target" id="main_8cpp_1a650a863e2f7800182a4f1c9f73b29f69"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">joint_commands</span></span></span><a class="headerlink" href="#_CPPv414joint_commands" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Pointer to decoded joint command values. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv421motor_position_states">
+<span id="_CPPv321motor_position_states"></span><span id="_CPPv221motor_position_states"></span><span id="motor_position_states__floatA"></span><span class="target" id="main_8cpp_1a3ebd040882873f33ba4ca79846ecd37b"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motor_position_states</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv421motor_position_states" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Current motor position states. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv421motor_velocity_states">
+<span id="_CPPv321motor_velocity_states"></span><span id="_CPPv221motor_velocity_states"></span><span id="motor_velocity_states__floatA"></span><span class="target" id="main_8cpp_1ada5550d3516005d96a11c936ee550114"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motor_velocity_states</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv421motor_velocity_states" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Current motor velocity states. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv422motor_position_offsets">
+<span id="_CPPv322motor_position_offsets"></span><span id="_CPPv222motor_position_offsets"></span><span id="motor_position_offsets__floatA"></span><span class="target" id="main_8cpp_1ae555d77b5a5f0935e5ee63b6d2a6a191"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motor_position_offsets</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv422motor_position_offsets" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Calibration offsets for motor positions. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv413joint_targets">
+<span id="_CPPv313joint_targets"></span><span id="_CPPv213joint_targets"></span><span id="joint_targets__floatA"></span><span class="target" id="main_8cpp_1a682d64c640e8b618b1e305c56f7c099a"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">joint_targets</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv413joint_targets" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Desired joint targets. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv413static_torque">
+<span id="_CPPv313static_torque"></span><span id="_CPPv213static_torque"></span><span id="static_torque__float"></span><span class="target" id="main_8cpp_1ad1b3af4cc560a77793b48b8e544f380d"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">static_torque</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.065</span></span><a class="headerlink" href="#_CPPv413static_torque" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Static torque used during calibration. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv414velocity_limit">
+<span id="_CPPv314velocity_limit"></span><span id="_CPPv214velocity_limit"></span><span id="velocity_limit__float"></span><span class="target" id="main_8cpp_1af5c20b3a568c8f616ca560e3db173396"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">velocity_limit</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">50.0</span></span><a class="headerlink" href="#_CPPv414velocity_limit" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Velocity limit for safety. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv410calibrated">
+<span id="_CPPv310calibrated"></span><span id="_CPPv210calibrated"></span><span id="calibrated__b"></span><span class="target" id="main_8cpp_1a18358243788f8a956ff50db015724a56"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calibrated</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv410calibrated" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Flag indicating whether calibration is complete. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv412motor_states">
+<span id="_CPPv312motor_states"></span><span id="_CPPv212motor_states"></span><span id="motor_states__std::vector:double:"></span><span class="target" id="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motor_states</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv412motor_states" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Current motor positions (std::vector format). </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv413motor_torques">
+<span id="_CPPv313motor_torques"></span><span id="_CPPv213motor_torques"></span><span id="motor_torques__std::vector:double:"></span><span class="target" id="main_8cpp_1ab8f141b772f50e494bf0c2ca59d8f308"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motor_torques</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv413motor_torques" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Computed motor torques. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv415joint_error_sum">
+<span id="_CPPv315joint_error_sum"></span><span id="_CPPv215joint_error_sum"></span><span id="joint_error_sum__std::vector:double:"></span><span class="target" id="main_8cpp_1aa3d50d72d4c17514499781eda97e99cb"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">joint_error_sum</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv415joint_error_sum" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Accumulated joint error sum. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv420joint_states_desired">
+<span id="_CPPv320joint_states_desired"></span><span id="_CPPv220joint_states_desired"></span><span id="joint_states_desired__std::vector:double:"></span><span class="target" id="main_8cpp_1a9d15cb77cbe6fd6e64a2f1f0d6af33db"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">joint_states_desired</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv420joint_states_desired" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Desired joint states. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv416motor_velocities">
+<span id="_CPPv316motor_velocities"></span><span id="_CPPv216motor_velocities"></span><span id="motor_velocities__std::vector:double:"></span><span class="target" id="main_8cpp_1a9f670be4d519d72bc5e530303037b7e9"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motor_velocities</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv416motor_velocities" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Current motor velocities. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv46packet">
+<span id="_CPPv36packet"></span><span id="_CPPv26packet"></span><span id="packet__uint8_tP"></span><span class="target" id="main_8cpp_1a021141e4ed340d853a361edbafdc68a8"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">packet</span></span></span><a class="headerlink" href="#_CPPv46packet" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Pointer to a serial packet. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv47timeout">
+<span id="_CPPv37timeout"></span><span id="_CPPv27timeout"></span><span id="timeout__uint32_t"></span><span class="target" id="main_8cpp_1ab5627d8d8b095c198e2523c44ca380ac"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">timeout</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">millis</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv47timeout" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Timeout marker for CAN message sending. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv411danger_mode">
+<span id="_CPPv311danger_mode"></span><span id="_CPPv211danger_mode"></span><span id="danger_mode__i"></span><span class="target" id="main_8cpp_1a0a2bc0c52048720b86d3ac3757be2a74"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">danger_mode</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv411danger_mode" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Flag indicating if danger mode is active. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv423received_joint_commands">
+<span id="_CPPv323received_joint_commands"></span><span id="_CPPv223received_joint_commands"></span><span id="received_joint_commands__b"></span><span class="target" id="main_8cpp_1aa391c452d54cd2a2548594f45550614e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">received_joint_commands</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv423received_joint_commands" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Flag indicating if valid joint commands were received. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv48j1_input">
+<span id="_CPPv38j1_input"></span><span id="_CPPv28j1_input"></span><span id="j1_input__float"></span><span class="target" id="main_8cpp_1a59918f61772470adeabda7051b0989aa"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">j1_input</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv48j1_input" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Raw input for joint 1. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv48j2_input">
+<span id="_CPPv38j2_input"></span><span id="_CPPv28j2_input"></span><span id="j2_input__float"></span><span class="target" id="main_8cpp_1a53d34378b2db9479f9639971a3af17ae"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">j2_input</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv48j2_input" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Raw input for joint 2. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv417motor1_torque_cmd">
+<span id="_CPPv317motor1_torque_cmd"></span><span id="_CPPv217motor1_torque_cmd"></span><span id="motor1_torque_cmd__CAN_message_t"></span><span class="target" id="main_8cpp_1a611fecda0f687436671e9851b92e192e"></span><span class="n"><span class="pre">CAN_message_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motor1_torque_cmd</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415r1806_protocols" title="r1806_protocols"><span class="n"><span class="pre">r1806_protocols</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">encodeTorqueCommand</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv417motor1_torque_cmd" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv429motor1_close_loop_request_cmd">
+<span id="_CPPv329motor1_close_loop_request_cmd"></span><span id="_CPPv229motor1_close_loop_request_cmd"></span><span id="motor1_close_loop_request_cmd__CAN_message_t"></span><span class="target" id="main_8cpp_1a9b18957b3169fc2992425d6488c08afc"></span><span class="n"><span class="pre">CAN_message_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motor1_close_loop_request_cmd</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415r1806_protocols" title="r1806_protocols"><span class="n"><span class="pre">r1806_protocols</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">encodeRequestedStateCommand</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv46ODrive" title="ODrive"><span class="n"><span class="pre">ODrive</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">Axis</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">AxisState</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">CLOSED_LOOP_CONTROL</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv429motor1_close_loop_request_cmd" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv417motor2_torque_cmd">
+<span id="_CPPv317motor2_torque_cmd"></span><span id="_CPPv217motor2_torque_cmd"></span><span id="motor2_torque_cmd__CAN_message_t"></span><span class="target" id="main_8cpp_1a757e1bd96b23c795f03d7ff02112c52b"></span><span class="n"><span class="pre">CAN_message_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motor2_torque_cmd</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415r1806_protocols" title="r1806_protocols"><span class="n"><span class="pre">r1806_protocols</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">encodeTorqueCommand</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv417motor2_torque_cmd" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv429motor2_close_loop_request_cmd">
+<span id="_CPPv329motor2_close_loop_request_cmd"></span><span id="_CPPv229motor2_close_loop_request_cmd"></span><span id="motor2_close_loop_request_cmd__CAN_message_t"></span><span class="target" id="main_8cpp_1acde79ade2105ba5a318746769e4b75b4"></span><span class="n"><span class="pre">CAN_message_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motor2_close_loop_request_cmd</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415r1806_protocols" title="r1806_protocols"><span class="n"><span class="pre">r1806_protocols</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">encodeRequestedStateCommand</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv46ODrive" title="ODrive"><span class="n"><span class="pre">ODrive</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">Axis</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">AxisState</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">CLOSED_LOOP_CONTROL</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv429motor2_close_loop_request_cmd" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv417motor3_torque_cmd">
+<span id="_CPPv317motor3_torque_cmd"></span><span id="_CPPv217motor3_torque_cmd"></span><span id="motor3_torque_cmd__CAN_message_t"></span><span class="target" id="main_8cpp_1a92903169297b3ab5289d4dc72b170352"></span><span class="n"><span class="pre">CAN_message_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motor3_torque_cmd</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415r1806_protocols" title="r1806_protocols"><span class="n"><span class="pre">r1806_protocols</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">encodeTorqueCommand</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv417motor3_torque_cmd" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv429motor3_close_loop_request_cmd">
+<span id="_CPPv329motor3_close_loop_request_cmd"></span><span id="_CPPv229motor3_close_loop_request_cmd"></span><span id="motor3_close_loop_request_cmd__CAN_message_t"></span><span class="target" id="main_8cpp_1a566764c298010102b2468c64afb68ec9"></span><span class="n"><span class="pre">CAN_message_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motor3_close_loop_request_cmd</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415r1806_protocols" title="r1806_protocols"><span class="n"><span class="pre">r1806_protocols</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">encodeRequestedStateCommand</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">3</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv46ODrive" title="ODrive"><span class="n"><span class="pre">ODrive</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">Axis</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">AxisState</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">CLOSED_LOOP_CONTROL</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv429motor3_close_loop_request_cmd" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv417motor4_torque_cmd">
+<span id="_CPPv317motor4_torque_cmd"></span><span id="_CPPv217motor4_torque_cmd"></span><span id="motor4_torque_cmd__CAN_message_t"></span><span class="target" id="main_8cpp_1a8713dccb56c13753e3dcbd40557f8b38"></span><span class="n"><span class="pre">CAN_message_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motor4_torque_cmd</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415r1806_protocols" title="r1806_protocols"><span class="n"><span class="pre">r1806_protocols</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">encodeTorqueCommand</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv417motor4_torque_cmd" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv429motor4_close_loop_request_cmd">
+<span id="_CPPv329motor4_close_loop_request_cmd"></span><span id="_CPPv229motor4_close_loop_request_cmd"></span><span id="motor4_close_loop_request_cmd__CAN_message_t"></span><span class="target" id="main_8cpp_1a1bd6510e1a4c11d79832fc41619bcdd6"></span><span class="n"><span class="pre">CAN_message_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motor4_close_loop_request_cmd</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415r1806_protocols" title="r1806_protocols"><span class="n"><span class="pre">r1806_protocols</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">encodeRequestedStateCommand</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv46ODrive" title="ODrive"><span class="n"><span class="pre">ODrive</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">Axis</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">AxisState</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">CLOSED_LOOP_CONTROL</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv429motor4_close_loop_request_cmd" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv419POSITION_TIMEOUT_MS">
+<span id="_CPPv319POSITION_TIMEOUT_MS"></span><span id="_CPPv219POSITION_TIMEOUT_MS"></span><span id="POSITION_TIMEOUT_MS__uint32_tC"></span><span class="target" id="main_8cpp_1a698746f2c571003e99bc70c3730e2276"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">POSITION_TIMEOUT_MS</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">100</span></span><a class="headerlink" href="#_CPPv419POSITION_TIMEOUT_MS" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Maximum allowed delay for receiving joint commands. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv419lastpositionCmdTime">
+<span id="_CPPv319lastpositionCmdTime"></span><span id="_CPPv219lastpositionCmdTime"></span><span id="lastpositionCmdTime__uint32_t"></span><span class="target" id="main_8cpp_1a8362cdf9289c711a7450ad930a6304b9"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lastpositionCmdTime</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">millis</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv419lastpositionCmdTime" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Timestamp of the last valid joint command received. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="r1806_8cpp"></span><em><span class="pre">file</span></em> <span class="sig-name descname"><span class="pre">r1806.cpp</span></span></dt>
+<dd><div class="docutils container">
+<em>#include &lt;cmath&gt;</em></div>
+<div class="docutils container">
+<em>#include &lt;cstring&gt;</em></div>
+<div class="docutils container">
+<em>#include “<a class="reference internal" href="#r1806_8h"><span class="std std-ref">motor_protocols/r1806.h</span></a>”</em></div>
+<div class="docutils container">
+<em>#include “<a class="reference internal" href="#motor__protocols_2utils_8h"><span class="std std-ref">motor_protocols/utils.h</span></a>”</em></div>
+</dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="serial__protocols_8cpp"></span><em><span class="pre">file</span></em> <span class="sig-name descname"><span class="pre">serial_protocols.cpp</span></span></dt>
+<dd><div class="docutils container">
+<em>#include &lt;stdint.h&gt;</em></div>
+<div class="docutils container">
+<em>#include &lt;string.h&gt;</em></div>
+<div class="docutils container">
+<em>#include “<a class="reference internal" href="#serial__protocols_8h"><span class="std std-ref">serial_protocols/serial_protocols.h</span></a>”</em></div>
+</dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="dir_39b9d54b040febeebc00140e5c10ba61"></span><em><span class="pre">dir</span></em> <span class="sig-name descname"><span class="pre">include/controller</span></span></dt>
+<dd></dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="dir_41ef5d8a90b9cc03a02949a5c062e6f0"></span><em><span class="pre">dir</span></em> <span class="sig-name descname"><span class="pre">src/controller</span></span></dt>
+<dd></dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="dir_831d85dbdf859731adc2316f45fa3535"></span><em><span class="pre">dir</span></em> <span class="sig-name descname"><span class="pre">include/finger</span></span></dt>
+<dd></dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="dir_4fc349792385a19944149360642eea54"></span><em><span class="pre">dir</span></em> <span class="sig-name descname"><span class="pre">src/finger</span></span></dt>
+<dd></dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="dir_d44c64559bbebec7f509842c48db8b23"></span><em><span class="pre">dir</span></em> <span class="sig-name descname"><span class="pre">include</span></span></dt>
+<dd></dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="dir_442fda6247240e5b68514f32d9ee8e0d"></span><em><span class="pre">dir</span></em> <span class="sig-name descname"><span class="pre">include/motor_protocols</span></span></dt>
+<dd></dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="dir_4135090132a559989da7f3f532f06f0f"></span><em><span class="pre">dir</span></em> <span class="sig-name descname"><span class="pre">src/motor_protocols</span></span></dt>
+<dd></dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="dir_619e292b90bcfca1e3756f57fa800061"></span><em><span class="pre">dir</span></em> <span class="sig-name descname"><span class="pre">include/serial_protocols</span></span></dt>
+<dd></dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="dir_605c83cd5e8aa7930b76376c97b75646"></span><em><span class="pre">dir</span></em> <span class="sig-name descname"><span class="pre">src/serial_protocols</span></span></dt>
+<dd></dd></dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="dir_68267d1309a1af8e8297ef4c3efbcdba"></span><em><span class="pre">dir</span></em> <span class="sig-name descname"><span class="pre">src</span></span></dt>
+<dd></dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Team 2N.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

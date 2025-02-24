@@ -1,0 +1,411 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classController" kind="class" language="C++" prot="public">
+    <compoundname>Controller</compoundname>
+    <includes refid="controller_8h" local="no">controller.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classController_1a6ba667bed4b9ce292986b4e13d74dce1" prot="private" static="no" mutable="no">
+        <type><ref refid="classFinger" kindref="compound">Finger</ref></type>
+        <definition>Finger Controller::finger</definition>
+        <argsstring></argsstring>
+        <name>finger</name>
+        <qualifiedname>Controller::finger</qualifiedname>
+        <briefdescription>
+<para>Instance of the <ref refid="classFinger" kindref="compound">Finger</ref> class used for finger control. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="68" column="12" bodyfile="include/controller/controller.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classController_1ac0ec6432f5352ea8fda3c4e95a2396c2" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Controller::low_kp</definition>
+        <argsstring></argsstring>
+        <name>low_kp</name>
+        <qualifiedname>Controller::low_kp</qualifiedname>
+        <briefdescription>
+<para>Low and high proportional gains. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="71" column="12" bodyfile="include/controller/controller.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classController_1ae155dc6c371769d119608d9a472165e0" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Controller::high_kp</definition>
+        <argsstring></argsstring>
+        <name>high_kp</name>
+        <qualifiedname>Controller::high_kp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="71" column="19" bodyfile="include/controller/controller.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classController_1ab237bb6fe0212691e5d04f69aab51528" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Controller::low_kd</definition>
+        <argsstring></argsstring>
+        <name>low_kd</name>
+        <qualifiedname>Controller::low_kd</qualifiedname>
+        <briefdescription>
+<para>Low and high derivative gains. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="73" column="12" bodyfile="include/controller/controller.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classController_1a78a40c61c862a81279b052ef45ddf5f2" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Controller::high_kd</definition>
+        <argsstring></argsstring>
+        <name>high_kd</name>
+        <qualifiedname>Controller::high_kd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="73" column="19" bodyfile="include/controller/controller.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classController_1aed65e19cd6aaad4e781556789ae444d0" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Controller::low_ki</definition>
+        <argsstring></argsstring>
+        <name>low_ki</name>
+        <qualifiedname>Controller::low_ki</qualifiedname>
+        <briefdescription>
+<para>Low and high integral gains. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="75" column="12" bodyfile="include/controller/controller.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classController_1affad21bf0b3714abe33e0d4139b49607" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Controller::high_ki</definition>
+        <argsstring></argsstring>
+        <name>high_ki</name>
+        <qualifiedname>Controller::high_ki</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="75" column="19" bodyfile="include/controller/controller.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classController_1a42bbdcd708d335c5a3ee36328c2e433f" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Controller::r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <qualifiedname>Controller::r</qualifiedname>
+        <briefdescription>
+<para>Motor and finger pulley dimensions (expected to be defined elsewhere). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="78" column="12" bodyfile="include/controller/controller.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classController_1ac4b294e00b9a08b01f34003208ace9fe" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Controller::R1</definition>
+        <argsstring></argsstring>
+        <name>R1</name>
+        <qualifiedname>Controller::R1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="78" column="14" bodyfile="include/controller/controller.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classController_1a854e5e6386594693be149d09221ebc40" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Controller::R2</definition>
+        <argsstring></argsstring>
+        <name>R2</name>
+        <qualifiedname>Controller::R2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="78" column="17" bodyfile="include/controller/controller.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classController_1a83699f45f580ca1174240ca9bd9ea381" prot="private" static="no" mutable="no">
+        <type>std::array&lt; std::array&lt; double, 2 &gt;, 2 &gt;</type>
+        <definition>std::array&lt;std::array&lt;double, 2&gt;, 2&gt; Controller::kp</definition>
+        <argsstring></argsstring>
+        <name>kp</name>
+        <qualifiedname>Controller::kp</qualifiedname>
+        <briefdescription>
+<para>2x2 matrices for PID gains. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="81" column="16" bodyfile="include/controller/controller.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classController_1aed93f508b2d020780d9042ec8143f4ff" prot="private" static="no" mutable="no">
+        <type>std::array&lt; std::array&lt; double, 2 &gt;, 2 &gt;</type>
+        <definition>std::array&lt;std::array&lt;double, 2&gt;, 2&gt; Controller::kd</definition>
+        <argsstring></argsstring>
+        <name>kd</name>
+        <qualifiedname>Controller::kd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="81" column="19" bodyfile="include/controller/controller.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classController_1ab62072d5c082bedd4a6aba770b436a62" prot="private" static="no" mutable="no">
+        <type>std::array&lt; std::array&lt; double, 2 &gt;, 2 &gt;</type>
+        <definition>std::array&lt;std::array&lt;double, 2&gt;, 2&gt; Controller::ki</definition>
+        <argsstring></argsstring>
+        <name>ki</name>
+        <qualifiedname>Controller::ki</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="81" column="22" bodyfile="include/controller/controller.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classController_1ad587204ca05a62a200065529fd426e0d" prot="private" static="no" mutable="no">
+        <type>std::array&lt; std::array&lt; double, 4 &gt;, 2 &gt;</type>
+        <definition>std::array&lt;std::array&lt;double, 4&gt;, 2&gt; Controller::trans_mat</definition>
+        <argsstring></argsstring>
+        <name>trans_mat</name>
+        <qualifiedname>Controller::trans_mat</qualifiedname>
+        <briefdescription>
+<para>2x4 transformation matrix converting joint torques to motor torques. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="84" column="16" bodyfile="include/controller/controller.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classController_1a95c56822d667e94b031451729ce069a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Controller::Controller</definition>
+        <argsstring>()</argsstring>
+        <name>Controller</name>
+        <qualifiedname>Controller::Controller</qualifiedname>
+        <briefdescription>
+<para>Constructs a new <ref refid="classController" kindref="compound">Controller</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the PID gains and transformation matrix used for converting joint torques to motor torques.</para>
+<para>Initializes the PID gains, pulley dimensions, and transformation matrix used for motor torque conversion. Note: D_MOTOR_PULLEY, D_FINGER_PULLEY_1, and D_FINGER_PULLEY_2 should be defined elsewhere. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="32" column="5" bodyfile="src/controller/controller.cpp" bodystart="9" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classController_1aadf118b6025c2045262e05c68b227328" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; std::vector&lt; double &gt;, std::vector&lt; double &gt; &gt;</type>
+        <definition>std::pair&lt; std::vector&lt; double &gt;, std::vector&lt; double &gt; &gt; Controller::torque_control</definition>
+        <argsstring>(std::vector&lt; double &gt; joint_states, std::vector&lt; double &gt; joint_states_desired, std::vector&lt; double &gt; joint_error_sum, std::vector&lt; double &gt; motor_velocities)</argsstring>
+        <name>torque_control</name>
+        <qualifiedname>Controller::torque_control</qualifiedname>
+        <param>
+          <type>std::vector&lt; double &gt;</type>
+          <declname>joint_states</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; double &gt;</type>
+          <declname>joint_states_desired</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; double &gt;</type>
+          <declname>joint_error_sum</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; double &gt;</type>
+          <declname>motor_velocities</declname>
+        </param>
+        <briefdescription>
+<para>Computes motor torques based on PID control. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes motor torques using PID control.</para>
+<para>Calculates the difference between the desired and current joint states, updates the error sum, and computes the derivative of the error from motor velocities. It then applies a PID control algorithm to determine the joint torques, which are transformed into motor torques.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>joint_states</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of current joint states. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>joint_states_desired</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of desired joint states. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>joint_error_sum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector containing the accumulated joint error over time. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>motor_velocities</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of current motor velocities. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A std::pair consisting of:<itemizedlist>
+<listitem><para>A vector of computed motor torques.</para>
+</listitem><listitem><para>The updated joint error sum vector.</para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+This method calculates the error between desired and current joint states, updates the accumulated error, and computes the derivative of the error from the motor velocities. Then, it applies a PID algorithm to compute the joint torques and converts these into motor torques using a transformation matrix.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>joint_states</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of current joint states. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>joint_states_desired</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of desired joint states. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>joint_error_sum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector containing the accumulated joint error. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>motor_velocities</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of current motor velocities. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A std::pair containing:<itemizedlist>
+<listitem><para>A vector of computed motor torques.</para>
+</listitem><listitem><para>The updated joint error sum vector. </para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="49" column="15" bodyfile="src/controller/controller.cpp" bodystart="35" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classController_1ad24b67ab07743a84a7a93e82e7025924" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controller::check_error</definition>
+        <argsstring>(std::vector&lt; double &gt; joint_error)</argsstring>
+        <name>check_error</name>
+        <qualifiedname>Controller::check_error</qualifiedname>
+        <param>
+          <type>std::vector&lt; double &gt;</type>
+          <declname>joint_error</declname>
+        </param>
+        <briefdescription>
+<para>Adjusts PID gains based on the current joint error. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Adjusts the PID gains based on the current joint error.</para>
+<para>Depending on whether the joint errors are negative or positive, the PID gains (kp, ki, kd) are updated to use either lower or higher predefined values.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>joint_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector containing the error for each joint.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The function selects between low and high PID gains depending on whether each joint error is positive or negative.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>joint_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector containing the error for each joint. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/controller/controller.h" line="64" column="10" bodyfile="src/controller/controller.cpp" bodystart="87" bodyend="141"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Provides torque control functionality using a PID algorithm. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class calculates joint torques by comparing current and desired joint states, accumulating joint errors, and adjusting PID gains accordingly. </para>
+    </detaileddescription>
+    <location file="include/controller/controller.h" line="24" column="1" bodyfile="include/controller/controller.h" bodystart="24" bodyend="85"/>
+    <listofallmembers>
+      <member refid="classController_1ad24b67ab07743a84a7a93e82e7025924" prot="public" virt="non-virtual"><scope>Controller</scope><name>check_error</name></member>
+      <member refid="classController_1a95c56822d667e94b031451729ce069a9" prot="public" virt="non-virtual"><scope>Controller</scope><name>Controller</name></member>
+      <member refid="classController_1a6ba667bed4b9ce292986b4e13d74dce1" prot="private" virt="non-virtual"><scope>Controller</scope><name>finger</name></member>
+      <member refid="classController_1a78a40c61c862a81279b052ef45ddf5f2" prot="private" virt="non-virtual"><scope>Controller</scope><name>high_kd</name></member>
+      <member refid="classController_1affad21bf0b3714abe33e0d4139b49607" prot="private" virt="non-virtual"><scope>Controller</scope><name>high_ki</name></member>
+      <member refid="classController_1ae155dc6c371769d119608d9a472165e0" prot="private" virt="non-virtual"><scope>Controller</scope><name>high_kp</name></member>
+      <member refid="classController_1aed93f508b2d020780d9042ec8143f4ff" prot="private" virt="non-virtual"><scope>Controller</scope><name>kd</name></member>
+      <member refid="classController_1ab62072d5c082bedd4a6aba770b436a62" prot="private" virt="non-virtual"><scope>Controller</scope><name>ki</name></member>
+      <member refid="classController_1a83699f45f580ca1174240ca9bd9ea381" prot="private" virt="non-virtual"><scope>Controller</scope><name>kp</name></member>
+      <member refid="classController_1ab237bb6fe0212691e5d04f69aab51528" prot="private" virt="non-virtual"><scope>Controller</scope><name>low_kd</name></member>
+      <member refid="classController_1aed65e19cd6aaad4e781556789ae444d0" prot="private" virt="non-virtual"><scope>Controller</scope><name>low_ki</name></member>
+      <member refid="classController_1ac0ec6432f5352ea8fda3c4e95a2396c2" prot="private" virt="non-virtual"><scope>Controller</scope><name>low_kp</name></member>
+      <member refid="classController_1a42bbdcd708d335c5a3ee36328c2e433f" prot="private" virt="non-virtual"><scope>Controller</scope><name>r</name></member>
+      <member refid="classController_1ac4b294e00b9a08b01f34003208ace9fe" prot="private" virt="non-virtual"><scope>Controller</scope><name>R1</name></member>
+      <member refid="classController_1a854e5e6386594693be149d09221ebc40" prot="private" virt="non-virtual"><scope>Controller</scope><name>R2</name></member>
+      <member refid="classController_1aadf118b6025c2045262e05c68b227328" prot="public" virt="non-virtual"><scope>Controller</scope><name>torque_control</name></member>
+      <member refid="classController_1ad587204ca05a62a200065529fd426e0d" prot="private" virt="non-virtual"><scope>Controller</scope><name>trans_mat</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

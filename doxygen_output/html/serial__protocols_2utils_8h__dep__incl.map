@@ -1,0 +1,8 @@
+<map id="include/serial_protocols/utils.h" name="include/serial_protocols/utils.h">
+<area shape="rect" id="Node000001" title="Defines constants used in the serial communication protocols." alt="" coords="68,5,244,45"/>
+<area shape="rect" id="Node000002" href="$serial__protocols_8h.html" title="Declaration of the SerialProtocols class for handling serial communication." alt="" coords="5,93,181,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,58,109,95,105,92,132,55"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="Main entry point for the motor control and serial feedback system." alt="" coords="103,181,209,207"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="180,56,196,93,200,113,196,134,184,161,168,182,164,179,179,158,191,133,194,113,191,94,175,58"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="119,143,149,179,145,183,115,146"/>
+</map>

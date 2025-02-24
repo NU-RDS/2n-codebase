@@ -1,0 +1,81 @@
+\doxysection{include/serial\+\_\+protocols/utils.h File Reference}
+\hypertarget{serial__protocols_2utils_8h}{}\label{serial__protocols_2utils_8h}\index{include/serial\_protocols/utils.h@{include/serial\_protocols/utils.h}}
+
+
+Defines constants used in the serial communication protocols.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for utils.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{serial__protocols_2utils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{serial__protocols_2utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{serial__protocols_2utils_8h_a52b56a381e777b55e1b59019d9ee072e}\label{serial__protocols_2utils_8h_a52b56a381e777b55e1b59019d9ee072e} 
+\#define {\bfseries NUM\+\_\+\+MOTORS}~4
+\begin{DoxyCompactList}\small\item\em Number of motors controlled via the serial protocol. \end{DoxyCompactList}\item 
+\Hypertarget{serial__protocols_2utils_8h_a30d2043ca397843e08c43ade3aaee5b2}\label{serial__protocols_2utils_8h_a30d2043ca397843e08c43ade3aaee5b2} 
+\#define {\bfseries START\+\_\+\+BYTE}~0x\+AA
+\begin{DoxyCompactList}\small\item\em Special byte indicating the start of a packet. \end{DoxyCompactList}\item 
+\Hypertarget{serial__protocols_2utils_8h_a5126c1e2dc63cec63fc73710e48a9b5d}\label{serial__protocols_2utils_8h_a5126c1e2dc63cec63fc73710e48a9b5d} 
+\#define {\bfseries END\+\_\+\+BYTE}~0x\+BB
+\begin{DoxyCompactList}\small\item\em Special byte indicating the end of a packet. \end{DoxyCompactList}\item 
+\Hypertarget{serial__protocols_2utils_8h_ac4d65ccae3f423f70139217495e2cd98}\label{serial__protocols_2utils_8h_ac4d65ccae3f423f70139217495e2cd98} 
+\#define {\bfseries MSG\+\_\+\+FEEDBACK}~0x01
+\begin{DoxyCompactList}\small\item\em Message type for feedback packets. \end{DoxyCompactList}\item 
+\Hypertarget{serial__protocols_2utils_8h_acd2ea0fb131cece2099c97e29c34c659}\label{serial__protocols_2utils_8h_acd2ea0fb131cece2099c97e29c34c659} 
+\#define {\bfseries FEEDBACK\+\_\+\+PAYLOAD\+\_\+\+LENGTH}~8
+\begin{DoxyCompactList}\small\item\em Payload length for feedback packets (contains 2 floats). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{serial__protocols_2utils_8h_a9880be088cab58dc6d9782bc31258ca8}{FEEDBACK\+\_\+\+PACKET\+\_\+\+SIZE}}~13
+\begin{DoxyCompactList}\small\item\em Total packet size for feedback packets. \end{DoxyCompactList}\item 
+\Hypertarget{serial__protocols_2utils_8h_a3b9841196ad5c5ec384168d6caf6db3e}\label{serial__protocols_2utils_8h_a3b9841196ad5c5ec384168d6caf6db3e} 
+\#define {\bfseries MSG\+\_\+\+JOINT\+\_\+\+COMMAND}~0x02
+\begin{DoxyCompactList}\small\item\em Message type for joint command packets. \end{DoxyCompactList}\item 
+\Hypertarget{serial__protocols_2utils_8h_a178af33f4519cf8d44cc290463600f88}\label{serial__protocols_2utils_8h_a178af33f4519cf8d44cc290463600f88} 
+\#define {\bfseries JOINT\+\_\+\+COMMAND\+\_\+\+PAYLOAD\+\_\+\+LENGTH}~8
+\begin{DoxyCompactList}\small\item\em Payload length for joint command packets (contains 2 floats). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{serial__protocols_2utils_8h_a60e48a418bc0b66b574f5ee4abb296e2}{JOINT\+\_\+\+COMMAND\+\_\+\+PACKET\+\_\+\+SIZE}}~13
+\begin{DoxyCompactList}\small\item\em Total packet size for joint command packets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines constants used in the serial communication protocols. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{serial__protocols_2utils_8h_a9880be088cab58dc6d9782bc31258ca8}\label{serial__protocols_2utils_8h_a9880be088cab58dc6d9782bc31258ca8} 
+\index{utils.h@{utils.h}!FEEDBACK\_PACKET\_SIZE@{FEEDBACK\_PACKET\_SIZE}}
+\index{FEEDBACK\_PACKET\_SIZE@{FEEDBACK\_PACKET\_SIZE}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{FEEDBACK\_PACKET\_SIZE}{FEEDBACK\_PACKET\_SIZE}}
+{\footnotesize\ttfamily \#define FEEDBACK\+\_\+\+PACKET\+\_\+\+SIZE~13}
+
+
+
+Total packet size for feedback packets. 
+
+Calculated as\+: START\+\_\+\+BYTE + MSG\+\_\+\+FEEDBACK + payload length + checksum + END\+\_\+\+BYTE. \Hypertarget{serial__protocols_2utils_8h_a60e48a418bc0b66b574f5ee4abb296e2}\label{serial__protocols_2utils_8h_a60e48a418bc0b66b574f5ee4abb296e2} 
+\index{utils.h@{utils.h}!JOINT\_COMMAND\_PACKET\_SIZE@{JOINT\_COMMAND\_PACKET\_SIZE}}
+\index{JOINT\_COMMAND\_PACKET\_SIZE@{JOINT\_COMMAND\_PACKET\_SIZE}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{JOINT\_COMMAND\_PACKET\_SIZE}{JOINT\_COMMAND\_PACKET\_SIZE}}
+{\footnotesize\ttfamily \#define JOINT\+\_\+\+COMMAND\+\_\+\+PACKET\+\_\+\+SIZE~13}
+
+
+
+Total packet size for joint command packets. 
+
+Calculated as\+: START\+\_\+\+BYTE + MSG\+\_\+\+JOINT\+\_\+\+COMMAND + payload length + checksum + END\+\_\+\+BYTE. 

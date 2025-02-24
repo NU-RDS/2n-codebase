@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="finger_8cpp" kind="file" language="C++">
+    <compoundname>finger.cpp</compoundname>
+    <includes local="no">string.h</includes>
+    <includes refid="finger_8h" local="yes">finger/finger.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>finger/finger.h</label>
+        <link refid="finger_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/finger/finger.cpp</label>
+        <link refid="finger_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="finger_8h" kindref="compound">finger/finger.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><ref refid="classFinger_1aa71829d5592249136d8f8c3128bc757b" kindref="member">Finger::Finger</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/><ref refid="classFinger_1aefe9b0417b1bdc93bce95df895520b5e" kindref="member">Finger::getJointStates</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[<ref refid="finger_8h_1a52b56a381e777b55e1b59019d9ee072e" kindref="member">NUM_MOTORS</ref>])<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>positions<sp/>for<sp/>joint<sp/>1<sp/>using<sp/>motor<sp/>states<sp/>0<sp/>and<sp/>1.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>joint1_position_1<sp/>=<sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[0]<sp/>*<sp/><ref refid="finger_8h_1abff68362f6a3518d826036342723ff99" kindref="member">D_MOTOR_PULLEY</ref><sp/>/<sp/><ref refid="finger_8h_1a88a43911f0e9357330e3a24beb6e39d4" kindref="member">D_FINGER_PULLEY_1</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>joint1_position_2<sp/>=<sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[1]<sp/>*<sp/><ref refid="finger_8h_1abff68362f6a3518d826036342723ff99" kindref="member">D_MOTOR_PULLEY</ref><sp/>/<sp/><ref refid="finger_8h_1a88a43911f0e9357330e3a24beb6e39d4" kindref="member">D_FINGER_PULLEY_1</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>positions<sp/>for<sp/>joint<sp/>2<sp/>using<sp/>motor<sp/>states<sp/>0,<sp/>1,<sp/>2,<sp/>and<sp/>3.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>joint2_position_1<sp/>=<sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[0]<sp/>*<sp/><ref refid="finger_8h_1abff68362f6a3518d826036342723ff99" kindref="member">D_MOTOR_PULLEY</ref><sp/>/<sp/><ref refid="finger_8h_1abc25c804485d85e98841ce908ec1746c" kindref="member">D_FINGER_PULLEY_2</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>joint2_position_2<sp/>=<sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[1]<sp/>*<sp/><ref refid="finger_8h_1abff68362f6a3518d826036342723ff99" kindref="member">D_MOTOR_PULLEY</ref><sp/>/<sp/><ref refid="finger_8h_1abc25c804485d85e98841ce908ec1746c" kindref="member">D_FINGER_PULLEY_2</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>joint2_position_3<sp/>=<sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[2]<sp/>*<sp/><ref refid="finger_8h_1abff68362f6a3518d826036342723ff99" kindref="member">D_MOTOR_PULLEY</ref><sp/>/<sp/><ref refid="finger_8h_1abc25c804485d85e98841ce908ec1746c" kindref="member">D_FINGER_PULLEY_2</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>joint2_position_4<sp/>=<sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[3]<sp/>*<sp/><ref refid="finger_8h_1abff68362f6a3518d826036342723ff99" kindref="member">D_MOTOR_PULLEY</ref><sp/>/<sp/><ref refid="finger_8h_1abc25c804485d85e98841ce908ec1746c" kindref="member">D_FINGER_PULLEY_2</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Compute<sp/>joint<sp/>states<sp/>by<sp/>averaging<sp/>the<sp/>appropriate<sp/>motor<sp/>states.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>_joint_states[0]<sp/>=<sp/>(joint1_position_1<sp/>-<sp/>joint1_position_2)<sp/>/<sp/>2.0f;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>_joint_states[1]<sp/>=<sp/>(joint2_position_1<sp/>+<sp/>joint2_position_2<sp/>-<sp/>joint2_position_3<sp/>+<sp/>joint2_position_4)<sp/>/<sp/>4.0f;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_joint_states;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/><ref refid="classFinger_1a680479a754818275e9f46a0c220c5fd6" kindref="member">Finger::getMotorCommands</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>joint_inputs[<ref refid="finger_8h_1af742980593d698725375a7d12711c24f" kindref="member">NUM_JOINTS</ref>])<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>_motor_commands[0]<sp/>=<sp/>joint_inputs[0]<sp/>/<sp/>2.0f;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>_motor_commands[1]<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>_motor_commands[2]<sp/>=<sp/>-joint_inputs[0]<sp/>/<sp/>2.0f;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>_motor_commands[3]<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_motor_commands;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/finger/finger.cpp"/>
+  </compounddef>
+</doxygen>
