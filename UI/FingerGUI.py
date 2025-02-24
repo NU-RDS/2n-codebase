@@ -217,6 +217,9 @@ class FingerGUI:
         # Link lengths and base position
         L1, L2 = 80, 60
         x0, y0 = 200, 200
+        joint = self.msi.get_joint_states()
+        j1 = joint[1]
+        j2 = joint[0]
         # Assume j1 and j2 are in radians
         r1 = j1
         r2 = j2
@@ -242,6 +245,9 @@ class FingerGUI:
         )
 
     def update_plots(self):
+        joint = self.msi.get_joint_states()
+        self.joint1_actual_data = joint[1]
+        self.joint2_actual_data = joint[0]
         # Update the data of each line
         self.line1_actual.set_data(self.time_data, self.joint1_actual_data)
         self.line1_desired.set_data(self.time_data, self.joint1_desired_data)
