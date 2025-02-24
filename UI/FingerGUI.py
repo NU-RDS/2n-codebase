@@ -91,6 +91,7 @@ class FingerGUI:
 
         self.master.protocol("WM_DELETE_WINDOW", self.on_closing)
 
+        self.update_gui()
         # Start updating the plots every 100 ms
         self.update_plots()
 
@@ -199,8 +200,8 @@ class FingerGUI:
         if self.msi:
             joint_states = self.msi.get_joint_states()  # Returns a tuple of 2 floats (radians)
             if joint_states is not None and len(joint_states) >= 2:
-                j1_actual = joint_states[0]
-                j2_actual = joint_states[1]
+                j1_actual = joint_states[1]
+                j2_actual = joint_states[0]
                 self.joint_current = [j1_actual, j2_actual]
                 self.draw_finger(j1_actual, j2_actual)
                 # Update plot data
@@ -217,9 +218,6 @@ class FingerGUI:
         # Link lengths and base position
         L1, L2 = 80, 60
         x0, y0 = 200, 200
-        joint = self.msi.get_joint_states()
-        j1 = joint[1]
-        j2 = joint[0]
         # Assume j1 and j2 are in radians
         r1 = j1
         r2 = j2
@@ -245,9 +243,9 @@ class FingerGUI:
         )
 
     def update_plots(self):
-        joint = self.msi.get_joint_states()
-        self.joint1_actual_data = joint[1]
-        self.joint2_actual_data = joint[0]
+        # joint = self.msi.get_joint_states()
+        # self.joint1_actual_data = joint[1]
+        # self.joint2_actual_data = joint[0]
         # Update the data of each line
         self.line1_actual.set_data(self.time_data, self.joint1_actual_data)
         self.line1_desired.set_data(self.time_data, self.joint1_desired_data)
