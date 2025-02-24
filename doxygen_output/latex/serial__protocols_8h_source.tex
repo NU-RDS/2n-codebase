@@ -1,0 +1,33 @@
+\doxysection{serial\+\_\+protocols.\+h}
+\hypertarget{serial__protocols_8h_source}{}\label{serial__protocols_8h_source}\index{include/serial\_protocols/serial\_protocols.h@{include/serial\_protocols/serial\_protocols.h}}
+\mbox{\hyperlink{serial__protocols_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SERIAL\_PROTOCOLS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SERIAL\_PROTOCOLS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serial__protocols_2utils_8h}{serial\_protocols/utils.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ NUM\_JOINTS\ 2}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSerialProtocols}{SerialProtocols}}\{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classSerialProtocols_ae4b9453d604f377e34b520b8f58a7e11}{SerialProtocols}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00043\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classSerialProtocols_a4aa379fe04b74f8b0807e9b552f00cc0}{computeChecksum}}(uint8\_t\ msgType,\ uint8\_t\ payloadLen,\ \textcolor{keyword}{const}\ uint8\_t*\ payload);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00054\ \ \ \ \ uint8\_t*\ \mbox{\hyperlink{classSerialProtocols_a967d508f968bd1d09f41db97ea97b432}{encodeFeedbackPacket}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ positions[\mbox{\hyperlink{serial__protocols_8h_af742980593d698725375a7d12711c24f}{NUM\_JOINTS}}]);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{float}*\ \mbox{\hyperlink{classSerialProtocols_aec800812be41156be7e0a1e0374a03fd}{decodeJointCommandPacket}}(\textcolor{keyword}{const}\ uint8\_t*\ data);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00069\ \ \ \ \ uint8\_t\ \_encoder\_feedback\_packet[\mbox{\hyperlink{serial__protocols_2utils_8h_a9880be088cab58dc6d9782bc31258ca8}{FEEDBACK\_PACKET\_SIZE}}];}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00072\ \ \ \ \ uint8\_t\ \_joint\_command\_packet[\mbox{\hyperlink{serial__protocols_2utils_8h_a60e48a418bc0b66b574f5ee4abb296e2}{JOINT\_COMMAND\_PACKET\_SIZE}}];}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{float}\ \_joint\_command[\mbox{\hyperlink{finger_8h_a52b56a381e777b55e1b59019d9ee072e}{NUM\_MOTORS}}];}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SERIAL\_PROTOCOLS\_H}}
+
+\end{DoxyCode}

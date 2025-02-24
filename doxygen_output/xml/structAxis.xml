@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structAxis" kind="struct" language="C++" prot="public">
+    <compoundname>Axis</compoundname>
+    <includes refid="motor__protocols_2utils_8h" local="no">utils.h</includes>
+    <briefdescription>
+<para>Nested struct for handling axis-based data and states. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/motor_protocols/utils.h" line="20" column="1"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

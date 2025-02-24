@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="r1806_8h" kind="file" language="C++">
+    <compoundname>r1806.h</compoundname>
+    <includes local="no">FlexCAN_T4.h</includes>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <includedby refid="r1806_8cpp" local="yes">src/motor_protocols/r1806.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/motor_protocols/r1806.h</label>
+        <link refid="r1806_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>FlexCAN_T4.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/motor_protocols/r1806.h</label>
+        <link refid="r1806_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classR1806" prot="public">R1806</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="r1806_8h_1a890ee506c2f2d76aa67bae8d9c9507f5" prot="public" static="no">
+        <name>GEAR_REDUCION_RATIO</name>
+        <initializer>22.6f</initializer>
+        <briefdescription>
+<para>Gear reduction ratio for the <ref refid="classR1806" kindref="compound">R1806</ref> motor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/r1806.h" line="22" column="9" bodyfile="include/motor_protocols/r1806.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Motor protocols for the <ref refid="classR1806" kindref="compound">R1806</ref> motor used with <ref refid="structODrive" kindref="compound">ODrive</ref> Pro. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classR1806" kindref="compound">R1806</ref> motor is fabricated by Repeat Robotics, and this file defines the <ref refid="classR1806" kindref="compound">R1806</ref> class for CAN-based communication with <ref refid="structODrive" kindref="compound">ODrive</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="classR1806" kindref="compound">R1806</ref> motor details: <ulink url="https://repeat-robotics.com/buy/repeat-compact-1806">https://repeat-robotics.com/buy/repeat-compact-1806</ulink></para>
+</listitem><listitem><para><ref refid="structODrive" kindref="compound">ODrive</ref> CAN Protocol Details: <ulink url="https://docs.odriverobotics.com/v/latest/manual/can-protocol.html">https://docs.odriverobotics.com/v/latest/manual/can-protocol.html</ulink> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>R1806_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R1806_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;FlexCAN_T4.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="r1806_8h_1a890ee506c2f2d76aa67bae8d9c9507f5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GEAR_REDUCION_RATIO<sp/>22.6f</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classR1806" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classR1806" kindref="compound">R1806</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classR1806_1ac24ac7af211be841111d150808fdd2f7" kindref="member">R1806</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="classR1806_1a116d467196ccdc10b6fa46b5c2d87e75" kindref="member">extract_node_id</ref>(uint32_t<sp/>can_id);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="classR1806_1a0db19be4b6c4e0be27d6128a8165de3e" kindref="member">extract_command_id</ref>(uint32_t<sp/>can_id);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>CAN_message_t<sp/><ref refid="classR1806_1a400662f13aa22e39f5b1d780d193c169" kindref="member">encodeRequestedStateCommand</ref>(uint32_t<sp/>node_id,<sp/>uint32_t<sp/>requested_state);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>CAN_message_t<sp/><ref refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" kindref="member">encodeTorqueCommand</ref>(uint32_t<sp/>node_id,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>torque);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classR1806_1afc210aa77fbaf2a72dbe3ec34e7ca9ba" kindref="member">decodePositionFeedback</ref>(CAN_message_t<sp/>frame);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classR1806_1a80c75872c7390915c6ccb6f2ee12bbd5" kindref="member">decodeVelocityFeedback</ref>(CAN_message_t<sp/>frame);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_gear_reduction_ratio;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>R1806_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/motor_protocols/r1806.h"/>
+  </compounddef>
+</doxygen>

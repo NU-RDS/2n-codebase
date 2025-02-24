@@ -1,0 +1,366 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classR1806" kind="class" language="C++" prot="public">
+    <compoundname>R1806</compoundname>
+    <includes refid="r1806_8h" local="no">r1806.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classR1806_1acff280648eb3c889f6df6fd83bdd6ffe" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float R1806::_gear_reduction_ratio</definition>
+        <argsstring></argsstring>
+        <name>_gear_reduction_ratio</name>
+        <qualifiedname>R1806::_gear_reduction_ratio</qualifiedname>
+        <briefdescription>
+<para>Internal gear reduction ratio used for torque and feedback calculations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/r1806.h" line="106" column="11" bodyfile="include/motor_protocols/r1806.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classR1806_1ac24ac7af211be841111d150808fdd2f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>R1806::R1806</definition>
+        <argsstring>()</argsstring>
+        <name>R1806</name>
+        <qualifiedname>R1806::R1806</qualifiedname>
+        <briefdescription>
+<para>Constructs a new <ref refid="classR1806" kindref="compound">R1806</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a new <ref refid="classR1806" kindref="compound">R1806</ref> object and sets the gear reduction ratio.</para>
+<para>Initializes internal parameters, including the gear reduction ratio. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/r1806.h" line="39" column="5" bodyfile="src/motor_protocols/r1806.cpp" bodystart="9" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classR1806_1a116d467196ccdc10b6fa46b5c2d87e75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t R1806::extract_node_id</definition>
+        <argsstring>(uint32_t can_id)</argsstring>
+        <name>extract_node_id</name>
+        <qualifiedname>R1806::extract_node_id</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>can_id</declname>
+        </param>
+        <briefdescription>
+<para>Extract the node ID from a given CAN identifier. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Extract the node ID from a CAN ID.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>can_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>29-bit or 11-bit CAN identifier. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Node ID (extracted bits from can_id).</para>
+</simplesect>
+Node ID occupies bits [10..5] of a standard 11-bit ID. We mask and shift to retrieve it.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>can_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The raw CAN identifier. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Extracted node ID. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/r1806.h" line="47" column="14" bodyfile="src/motor_protocols/r1806.cpp" bodystart="22" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classR1806_1a0db19be4b6c4e0be27d6128a8165de3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t R1806::extract_command_id</definition>
+        <argsstring>(uint32_t can_id)</argsstring>
+        <name>extract_command_id</name>
+        <qualifiedname>R1806::extract_command_id</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>can_id</declname>
+        </param>
+        <briefdescription>
+<para>Extract the command ID from a given CAN identifier. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Extract the command ID from a CAN ID.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>can_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>29-bit or 11-bit CAN identifier. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Command ID (extracted bits from can_id).</para>
+</simplesect>
+Command ID occupies bits [4..0] of the CAN identifier. We mask out the lower 5 bits to retrieve it.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>can_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The raw CAN identifier. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Extracted command ID. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/r1806.h" line="55" column="14" bodyfile="src/motor_protocols/r1806.cpp" bodystart="35" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classR1806_1a400662f13aa22e39f5b1d780d193c169" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CAN_message_t</type>
+        <definition>CAN_message_t R1806::encodeRequestedStateCommand</definition>
+        <argsstring>(uint32_t node_id, uint32_t requested_state)</argsstring>
+        <name>encodeRequestedStateCommand</name>
+        <qualifiedname>R1806::encodeRequestedStateCommand</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>node_id</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>requested_state</declname>
+        </param>
+        <briefdescription>
+<para>Encode a &quot;requested state&quot; command for <ref refid="structODrive" kindref="compound">ODrive</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Encode a &quot;requested state&quot; command into a CAN message.</para>
+<para>Creates a CAN message instructing <ref refid="structODrive" kindref="compound">ODrive</ref> to enter a specific axis state.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the node (motor) on the CAN bus. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>requested_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The requested axis state (e.g., CLOSED_LOOP_CONTROL). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A CAN_message_t struct with the encoded command.</para>
+</simplesect>
+This implementation forces the state to CLOSED_LOOP_CONTROL for demonstration. You can modify it to use the passed-in requested_state argument fully.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target node (motor) ID. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>requested_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The desired axis state (not fully used in this example). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A CAN_message_t configured with the appropriate ID and payload. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/r1806.h" line="66" column="19" bodyfile="src/motor_protocols/r1806.cpp" bodystart="49" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CAN_message_t</type>
+        <definition>CAN_message_t R1806::encodeTorqueCommand</definition>
+        <argsstring>(uint32_t node_id, float torque)</argsstring>
+        <name>encodeTorqueCommand</name>
+        <qualifiedname>R1806::encodeTorqueCommand</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>node_id</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>torque</declname>
+        </param>
+        <briefdescription>
+<para>Encode a torque command for the <ref refid="structODrive" kindref="compound">ODrive</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Encode a torque command into a CAN message.</para>
+<para>Creates a CAN message to set a torque value for a given node. The torque is automatically adjusted by the gear reduction ratio.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the node (motor) on the CAN bus. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>torque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired torque in Nm (or consistent units). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A CAN_message_t struct with the encoded torque command.</para>
+</simplesect>
+The gear reduction ratio is factored into the torque command so that the motor sees the correct torque value. The 4-byte float is written in little-endian format into the CAN frame buffer.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target node (motor) ID. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>torque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired torque before gear reduction is accounted for. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A CAN_message_t with the correct ID and payload to set torque on <ref refid="structODrive" kindref="compound">ODrive</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/r1806.h" line="78" column="19" bodyfile="src/motor_protocols/r1806.cpp" bodystart="82" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classR1806_1afc210aa77fbaf2a72dbe3ec34e7ca9ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float R1806::decodePositionFeedback</definition>
+        <argsstring>(CAN_message_t frame)</argsstring>
+        <name>decodePositionFeedback</name>
+        <qualifiedname>R1806::decodePositionFeedback</qualifiedname>
+        <param>
+          <type>CAN_message_t</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+<para>Decode position feedback from a CAN message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Interprets the first 4 bytes of the CAN message payload as a float for the number of revolutions, then converts it to a position (radians) factoring in the gear reduction ratio.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>frame</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CAN_message_t containing position feedback data. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Position in radians.</para>
+</simplesect>
+The first 4 bytes of the CAN frame are interpreted as a float representing the number of revolutions. This is then converted to radians, factoring in the gear reduction ratio.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>frame</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CAN_message_t containing position data in its first 4 bytes. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Position in radians. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/r1806.h" line="90" column="11" bodyfile="src/motor_protocols/r1806.cpp" bodystart="116" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classR1806_1a80c75872c7390915c6ccb6f2ee12bbd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float R1806::decodeVelocityFeedback</definition>
+        <argsstring>(CAN_message_t frame)</argsstring>
+        <name>decodeVelocityFeedback</name>
+        <qualifiedname>R1806::decodeVelocityFeedback</qualifiedname>
+        <param>
+          <type>CAN_message_t</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+<para>Decode velocity feedback from a CAN message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Interprets bytes [4..7] of the CAN message payload as a float for the number of revolutions per second, then converts it to a velocity (rad/s), factoring in the gear reduction ratio.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>frame</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CAN_message_t containing velocity feedback data. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Velocity in rad/s.</para>
+</simplesect>
+Bytes [4..7] of the CAN frame are interpreted as a float representing the number of revolutions per second, then converted to rad/s with gear reduction considered.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>frame</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CAN_message_t containing velocity data in bytes [4..7]. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Velocity in rad/s. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motor_protocols/r1806.h" line="102" column="11" bodyfile="src/motor_protocols/r1806.cpp" bodystart="134" bodyend="140"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Provides methods to encode and decode CAN messages for controlling an <ref refid="classR1806" kindref="compound">R1806</ref> motor via <ref refid="structODrive" kindref="compound">ODrive</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class contains utility functions to extract node/command IDs, encode state and torque commands, and decode feedback such as position and velocity. </para>
+    </detaileddescription>
+    <location file="include/motor_protocols/r1806.h" line="31" column="1" bodyfile="include/motor_protocols/r1806.h" bodystart="32" bodyend="107"/>
+    <listofallmembers>
+      <member refid="classR1806_1acff280648eb3c889f6df6fd83bdd6ffe" prot="private" virt="non-virtual"><scope>R1806</scope><name>_gear_reduction_ratio</name></member>
+      <member refid="classR1806_1afc210aa77fbaf2a72dbe3ec34e7ca9ba" prot="public" virt="non-virtual"><scope>R1806</scope><name>decodePositionFeedback</name></member>
+      <member refid="classR1806_1a80c75872c7390915c6ccb6f2ee12bbd5" prot="public" virt="non-virtual"><scope>R1806</scope><name>decodeVelocityFeedback</name></member>
+      <member refid="classR1806_1a400662f13aa22e39f5b1d780d193c169" prot="public" virt="non-virtual"><scope>R1806</scope><name>encodeRequestedStateCommand</name></member>
+      <member refid="classR1806_1ac0f7a4e9e1d0aa7481a79217c75ea104" prot="public" virt="non-virtual"><scope>R1806</scope><name>encodeTorqueCommand</name></member>
+      <member refid="classR1806_1a0db19be4b6c4e0be27d6128a8165de3e" prot="public" virt="non-virtual"><scope>R1806</scope><name>extract_command_id</name></member>
+      <member refid="classR1806_1a116d467196ccdc10b6fa46b5c2d87e75" prot="public" virt="non-virtual"><scope>R1806</scope><name>extract_node_id</name></member>
+      <member refid="classR1806_1ac24ac7af211be841111d150808fdd2f7" prot="public" virt="non-virtual"><scope>R1806</scope><name>R1806</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

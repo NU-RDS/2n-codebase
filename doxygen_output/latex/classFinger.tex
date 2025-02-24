@@ -1,0 +1,109 @@
+\doxysection{Finger Class Reference}
+\hypertarget{classFinger}{}\label{classFinger}\index{Finger@{Finger}}
+
+
+Provides functionality to convert between motor states and finger joint states.  
+
+
+
+
+{\ttfamily \#include $<$finger.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFinger_aa71829d5592249136d8f8c3128bc757b}{Finger}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classFinger}{Finger} object. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFinger_aefe9b0417b1bdc93bce95df895520b5e}{get\+Joint\+States}} (const float \mbox{\hyperlink{main_8cpp_ad5fc2c067a5d275ec1d6f4eed478b335}{motor\+\_\+states}}\mbox{[}\mbox{\hyperlink{finger_8h_a52b56a381e777b55e1b59019d9ee072e}{NUM\+\_\+\+MOTORS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Computes the finger joint states based on motor states. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFinger_a680479a754818275e9f46a0c220c5fd6}{get\+Motor\+Commands}} (const float joint\+\_\+inputs\mbox{[}\mbox{\hyperlink{finger_8h_af742980593d698725375a7d12711c24f}{NUM\+\_\+\+JOINTS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Computes motor commands based on desired joint inputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functionality to convert between motor states and finger joint states. 
+
+This class defines methods to compute joint states from motor states and vice versa. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFinger_aa71829d5592249136d8f8c3128bc757b}\label{classFinger_aa71829d5592249136d8f8c3128bc757b} 
+\index{Finger@{Finger}!Finger@{Finger}}
+\index{Finger@{Finger}!Finger@{Finger}}
+\doxysubsubsection{\texorpdfstring{Finger()}{Finger()}}
+{\footnotesize\ttfamily Finger\+::\+Finger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{classFinger}{Finger} object. 
+
+The constructor currently does not perform additional initialization. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFinger_aefe9b0417b1bdc93bce95df895520b5e}\label{classFinger_aefe9b0417b1bdc93bce95df895520b5e} 
+\index{Finger@{Finger}!getJointStates@{getJointStates}}
+\index{getJointStates@{getJointStates}!Finger@{Finger}}
+\doxysubsubsection{\texorpdfstring{getJointStates()}{getJointStates()}}
+{\footnotesize\ttfamily float \texorpdfstring{$\ast$}{*} Finger\+::get\+Joint\+States (\begin{DoxyParamCaption}\item[{const float}]{motor\+\_\+states\mbox{[}\+NUM\+\_\+\+MOTORS\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Computes the finger joint states based on motor states. 
+
+Computes the finger joint states from motor states.
+
+Given an array of motor states, this function calculates the positions of the finger joints.
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor\+\_\+states} & An array of motor states with length NUM\+\_\+\+MOTORS. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to an array of computed joint states (length NUM\+\_\+\+JOINTS).
+\end{DoxyReturn}
+This function calculates the positions of two joints by converting motor states using the specified pulley diameters. The first joint is computed as the difference between two positions (averaged), while the second joint is a combination of four positions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor\+\_\+states} & An array of motor states (length NUM\+\_\+\+MOTORS). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to an array containing the computed joint states (length NUM\+\_\+\+JOINTS). 
+\end{DoxyReturn}
+\Hypertarget{classFinger_a680479a754818275e9f46a0c220c5fd6}\label{classFinger_a680479a754818275e9f46a0c220c5fd6} 
+\index{Finger@{Finger}!getMotorCommands@{getMotorCommands}}
+\index{getMotorCommands@{getMotorCommands}!Finger@{Finger}}
+\doxysubsubsection{\texorpdfstring{getMotorCommands()}{getMotorCommands()}}
+{\footnotesize\ttfamily float \texorpdfstring{$\ast$}{*} Finger\+::get\+Motor\+Commands (\begin{DoxyParamCaption}\item[{const float}]{joint\+\_\+inputs\mbox{[}\+NUM\+\_\+\+JOINTS\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Computes motor commands based on desired joint inputs. 
+
+Given an array of desired joint inputs, this function calculates the motor commands required.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+inputs} & An array of desired joint inputs with length NUM\+\_\+\+JOINTS. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to an array of computed motor commands (length NUM\+\_\+\+MOTORS).
+\end{DoxyReturn}
+This function derives motor commands from the provided joint inputs. For now, it only uses the first joint input to compute commands for motor 0 and motor 2, with motor 1 and motor 3 set to zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+inputs} & An array of desired joint inputs (length NUM\+\_\+\+JOINTS). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to an array containing the computed motor commands (length NUM\+\_\+\+MOTORS). 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/finger/\mbox{\hyperlink{finger_8h}{finger.\+h}}\item 
+src/finger/finger.\+cpp\end{DoxyCompactItemize}

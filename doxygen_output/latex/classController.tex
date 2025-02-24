@@ -1,0 +1,127 @@
+\doxysection{Controller Class Reference}
+\hypertarget{classController}{}\label{classController}\index{Controller@{Controller}}
+
+
+Provides torque control functionality using a PID algorithm.  
+
+
+
+
+{\ttfamily \#include $<$controller.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classController_a95c56822d667e94b031451729ce069a9}{Controller}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classController}{Controller} object. \end{DoxyCompactList}\item 
+std\+::pair$<$ std\+::vector$<$ double $>$, std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classController_aadf118b6025c2045262e05c68b227328}{torque\+\_\+control}} (std\+::vector$<$ double $>$ \mbox{\hyperlink{main_8cpp_a147b8003a5567f680edf4838fa5b4972}{joint\+\_\+states}}, std\+::vector$<$ double $>$ \mbox{\hyperlink{main_8cpp_a9d15cb77cbe6fd6e64a2f1f0d6af33db}{joint\+\_\+states\+\_\+desired}}, std\+::vector$<$ double $>$ \mbox{\hyperlink{main_8cpp_aa3d50d72d4c17514499781eda97e99cb}{joint\+\_\+error\+\_\+sum}}, std\+::vector$<$ double $>$ \mbox{\hyperlink{main_8cpp_a9f670be4d519d72bc5e530303037b7e9}{motor\+\_\+velocities}})
+\begin{DoxyCompactList}\small\item\em Computes motor torques based on PID control. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classController_ad24b67ab07743a84a7a93e82e7025924}{check\+\_\+error}} (std\+::vector$<$ double $>$ joint\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Adjusts PID gains based on the current joint error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides torque control functionality using a PID algorithm. 
+
+This class calculates joint torques by comparing current and desired joint states, accumulating joint errors, and adjusting PID gains accordingly. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classController_a95c56822d667e94b031451729ce069a9}\label{classController_a95c56822d667e94b031451729ce069a9} 
+\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily Controller\+::\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{classController}{Controller} object. 
+
+Initializes the PID gains and transformation matrix used for converting joint torques to motor torques.
+
+Initializes the PID gains, pulley dimensions, and transformation matrix used for motor torque conversion. Note\+: D\+\_\+\+MOTOR\+\_\+\+PULLEY, D\+\_\+\+FINGER\+\_\+\+PULLEY\+\_\+1, and D\+\_\+\+FINGER\+\_\+\+PULLEY\+\_\+2 should be defined elsewhere. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classController_ad24b67ab07743a84a7a93e82e7025924}\label{classController_ad24b67ab07743a84a7a93e82e7025924} 
+\index{Controller@{Controller}!check\_error@{check\_error}}
+\index{check\_error@{check\_error}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{check\_error()}{check\_error()}}
+{\footnotesize\ttfamily void Controller\+::check\+\_\+error (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{joint\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+Adjusts PID gains based on the current joint error. 
+
+Adjusts the PID gains based on the current joint error.
+
+Depending on whether the joint errors are negative or positive, the PID gains (kp, ki, kd) are updated to use either lower or higher predefined values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+error} & Vector containing the error for each joint.\\
+\hline
+\end{DoxyParams}
+The function selects between low and high PID gains depending on whether each joint error is positive or negative.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+error} & Vector containing the error for each joint. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classController_aadf118b6025c2045262e05c68b227328}\label{classController_aadf118b6025c2045262e05c68b227328} 
+\index{Controller@{Controller}!torque\_control@{torque\_control}}
+\index{torque\_control@{torque\_control}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{torque\_control()}{torque\_control()}}
+{\footnotesize\ttfamily std\+::pair$<$ std\+::vector$<$ double $>$, std\+::vector$<$ double $>$ $>$ Controller\+::torque\+\_\+control (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{joint\+\_\+states,  }\item[{std\+::vector$<$ double $>$}]{joint\+\_\+states\+\_\+desired,  }\item[{std\+::vector$<$ double $>$}]{joint\+\_\+error\+\_\+sum,  }\item[{std\+::vector$<$ double $>$}]{motor\+\_\+velocities }\end{DoxyParamCaption})}
+
+
+
+Computes motor torques based on PID control. 
+
+Computes motor torques using PID control.
+
+Calculates the difference between the desired and current joint states, updates the error sum, and computes the derivative of the error from motor velocities. It then applies a PID control algorithm to determine the joint torques, which are transformed into motor torques.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+states} & Vector of current joint states. \\
+\hline
+{\em joint\+\_\+states\+\_\+desired} & Vector of desired joint states. \\
+\hline
+{\em joint\+\_\+error\+\_\+sum} & Vector containing the accumulated joint error over time. \\
+\hline
+{\em motor\+\_\+velocities} & Vector of current motor velocities. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::pair consisting of\+:
+\begin{DoxyItemize}
+\item A vector of computed motor torques.
+\item The updated joint error sum vector.
+\end{DoxyItemize}
+\end{DoxyReturn}
+This method calculates the error between desired and current joint states, updates the accumulated error, and computes the derivative of the error from the motor velocities. Then, it applies a PID algorithm to compute the joint torques and converts these into motor torques using a transformation matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+states} & Vector of current joint states. \\
+\hline
+{\em joint\+\_\+states\+\_\+desired} & Vector of desired joint states. \\
+\hline
+{\em joint\+\_\+error\+\_\+sum} & Vector containing the accumulated joint error. \\
+\hline
+{\em motor\+\_\+velocities} & Vector of current motor velocities. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::pair containing\+:
+\begin{DoxyItemize}
+\item A vector of computed motor torques.
+\item The updated joint error sum vector. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/controller/\mbox{\hyperlink{controller_8h}{controller.\+h}}\item 
+src/controller/controller.\+cpp\end{DoxyCompactItemize}

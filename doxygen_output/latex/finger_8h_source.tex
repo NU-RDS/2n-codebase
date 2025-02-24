@@ -1,0 +1,36 @@
+\doxysection{finger.\+h}
+\hypertarget{finger_8h_source}{}\label{finger_8h_source}\index{include/finger/finger.h@{include/finger/finger.h}}
+\mbox{\hyperlink{finger_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FINGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FINGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ NUM\_JOINTS\ 2}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ NUM\_MOTORS\ 4}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ D\_MOTOR\_PULLEY\ 11.9998f\ }\textcolor{comment}{//\ 12\ mm}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ D\_FINGER\_PULLEY\_1\ 29.0f\ }\textcolor{comment}{//\ 29\ mm}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ D\_FINGER\_PULLEY\_2\ 35.0f\ }\textcolor{comment}{//\ 35\ mm}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFinger}{Finger}}\ \{}
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classFinger_aa71829d5592249136d8f8c3128bc757b}{Finger}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{float}*\ \mbox{\hyperlink{classFinger_aefe9b0417b1bdc93bce95df895520b5e}{getJointStates}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{main_8cpp_ad5fc2c067a5d275ec1d6f4eed478b335}{motor\_states}}[\mbox{\hyperlink{finger_8h_a52b56a381e777b55e1b59019d9ee072e}{NUM\_MOTORS}}]);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{float}*\ \mbox{\hyperlink{classFinger_a680479a754818275e9f46a0c220c5fd6}{getMotorCommands}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ joint\_inputs[\mbox{\hyperlink{finger_8h_af742980593d698725375a7d12711c24f}{NUM\_JOINTS}}]);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{float}\ \_joint\_states[\mbox{\hyperlink{finger_8h_af742980593d698725375a7d12711c24f}{NUM\_JOINTS}}];}
+\DoxyCodeLine{00077\ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{float}\ \_motor\_commands[\mbox{\hyperlink{finger_8h_a52b56a381e777b55e1b59019d9ee072e}{NUM\_MOTORS}}];}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FINGER\_H}}
+
+\end{DoxyCode}

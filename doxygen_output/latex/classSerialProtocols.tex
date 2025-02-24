@@ -1,0 +1,153 @@
+\doxysection{Serial\+Protocols Class Reference}
+\hypertarget{classSerialProtocols}{}\label{classSerialProtocols}\index{SerialProtocols@{SerialProtocols}}
+
+
+Provides functions to encode and decode serial packets for feedback and joint commands.  
+
+
+
+
+{\ttfamily \#include $<$serial\+\_\+protocols.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSerialProtocols_ae4b9453d604f377e34b520b8f58a7e11}\label{classSerialProtocols_ae4b9453d604f377e34b520b8f58a7e11} 
+{\bfseries Serial\+Protocols} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classSerialProtocols}{Serial\+Protocols} object. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classSerialProtocols_a4aa379fe04b74f8b0807e9b552f00cc0}{compute\+Checksum}} (uint8\+\_\+t msg\+Type, uint8\+\_\+t payload\+Len, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}payload)
+\begin{DoxyCompactList}\small\item\em Computes a checksum for a serial packet. \end{DoxyCompactList}\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSerialProtocols_a967d508f968bd1d09f41db97ea97b432}{encode\+Feedback\+Packet}} (const float positions\mbox{[}\mbox{\hyperlink{serial__protocols_8h_af742980593d698725375a7d12711c24f}{NUM\+\_\+\+JOINTS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Encodes a feedback packet from joint positions. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSerialProtocols_aec800812be41156be7e0a1e0374a03fd}{decode\+Joint\+Command\+Packet}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Decodes a joint command packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functions to encode and decode serial packets for feedback and joint commands. 
+
+This class includes methods to compute packet checksums, encode feedback packets, and decode joint command packets received via serial communication. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSerialProtocols_a4aa379fe04b74f8b0807e9b552f00cc0}\label{classSerialProtocols_a4aa379fe04b74f8b0807e9b552f00cc0} 
+\index{SerialProtocols@{SerialProtocols}!computeChecksum@{computeChecksum}}
+\index{computeChecksum@{computeChecksum}!SerialProtocols@{SerialProtocols}}
+\doxysubsubsection{\texorpdfstring{computeChecksum()}{computeChecksum()}}
+{\footnotesize\ttfamily uint8\+\_\+t Serial\+Protocols\+::compute\+Checksum (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{msg\+Type,  }\item[{uint8\+\_\+t}]{payload\+Len,  }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{payload }\end{DoxyParamCaption})}
+
+
+
+Computes a checksum for a serial packet. 
+
+The checksum is computed as the 8-\/bit sum of the message type, payload length, and each byte of the payload.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg\+Type} & The message type byte. \\
+\hline
+{\em payload\+Len} & The length of the payload. \\
+\hline
+{\em payload} & Pointer to the payload data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Computed 8-\/bit checksum.
+\end{DoxyReturn}
+The checksum is calculated by summing the message type, payload length, and every byte in the payload. The result is truncated to an 8-\/bit value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg\+Type} & The message type. \\
+\hline
+{\em payload\+Len} & Length of the payload. \\
+\hline
+{\em payload} & Pointer to the payload data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An 8-\/bit checksum value. 
+\end{DoxyReturn}
+\Hypertarget{classSerialProtocols_aec800812be41156be7e0a1e0374a03fd}\label{classSerialProtocols_aec800812be41156be7e0a1e0374a03fd} 
+\index{SerialProtocols@{SerialProtocols}!decodeJointCommandPacket@{decodeJointCommandPacket}}
+\index{decodeJointCommandPacket@{decodeJointCommandPacket}!SerialProtocols@{SerialProtocols}}
+\doxysubsubsection{\texorpdfstring{decodeJointCommandPacket()}{decodeJointCommandPacket()}}
+{\footnotesize\ttfamily float \texorpdfstring{$\ast$}{*} Serial\+Protocols\+::decode\+Joint\+Command\+Packet (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Decodes a joint command packet. 
+
+This method validates the packet structure (start byte, message type, payload length, checksum, and end byte) and decodes the payload into joint command values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the received packet data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the decoded joint command array, or nullptr if validation fails.
+\end{DoxyReturn}
+The expected packet layout is\+:
+\begin{DoxyItemize}
+\item Byte 0\+: START\+\_\+\+BYTE
+\item Byte 1\+: MSG\+\_\+\+JOINT\+\_\+\+COMMAND
+\item Byte 2\+: JOINT\+\_\+\+COMMAND\+\_\+\+PAYLOAD\+\_\+\+LENGTH
+\item Bytes 3-\/10\+: Payload (4 float position commands, 16 bytes total)
+\item Byte 11\+: Checksum (computed over bytes 1-\/10)
+\item Byte 12\+: END\+\_\+\+BYTE
+\end{DoxyItemize}
+
+The method validates each part of the packet and returns a pointer to the decoded joint commands. If any validation fails, the method returns nullptr.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the received packet data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the decoded joint command array, or nullptr if the packet is invalid. 
+\end{DoxyReturn}
+\Hypertarget{classSerialProtocols_a967d508f968bd1d09f41db97ea97b432}\label{classSerialProtocols_a967d508f968bd1d09f41db97ea97b432} 
+\index{SerialProtocols@{SerialProtocols}!encodeFeedbackPacket@{encodeFeedbackPacket}}
+\index{encodeFeedbackPacket@{encodeFeedbackPacket}!SerialProtocols@{SerialProtocols}}
+\doxysubsubsection{\texorpdfstring{encodeFeedbackPacket()}{encodeFeedbackPacket()}}
+{\footnotesize\ttfamily uint8\+\_\+t \texorpdfstring{$\ast$}{*} Serial\+Protocols\+::encode\+Feedback\+Packet (\begin{DoxyParamCaption}\item[{const float}]{positions\mbox{[}\+NUM\+\_\+\+JOINTS\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Encodes a feedback packet from joint positions. 
+
+The feedback packet is constructed using a start byte, message type, payload length, the payload containing two float positions, a checksum, and an end byte.
+
+
+\begin{DoxyParams}{Parameters}
+{\em positions} & An array of joint positions (2 floats). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the encoded feedback packet.
+\end{DoxyReturn}
+The packet is structured as follows\+:
+\begin{DoxyItemize}
+\item Byte 0\+: START\+\_\+\+BYTE
+\item Byte 1\+: MSG\+\_\+\+FEEDBACK
+\item Byte 2\+: FEEDBACK\+\_\+\+PAYLOAD\+\_\+\+LENGTH
+\item Bytes 3-\/10\+: Payload (2 floats representing positions)
+\item Byte 11\+: Checksum (computed over bytes 1-\/10)
+\item Byte 12\+: END\+\_\+\+BYTE
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em positions} & An array of two float positions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the encoded feedback packet. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/serial\+\_\+protocols/\mbox{\hyperlink{serial__protocols_8h}{serial\+\_\+protocols.\+h}}\item 
+src/serial\+\_\+protocols/serial\+\_\+protocols.\+cpp\end{DoxyCompactItemize}

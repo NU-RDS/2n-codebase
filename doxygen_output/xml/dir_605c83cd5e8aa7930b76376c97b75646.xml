@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_605c83cd5e8aa7930b76376c97b75646" kind="dir">
+    <compoundname>src/serial_protocols</compoundname>
+    <innerfile refid="serial__protocols_8cpp">serial_protocols.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/serial_protocols/"/>
+  </compounddef>
+</doxygen>

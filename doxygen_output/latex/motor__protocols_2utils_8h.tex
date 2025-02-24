@@ -1,0 +1,145 @@
+\doxysection{include/motor\+\_\+protocols/utils.h File Reference}
+\hypertarget{motor__protocols_2utils_8h}{}\label{motor__protocols_2utils_8h}\index{include/motor\_protocols/utils.h@{include/motor\_protocols/utils.h}}
+
+
+Contains utility data structures and definitions for motor protocols.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for utils.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{motor__protocols_2utils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{motor__protocols_2utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{motor__protocols_2utils_8h_a3015bd6af60dc3af90ccc4603e186216}\label{motor__protocols_2utils_8h_a3015bd6af60dc3af90ccc4603e186216} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>struct \{\\
+\>\>struct \{\\
+\>\>\>uint32\_t \mbox{\hyperlink{motor__protocols_2utils_8h_a714603a926a5a8ef7ac92b7639e296df}{UNDEFINED}} = 0\\
+\>\>\>uint32\_t \mbox{\hyperlink{motor__protocols_2utils_8h_a3430db71581c017e7a6a91bc5b0062cb}{IDLE}} = 1\\
+\>\>\>uint32\_t \mbox{\hyperlink{motor__protocols_2utils_8h_a700c8e2c1a99a3c793da7f0b40524b9d}{STARTUP\_SEQUENCE}} = 2\\
+\>\>\>uint32\_t \mbox{\hyperlink{motor__protocols_2utils_8h_a83a1fbd0642c0b56b0c526a606a1f019}{FULL\_CALIBRATION\_SEQUENCE}} = 3\\
+\>\>\>uint32\_t \mbox{\hyperlink{motor__protocols_2utils_8h_a1798321130fd876b6d01b6e1abea2e1b}{MOTOR\_CALIBRATION}} = 4\\
+\>\>\>uint32\_t \mbox{\hyperlink{motor__protocols_2utils_8h_a0ba5431476691c9d1d75f00786a3d518}{ENCODER\_INDEX\_SEARCH}} = 6\\
+\>\>\>uint32\_t \mbox{\hyperlink{motor__protocols_2utils_8h_af85d45d12286e7163a830a704462f2d2}{ENCODER\_OFFSET\_CALIBRATION}} = 7\\
+\>\>\>uint32\_t \mbox{\hyperlink{motor__protocols_2utils_8h_a15ee4d274ebbd72a00d1184e3aca0df2}{CLOSED\_LOOP\_CONTROL}} = 8\\
+\>\>\>uint32\_t \mbox{\hyperlink{motor__protocols_2utils_8h_a3504f2fcd5a8c030c5f3d8f8d5b15cb1}{LOCKIN\_SPIN}} = 9\\
+\>\>\>uint32\_t \mbox{\hyperlink{motor__protocols_2utils_8h_a6b544adec6a340cb0132a6d2ed8af1ca}{ENCODER\_DIR\_FIND}} = 10\\
+\>\>\>uint32\_t \mbox{\hyperlink{motor__protocols_2utils_8h_a296aa8ca8681ca73f8aa365844a66aa5}{HOMING}} = 11\\
+\>\>\>uint32\_t \mbox{\hyperlink{motor__protocols_2utils_8h_a9e7e76429a71009654c6559a3b58f0bb}{ENCODER\_HALL\_POLARITY\_CALIBRATION}} = 12\\
+\>\>\>uint32\_t \mbox{\hyperlink{motor__protocols_2utils_8h_aabfb649bd896ad4f20ca30d2d16ef8b6}{ENCODER\_HALL\_PHASE\_CALIBRATION}} = 13\\
+\>\>\>uint32\_t \mbox{\hyperlink{motor__protocols_2utils_8h_af1f5a4a2c11532e49da4795f852799a6}{ANTICOGGING\_CALIBRATION}} = 14\\
+\>\>\} {\bfseries AxisState}\\
+\>\} {\bfseries Axis}\\
+\} {\bfseries ODrive}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains utility data structures and definitions for motor protocols. 
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{motor__protocols_2utils_8h_af1f5a4a2c11532e49da4795f852799a6}\label{motor__protocols_2utils_8h_af1f5a4a2c11532e49da4795f852799a6} 
+\index{utils.h@{utils.h}!ANTICOGGING\_CALIBRATION@{ANTICOGGING\_CALIBRATION}}
+\index{ANTICOGGING\_CALIBRATION@{ANTICOGGING\_CALIBRATION}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{ANTICOGGING\_CALIBRATION}{ANTICOGGING\_CALIBRATION}}
+{\footnotesize\ttfamily uint32\+\_\+t ANTICOGGING\+\_\+\+CALIBRATION = 14}
+
+Anti-\/cogging calibration. \Hypertarget{motor__protocols_2utils_8h_a15ee4d274ebbd72a00d1184e3aca0df2}\label{motor__protocols_2utils_8h_a15ee4d274ebbd72a00d1184e3aca0df2} 
+\index{utils.h@{utils.h}!CLOSED\_LOOP\_CONTROL@{CLOSED\_LOOP\_CONTROL}}
+\index{CLOSED\_LOOP\_CONTROL@{CLOSED\_LOOP\_CONTROL}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{CLOSED\_LOOP\_CONTROL}{CLOSED\_LOOP\_CONTROL}}
+{\footnotesize\ttfamily uint32\+\_\+t CLOSED\+\_\+\+LOOP\+\_\+\+CONTROL = 8}
+
+Closed-\/loop control. \Hypertarget{motor__protocols_2utils_8h_a6b544adec6a340cb0132a6d2ed8af1ca}\label{motor__protocols_2utils_8h_a6b544adec6a340cb0132a6d2ed8af1ca} 
+\index{utils.h@{utils.h}!ENCODER\_DIR\_FIND@{ENCODER\_DIR\_FIND}}
+\index{ENCODER\_DIR\_FIND@{ENCODER\_DIR\_FIND}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{ENCODER\_DIR\_FIND}{ENCODER\_DIR\_FIND}}
+{\footnotesize\ttfamily uint32\+\_\+t ENCODER\+\_\+\+DIR\+\_\+\+FIND = 10}
+
+Encoder direction find. \Hypertarget{motor__protocols_2utils_8h_aabfb649bd896ad4f20ca30d2d16ef8b6}\label{motor__protocols_2utils_8h_aabfb649bd896ad4f20ca30d2d16ef8b6} 
+\index{utils.h@{utils.h}!ENCODER\_HALL\_PHASE\_CALIBRATION@{ENCODER\_HALL\_PHASE\_CALIBRATION}}
+\index{ENCODER\_HALL\_PHASE\_CALIBRATION@{ENCODER\_HALL\_PHASE\_CALIBRATION}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{ENCODER\_HALL\_PHASE\_CALIBRATION}{ENCODER\_HALL\_PHASE\_CALIBRATION}}
+{\footnotesize\ttfamily uint32\+\_\+t ENCODER\+\_\+\+HALL\+\_\+\+PHASE\+\_\+\+CALIBRATION = 13}
+
+Hall phase calibration. \Hypertarget{motor__protocols_2utils_8h_a9e7e76429a71009654c6559a3b58f0bb}\label{motor__protocols_2utils_8h_a9e7e76429a71009654c6559a3b58f0bb} 
+\index{utils.h@{utils.h}!ENCODER\_HALL\_POLARITY\_CALIBRATION@{ENCODER\_HALL\_POLARITY\_CALIBRATION}}
+\index{ENCODER\_HALL\_POLARITY\_CALIBRATION@{ENCODER\_HALL\_POLARITY\_CALIBRATION}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{ENCODER\_HALL\_POLARITY\_CALIBRATION}{ENCODER\_HALL\_POLARITY\_CALIBRATION}}
+{\footnotesize\ttfamily uint32\+\_\+t ENCODER\+\_\+\+HALL\+\_\+\+POLARITY\+\_\+\+CALIBRATION = 12}
+
+Hall polarity calibration. \Hypertarget{motor__protocols_2utils_8h_a0ba5431476691c9d1d75f00786a3d518}\label{motor__protocols_2utils_8h_a0ba5431476691c9d1d75f00786a3d518} 
+\index{utils.h@{utils.h}!ENCODER\_INDEX\_SEARCH@{ENCODER\_INDEX\_SEARCH}}
+\index{ENCODER\_INDEX\_SEARCH@{ENCODER\_INDEX\_SEARCH}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{ENCODER\_INDEX\_SEARCH}{ENCODER\_INDEX\_SEARCH}}
+{\footnotesize\ttfamily uint32\+\_\+t ENCODER\+\_\+\+INDEX\+\_\+\+SEARCH = 6}
+
+Encoder index search. \Hypertarget{motor__protocols_2utils_8h_af85d45d12286e7163a830a704462f2d2}\label{motor__protocols_2utils_8h_af85d45d12286e7163a830a704462f2d2} 
+\index{utils.h@{utils.h}!ENCODER\_OFFSET\_CALIBRATION@{ENCODER\_OFFSET\_CALIBRATION}}
+\index{ENCODER\_OFFSET\_CALIBRATION@{ENCODER\_OFFSET\_CALIBRATION}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{ENCODER\_OFFSET\_CALIBRATION}{ENCODER\_OFFSET\_CALIBRATION}}
+{\footnotesize\ttfamily uint32\+\_\+t ENCODER\+\_\+\+OFFSET\+\_\+\+CALIBRATION = 7}
+
+Encoder offset calibration. \Hypertarget{motor__protocols_2utils_8h_a83a1fbd0642c0b56b0c526a606a1f019}\label{motor__protocols_2utils_8h_a83a1fbd0642c0b56b0c526a606a1f019} 
+\index{utils.h@{utils.h}!FULL\_CALIBRATION\_SEQUENCE@{FULL\_CALIBRATION\_SEQUENCE}}
+\index{FULL\_CALIBRATION\_SEQUENCE@{FULL\_CALIBRATION\_SEQUENCE}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{FULL\_CALIBRATION\_SEQUENCE}{FULL\_CALIBRATION\_SEQUENCE}}
+{\footnotesize\ttfamily uint32\+\_\+t FULL\+\_\+\+CALIBRATION\+\_\+\+SEQUENCE = 3}
+
+Full calibration sequence. \Hypertarget{motor__protocols_2utils_8h_a296aa8ca8681ca73f8aa365844a66aa5}\label{motor__protocols_2utils_8h_a296aa8ca8681ca73f8aa365844a66aa5} 
+\index{utils.h@{utils.h}!HOMING@{HOMING}}
+\index{HOMING@{HOMING}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{HOMING}{HOMING}}
+{\footnotesize\ttfamily uint32\+\_\+t HOMING = 11}
+
+Homing procedure. \Hypertarget{motor__protocols_2utils_8h_a3430db71581c017e7a6a91bc5b0062cb}\label{motor__protocols_2utils_8h_a3430db71581c017e7a6a91bc5b0062cb} 
+\index{utils.h@{utils.h}!IDLE@{IDLE}}
+\index{IDLE@{IDLE}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{IDLE}{IDLE}}
+{\footnotesize\ttfamily uint32\+\_\+t IDLE = 1}
+
+Idle state. \Hypertarget{motor__protocols_2utils_8h_a3504f2fcd5a8c030c5f3d8f8d5b15cb1}\label{motor__protocols_2utils_8h_a3504f2fcd5a8c030c5f3d8f8d5b15cb1} 
+\index{utils.h@{utils.h}!LOCKIN\_SPIN@{LOCKIN\_SPIN}}
+\index{LOCKIN\_SPIN@{LOCKIN\_SPIN}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{LOCKIN\_SPIN}{LOCKIN\_SPIN}}
+{\footnotesize\ttfamily uint32\+\_\+t LOCKIN\+\_\+\+SPIN = 9}
+
+Lock-\/in spin. \Hypertarget{motor__protocols_2utils_8h_a1798321130fd876b6d01b6e1abea2e1b}\label{motor__protocols_2utils_8h_a1798321130fd876b6d01b6e1abea2e1b} 
+\index{utils.h@{utils.h}!MOTOR\_CALIBRATION@{MOTOR\_CALIBRATION}}
+\index{MOTOR\_CALIBRATION@{MOTOR\_CALIBRATION}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{MOTOR\_CALIBRATION}{MOTOR\_CALIBRATION}}
+{\footnotesize\ttfamily uint32\+\_\+t MOTOR\+\_\+\+CALIBRATION = 4}
+
+Motor calibration. \Hypertarget{motor__protocols_2utils_8h_a700c8e2c1a99a3c793da7f0b40524b9d}\label{motor__protocols_2utils_8h_a700c8e2c1a99a3c793da7f0b40524b9d} 
+\index{utils.h@{utils.h}!STARTUP\_SEQUENCE@{STARTUP\_SEQUENCE}}
+\index{STARTUP\_SEQUENCE@{STARTUP\_SEQUENCE}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{STARTUP\_SEQUENCE}{STARTUP\_SEQUENCE}}
+{\footnotesize\ttfamily uint32\+\_\+t STARTUP\+\_\+\+SEQUENCE = 2}
+
+Startup sequence in progress. \Hypertarget{motor__protocols_2utils_8h_a714603a926a5a8ef7ac92b7639e296df}\label{motor__protocols_2utils_8h_a714603a926a5a8ef7ac92b7639e296df} 
+\index{utils.h@{utils.h}!UNDEFINED@{UNDEFINED}}
+\index{UNDEFINED@{UNDEFINED}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{UNDEFINED}{UNDEFINED}}
+{\footnotesize\ttfamily uint32\+\_\+t UNDEFINED = 0}
+
+Undefined state. 

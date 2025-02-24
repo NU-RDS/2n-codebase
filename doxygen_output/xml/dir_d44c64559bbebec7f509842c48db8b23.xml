@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_d44c64559bbebec7f509842c48db8b23" kind="dir">
+    <compoundname>include</compoundname>
+    <innerdir refid="dir_39b9d54b040febeebc00140e5c10ba61">include/controller</innerdir>
+    <innerdir refid="dir_831d85dbdf859731adc2316f45fa3535">include/finger</innerdir>
+    <innerdir refid="dir_442fda6247240e5b68514f32d9ee8e0d">include/motor_protocols</innerdir>
+    <innerdir refid="dir_619e292b90bcfca1e3756f57fa800061">include/serial_protocols</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/"/>
+  </compounddef>
+</doxygen>

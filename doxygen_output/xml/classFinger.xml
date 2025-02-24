@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classFinger" kind="class" language="C++" prot="public">
+    <compoundname>Finger</compoundname>
+    <includes refid="finger_8h" local="no">finger.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classFinger_1a6e43c6c13ac9a8da993ef5a0070490ab" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Finger::_joint_states[NUM_JOINTS]</definition>
+        <argsstring>[NUM_JOINTS]</argsstring>
+        <name>_joint_states</name>
+        <qualifiedname>Finger::_joint_states</qualifiedname>
+        <briefdescription>
+<para>Array storing the current joint states. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/finger/finger.h" line="76" column="11" bodyfile="include/finger/finger.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFinger_1a0fef6fcf2e141ee17d3224a1cffcb316" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Finger::_motor_commands[NUM_MOTORS]</definition>
+        <argsstring>[NUM_MOTORS]</argsstring>
+        <name>_motor_commands</name>
+        <qualifiedname>Finger::_motor_commands</qualifiedname>
+        <briefdescription>
+<para>Array storing the computed motor commands. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/finger/finger.h" line="79" column="11" bodyfile="include/finger/finger.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classFinger_1aa71829d5592249136d8f8c3128bc757b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Finger::Finger</definition>
+        <argsstring>()</argsstring>
+        <name>Finger</name>
+        <qualifiedname>Finger::Finger</qualifiedname>
+        <briefdescription>
+<para>Constructs a new <ref refid="classFinger" kindref="compound">Finger</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The constructor currently does not perform additional initialization. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/finger/finger.h" line="52" column="5" bodyfile="src/finger/finger.cpp" bodystart="9" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classFinger_1aefe9b0417b1bdc93bce95df895520b5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float *</type>
+        <definition>float * Finger::getJointStates</definition>
+        <argsstring>(const float motor_states[NUM_MOTORS])</argsstring>
+        <name>getJointStates</name>
+        <qualifiedname>Finger::getJointStates</qualifiedname>
+        <param>
+          <type>const float</type>
+          <declname>motor_states</declname>
+          <array>[NUM_MOTORS]</array>
+        </param>
+        <briefdescription>
+<para>Computes the finger joint states based on motor states. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes the finger joint states from motor states.</para>
+<para>Given an array of motor states, this function calculates the positions of the finger joints.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>motor_states</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of motor states with length NUM_MOTORS. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to an array of computed joint states (length NUM_JOINTS).</para>
+</simplesect>
+This function calculates the positions of two joints by converting motor states using the specified pulley diameters. The first joint is computed as the difference between two positions (averaged), while the second joint is a combination of four positions.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>motor_states</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of motor states (length NUM_MOTORS). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to an array containing the computed joint states (length NUM_JOINTS). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/finger/finger.h" line="62" column="11" bodyfile="src/finger/finger.cpp" bodystart="22" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classFinger_1a680479a754818275e9f46a0c220c5fd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float *</type>
+        <definition>float * Finger::getMotorCommands</definition>
+        <argsstring>(const float joint_inputs[NUM_JOINTS])</argsstring>
+        <name>getMotorCommands</name>
+        <qualifiedname>Finger::getMotorCommands</qualifiedname>
+        <param>
+          <type>const float</type>
+          <declname>joint_inputs</declname>
+          <array>[NUM_JOINTS]</array>
+        </param>
+        <briefdescription>
+<para>Computes motor commands based on desired joint inputs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Given an array of desired joint inputs, this function calculates the motor commands required.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>joint_inputs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of desired joint inputs with length NUM_JOINTS. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to an array of computed motor commands (length NUM_MOTORS).</para>
+</simplesect>
+This function derives motor commands from the provided joint inputs. For now, it only uses the first joint input to compute commands for motor 0 and motor 2, with motor 1 and motor 3 set to zero.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>joint_inputs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of desired joint inputs (length NUM_JOINTS). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to an array containing the computed motor commands (length NUM_MOTORS). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/finger/finger.h" line="72" column="11" bodyfile="src/finger/finger.cpp" bodystart="49" bodyend="56"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Provides functionality to convert between motor states and finger joint states. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class defines methods to compute joint states from motor states and vice versa. </para>
+    </detaileddescription>
+    <location file="include/finger/finger.h" line="47" column="1" bodyfile="include/finger/finger.h" bodystart="47" bodyend="80"/>
+    <listofallmembers>
+      <member refid="classFinger_1a6e43c6c13ac9a8da993ef5a0070490ab" prot="private" virt="non-virtual"><scope>Finger</scope><name>_joint_states</name></member>
+      <member refid="classFinger_1a0fef6fcf2e141ee17d3224a1cffcb316" prot="private" virt="non-virtual"><scope>Finger</scope><name>_motor_commands</name></member>
+      <member refid="classFinger_1aa71829d5592249136d8f8c3128bc757b" prot="public" virt="non-virtual"><scope>Finger</scope><name>Finger</name></member>
+      <member refid="classFinger_1aefe9b0417b1bdc93bce95df895520b5e" prot="public" virt="non-virtual"><scope>Finger</scope><name>getJointStates</name></member>
+      <member refid="classFinger_1a680479a754818275e9f46a0c220c5fd6" prot="public" virt="non-virtual"><scope>Finger</scope><name>getMotorCommands</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

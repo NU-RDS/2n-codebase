@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="serial__protocols_8cpp" kind="file" language="C++">
+    <compoundname>serial_protocols.cpp</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="serial__protocols_8h" local="yes">serial_protocols/serial_protocols.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>serial_protocols/serial_protocols.h</label>
+        <link refid="serial__protocols_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>serial_protocols/utils.h</label>
+        <link refid="serial__protocols_2utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/serial_protocols/serial_protocols.cpp</label>
+        <link refid="serial__protocols_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="serial__protocols_8h" kindref="compound">serial_protocols/serial_protocols.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><ref refid="classSerialProtocols_1ae4b9453d604f377e34b520b8f58a7e11" kindref="member">SerialProtocols::SerialProtocols</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">uint8_t<sp/><ref refid="classSerialProtocols_1a4aa379fe04b74f8b0807e9b552f00cc0" kindref="member">SerialProtocols::computeChecksum</ref>(uint8_t<sp/>msgType,<sp/>uint8_t<sp/>payloadLen,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>payload)<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>sum<sp/>=<sp/>msgType<sp/>+<sp/>payloadLen;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint8_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>payloadLen;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sum<sp/>+=<sp/>payload[i];</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(uint8_t)(sum<sp/>&amp;<sp/>0xFF);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">uint8_t*<sp/><ref refid="classSerialProtocols_1a967d508f968bd1d09f41db97ea97b432" kindref="member">SerialProtocols::encodeFeedbackPacket</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>positions[<ref refid="finger_8h_1af742980593d698725375a7d12711c24f" kindref="member">NUM_JOINTS</ref>])<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>_encoder_feedback_packet[0]<sp/>=<sp/><ref refid="serial__protocols_2utils_8h_1a30d2043ca397843e08c43ade3aaee5b2" kindref="member">START_BYTE</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>_encoder_feedback_packet[1]<sp/>=<sp/><ref refid="serial__protocols_2utils_8h_1ac4d65ccae3f423f70139217495e2cd98" kindref="member">MSG_FEEDBACK</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>_encoder_feedback_packet[2]<sp/>=<sp/><ref refid="serial__protocols_2utils_8h_1acd2ea0fb131cece2099c97e29c34c659" kindref="member">FEEDBACK_PAYLOAD_LENGTH</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>the<sp/>two<sp/>float<sp/>positions<sp/>into<sp/>the<sp/>payload.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(&amp;_encoder_feedback_packet[3],<sp/>positions,<sp/>2<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Compute<sp/>checksum<sp/>over<sp/>the<sp/>message<sp/>type,<sp/>payload<sp/>length,<sp/>and<sp/>payload.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>checksum<sp/>=<sp/><ref refid="classSerialProtocols_1a4aa379fe04b74f8b0807e9b552f00cc0" kindref="member">computeChecksum</ref>(_encoder_feedback_packet[1],<sp/>_encoder_feedback_packet[2],<sp/>&amp;_encoder_feedback_packet[3]);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>_encoder_feedback_packet[3<sp/>+<sp/><ref refid="serial__protocols_2utils_8h_1acd2ea0fb131cece2099c97e29c34c659" kindref="member">FEEDBACK_PAYLOAD_LENGTH</ref>]<sp/>=<sp/>checksum;<sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>checksum<sp/>byte.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>_encoder_feedback_packet[3<sp/>+<sp/><ref refid="serial__protocols_2utils_8h_1acd2ea0fb131cece2099c97e29c34c659" kindref="member">FEEDBACK_PAYLOAD_LENGTH</ref><sp/>+<sp/>1]<sp/>=<sp/><ref refid="serial__protocols_2utils_8h_1a5126c1e2dc63cec63fc73710e48a9b5d" kindref="member">END_BYTE</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>end<sp/>byte.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_encoder_feedback_packet;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/><ref refid="classSerialProtocols_1aec800812be41156be7e0a1e0374a03fd" kindref="member">SerialProtocols::decodeJointCommandPacket</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>data)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>the<sp/>incoming<sp/>packet<sp/>data<sp/>into<sp/>the<sp/>internal<sp/>buffer.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(_joint_command_packet,<sp/>data,<sp/><ref refid="serial__protocols_2utils_8h_1a60e48a418bc0b66b574f5ee4abb296e2" kindref="member">JOINT_COMMAND_PACKET_SIZE</ref>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Validate<sp/>start<sp/>byte.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_joint_command_packet[0]<sp/>!=<sp/><ref refid="serial__protocols_2utils_8h_1a30d2043ca397843e08c43ade3aaee5b2" kindref="member">START_BYTE</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Validate<sp/>message<sp/>type.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_joint_command_packet[1]<sp/>!=<sp/><ref refid="serial__protocols_2utils_8h_1a3b9841196ad5c5ec384168d6caf6db3e" kindref="member">MSG_JOINT_COMMAND</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Validate<sp/>payload<sp/>length.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_joint_command_packet[2]<sp/>!=<sp/><ref refid="serial__protocols_2utils_8h_1a178af33f4519cf8d44cc290463600f88" kindref="member">JOINT_COMMAND_PAYLOAD_LENGTH</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Compute<sp/>and<sp/>validate<sp/>the<sp/>checksum.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>computedChecksum<sp/>=<sp/><ref refid="classSerialProtocols_1a4aa379fe04b74f8b0807e9b552f00cc0" kindref="member">computeChecksum</ref>(_joint_command_packet[1],<sp/>_joint_command_packet[2],<sp/>&amp;_joint_command_packet[3]);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(computedChecksum<sp/>!=<sp/>_joint_command_packet[3<sp/>+<sp/><ref refid="serial__protocols_2utils_8h_1a178af33f4519cf8d44cc290463600f88" kindref="member">JOINT_COMMAND_PAYLOAD_LENGTH</ref>])<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Validate<sp/>end<sp/>byte.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_joint_command_packet[3<sp/>+<sp/><ref refid="serial__protocols_2utils_8h_1a178af33f4519cf8d44cc290463600f88" kindref="member">JOINT_COMMAND_PAYLOAD_LENGTH</ref><sp/>+<sp/>1]<sp/>!=<sp/><ref refid="serial__protocols_2utils_8h_1a5126c1e2dc63cec63fc73710e48a9b5d" kindref="member">END_BYTE</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Decode<sp/>the<sp/>payload<sp/>into<sp/>the<sp/>joint<sp/>command<sp/>array.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(_joint_command,<sp/>&amp;_joint_command_packet[3],<sp/><ref refid="serial__protocols_2utils_8h_1a178af33f4519cf8d44cc290463600f88" kindref="member">JOINT_COMMAND_PAYLOAD_LENGTH</ref>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_joint_command;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/serial_protocols/serial_protocols.cpp"/>
+  </compounddef>
+</doxygen>

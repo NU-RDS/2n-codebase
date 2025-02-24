@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="finger_8h" kind="file" language="C++">
+    <compoundname>finger.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="controller_8h" local="yes">include/controller/controller.h</includedby>
+    <includedby refid="finger_8cpp" local="yes">src/finger/finger.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/finger/finger.h</label>
+        <link refid="finger_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/controller/controller.h</label>
+        <link refid="controller_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/finger/finger.h</label>
+        <link refid="finger_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classFinger" prot="public">Finger</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="finger_8h_1af742980593d698725375a7d12711c24f" prot="public" static="no">
+        <name>NUM_JOINTS</name>
+        <initializer>2</initializer>
+        <briefdescription>
+<para>Number of finger joints. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/finger/finger.h" line="15" column="9" bodyfile="include/finger/finger.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="finger_8h_1a52b56a381e777b55e1b59019d9ee072e" prot="public" static="no">
+        <name>NUM_MOTORS</name>
+        <initializer>4</initializer>
+        <briefdescription>
+<para>Number of motors controlling the finger. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/finger/finger.h" line="21" column="9" bodyfile="include/finger/finger.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="finger_8h_1abff68362f6a3518d826036342723ff99" prot="public" static="no">
+        <name>D_MOTOR_PULLEY</name>
+        <initializer>11.9998f</initializer>
+        <briefdescription>
+<para>Diameter of the motor pulley in millimeters. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/finger/finger.h" line="27" column="9" bodyfile="include/finger/finger.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="finger_8h_1a88a43911f0e9357330e3a24beb6e39d4" prot="public" static="no">
+        <name>D_FINGER_PULLEY_1</name>
+        <initializer>29.0f</initializer>
+        <briefdescription>
+<para>Diameter of the first finger pulley in millimeters. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/finger/finger.h" line="33" column="9" bodyfile="include/finger/finger.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="finger_8h_1abc25c804485d85e98841ce908ec1746c" prot="public" static="no">
+        <name>D_FINGER_PULLEY_2</name>
+        <initializer>35.0f</initializer>
+        <briefdescription>
+<para>Diameter of the second finger pulley in millimeters. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/finger/finger.h" line="39" column="9" bodyfile="include/finger/finger.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Declaration of the <ref refid="classFinger" kindref="compound">Finger</ref> class and related constants. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>FINGER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FINGER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="finger_8h_1af742980593d698725375a7d12711c24f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NUM_JOINTS<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="finger_8h_1a52b56a381e777b55e1b59019d9ee072e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NUM_MOTORS<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="finger_8h_1abff68362f6a3518d826036342723ff99" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>D_MOTOR_PULLEY<sp/>11.9998f<sp/></highlight><highlight class="comment">//<sp/>12<sp/>mm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="finger_8h_1a88a43911f0e9357330e3a24beb6e39d4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>D_FINGER_PULLEY_1<sp/>29.0f<sp/></highlight><highlight class="comment">//<sp/>29<sp/>mm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="finger_8h_1abc25c804485d85e98841ce908ec1746c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>D_FINGER_PULLEY_2<sp/>35.0f<sp/></highlight><highlight class="comment">//<sp/>35<sp/>mm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classFinger" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classFinger" kindref="compound">Finger</ref><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFinger_1aa71829d5592249136d8f8c3128bc757b" kindref="member">Finger</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/><ref refid="classFinger_1aefe9b0417b1bdc93bce95df895520b5e" kindref="member">getJointStates</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1ad5fc2c067a5d275ec1d6f4eed478b335" kindref="member">motor_states</ref>[<ref refid="finger_8h_1a52b56a381e777b55e1b59019d9ee072e" kindref="member">NUM_MOTORS</ref>]);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/><ref refid="classFinger_1a680479a754818275e9f46a0c220c5fd6" kindref="member">getMotorCommands</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>joint_inputs[<ref refid="finger_8h_1af742980593d698725375a7d12711c24f" kindref="member">NUM_JOINTS</ref>]);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_joint_states[<ref refid="finger_8h_1af742980593d698725375a7d12711c24f" kindref="member">NUM_JOINTS</ref>];</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_motor_commands[<ref refid="finger_8h_1a52b56a381e777b55e1b59019d9ee072e" kindref="member">NUM_MOTORS</ref>];</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>FINGER_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/finger/finger.h"/>
+  </compounddef>
+</doxygen>

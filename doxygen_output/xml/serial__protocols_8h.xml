@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="serial__protocols_8h" kind="file" language="C++">
+    <compoundname>serial_protocols.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes refid="serial__protocols_2utils_8h" local="yes">serial_protocols/utils.h</includes>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <includedby refid="serial__protocols_8cpp" local="yes">src/serial_protocols/serial_protocols.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/serial_protocols/serial_protocols.h</label>
+        <link refid="serial__protocols_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>serial_protocols/utils.h</label>
+        <link refid="serial__protocols_2utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/serial_protocols/serial_protocols.h</label>
+        <link refid="serial__protocols_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classSerialProtocols" prot="public">SerialProtocols</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="serial__protocols_8h_1af742980593d698725375a7d12711c24f" prot="public" static="no">
+        <name>NUM_JOINTS</name>
+        <initializer>2</initializer>
+        <briefdescription>
+<para>Number of joints used in the serial communication protocol. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/serial_protocols/serial_protocols.h" line="16" column="9" bodyfile="include/serial_protocols/serial_protocols.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Declaration of the <ref refid="classSerialProtocols" kindref="compound">SerialProtocols</ref> class for handling serial communication. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SERIAL_PROTOCOLS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SERIAL_PROTOCOLS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="serial__protocols_2utils_8h" kindref="compound">serial_protocols/utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="serial__protocols_8h_1af742980593d698725375a7d12711c24f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NUM_JOINTS<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classSerialProtocols" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classSerialProtocols" kindref="compound">SerialProtocols</ref>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSerialProtocols_1ae4b9453d604f377e34b520b8f58a7e11" kindref="member">SerialProtocols</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="classSerialProtocols_1a4aa379fe04b74f8b0807e9b552f00cc0" kindref="member">computeChecksum</ref>(uint8_t<sp/>msgType,<sp/>uint8_t<sp/>payloadLen,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>payload);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t*<sp/><ref refid="classSerialProtocols_1a967d508f968bd1d09f41db97ea97b432" kindref="member">encodeFeedbackPacket</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>positions[<ref refid="serial__protocols_8h_1af742980593d698725375a7d12711c24f" kindref="member">NUM_JOINTS</ref>]);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/><ref refid="classSerialProtocols_1aec800812be41156be7e0a1e0374a03fd" kindref="member">decodeJointCommandPacket</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>data);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>_encoder_feedback_packet[<ref refid="serial__protocols_2utils_8h_1a9880be088cab58dc6d9782bc31258ca8" kindref="member">FEEDBACK_PACKET_SIZE</ref>];</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>_joint_command_packet[<ref refid="serial__protocols_2utils_8h_1a60e48a418bc0b66b574f5ee4abb296e2" kindref="member">JOINT_COMMAND_PACKET_SIZE</ref>];</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_joint_command[<ref refid="finger_8h_1a52b56a381e777b55e1b59019d9ee072e" kindref="member">NUM_MOTORS</ref>];</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SERIAL_PROTOCOLS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/serial_protocols/serial_protocols.h"/>
+  </compounddef>
+</doxygen>
