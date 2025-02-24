@@ -251,10 +251,16 @@ void loop() {
             );
             motor_torques = result.first;
             joint_error_sum = result.second;
-            motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, -static_torque+motor_torques[0]);
-            motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, -static_torque+motor_torques[1]);
-            motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, -static_torque+motor_torques[2]);
-            motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(4, -static_torque+motor_torques[3]);
+            double max = motor_torques[0];
+            for(int i=0; i<4; i++){
+                if (motor_torques[i] >= max){
+                    max = motor_torques[i];
+                }
+            }
+            motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, -max+motor_torques[0]);
+            motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, -max+motor_torques[1]);
+            motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, -max+motor_torques[2]);
+            motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(4, -max+motor_torques[3]);
             // print[0] = -static_torque-motor_torques[0];
             // print[1] = -static_torque-motor_torques[1];
             //Serial.print(motor_torques[2]);

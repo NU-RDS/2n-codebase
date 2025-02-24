@@ -1,7 +1,7 @@
 #include <controller/controller.h>
 
 Controller::Controller()
-    :   low_kp(0.15), high_kp(0.5), low_kd(0.05), high_kd(0.1), low_ki(0.0), high_ki(0.0),
+    :   low_kp(0.4), high_kp(0.8), low_kd(0.1), high_kd(0.2), low_ki(0.0), high_ki(0.0),
         kp{ std::array<double, 2>{low_kp, 0}, std::array<double, 2>{0, low_kp} },
         ki{ std::array<double, 2>{low_ki, 0}, std::array<double, 2>{0, low_ki} },
         kd{ std::array<double, 2>{low_kd, 0}, std::array<double, 2>{0, low_kd} },
