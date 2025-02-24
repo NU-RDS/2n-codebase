@@ -3,7 +3,8 @@ import math
 import time
 import threading
 import numpy as np
-
+import ttkbootstrap as ttk 
+from ttkbootstrap.constants import *
 from serial_com import MotorSerialInterface
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
@@ -51,6 +52,9 @@ class FingerGUI:
         # Top of right_frame: Canvas for drawing the finger (smaller height)
         self.canvas = tk.Canvas(right_frame, bg="white")
         self.canvas.grid(row=0, column=0, sticky="nsew")
+        # Draw default finger visualization (for example, with both joints at 0 radians)
+        self.draw_finger(0.0, 0.0)
+
 
         # Bottom of right_frame: Plot frame for real-time joint plots
         self.plot_frame = tk.Frame(right_frame)
@@ -64,7 +68,22 @@ class FingerGUI:
         # Create a matplotlib Figure with two subplots (for Joint1 and Joint2)
         self.fig = Figure(figsize=(5, 3), dpi=100)
         self.ax1 = self.fig.add_subplot(211)
-        self.ax2 = self.fig.add_subplot(212)
+        self.ax2 = self.fig.add_subplot(212)# Create the lines for Joint1 and Joint2 once
+        
+        # Setup plot value.
+        self.line1_actual, = self.ax1.plot([], [], label="Actual Joint1")
+        self.line1_desired, = self.ax1.plot([], [], label="Desired Joint1", linestyle="--")
+        self.line2_actual, = self.ax2.plot([], [], label="Actual Joint2")
+        self.line2_desired, = self.ax2.plot([], [], label="Desired Joint2", linestyle="--")
+
+        # Set the static labels and legends
+        self.ax1.set_xlabel("Time (s)")
+        self.ax1.set_ylabel("Angle (deg)")
+        self.ax1.legend()
+        self.ax2.set_xlabel("Time (s)")
+        self.ax2.set_ylabel("Angle (deg)")
+        self.ax2.legend()
+
         self.fig.tight_layout()
 
         self.canvas_fig = FigureCanvasTkAgg(self.fig, master=self.plot_frame)
@@ -84,37 +103,36 @@ class FingerGUI:
         btn_frame = tk.Frame(top_frame)
         btn_frame.pack(side=tk.TOP, fill=tk.X, padx=5, pady=5)
 
-        connect_btn = tk.Button(btn_frame, text="Connect", command=self.connect_serial)
+        connect_btn = tk.Button(btn_frame, text="Connect",font=("Arial", 12), command=self.connect_serial)
         connect_btn.pack(side=tk.LEFT, padx=5)
 
-        disconnect_btn = tk.Button(btn_frame, text="Disconnect", command=self.disconnect_serial)
-        disconnect_btn.pack(side=tk.LEFT, padx=5)
+        disconnect_btn = tk.Button(btn_frame, text="Disconnect", font=("Arial", 12), command=self.disconnect_serial)
+        disconnect_btn.pack(side=tk.LEFT, padx=5) 
 
-        home_btn = tk.Button(btn_frame, text="HOME", command=self.send_home)
+        home_btn = tk.Button(btn_frame, text="HOME", font=("Arial", 12), command=self.send_home)
         home_btn.pack(side=tk.LEFT, padx=5)
 
-        stop_btn = tk.Button(btn_frame, text="STOP", command=self.send_stop)
+        stop_btn = tk.Button(btn_frame, text="STOP", font=("Arial", 12), command=self.send_stop)
         stop_btn.pack(side=tk.LEFT, padx=5)
 
         # Joint Position input area (slider + text entry; both share the same variable)
-        pos_frame = tk.LabelFrame(top_frame, text="Set Joint Position (deg)")
+        pos_frame = tk.LabelFrame(top_frame, text="Set Joint Position (deg)", font=("Aerial",12))
         pos_frame.pack(side=tk.TOP, fill=tk.X, padx=5, pady=5)
-
-        tk.Label(pos_frame, text="Joint1:", font=("Arial", 10)).grid(row=0, column=0, padx=5, pady=2)
+        tk.Label(pos_frame, text="Joint1:", font=("Arial", 12)).grid(row=0, column=0, padx=5, pady=2)
         self.joint1_scale = tk.Scale(pos_frame, from_=0, to=90, orient=tk.HORIZONTAL,
                                       variable=self.j1_var, length=300)
         self.joint1_scale.grid(row=0, column=1, padx=5, pady=2)
         self.joint1_entry = tk.Entry(pos_frame, width=6, textvariable=self.j1_var)
         self.joint1_entry.grid(row=0, column=2, padx=5, pady=2)
 
-        tk.Label(pos_frame, text="Joint2:", font=("Arial", 10)).grid(row=1, column=0, padx=5, pady=2)
+        tk.Label(pos_frame, text="Joint2:", font=("Arial", 12)).grid(row=1, column=0, padx=5, pady=2)
         self.joint2_scale = tk.Scale(pos_frame, from_=-90, to=90, orient=tk.HORIZONTAL,
                                       variable=self.j2_var, length=300)
         self.joint2_scale.grid(row=1, column=1, padx=5, pady=2)
         self.joint2_entry = tk.Entry(pos_frame, width=6, textvariable=self.j2_var)
         self.joint2_entry.grid(row=1, column=2, padx=5, pady=2)
 
-        send_pos_btn = tk.Button(pos_frame, text="Send Position", command=self.send_position_cmd)
+        send_pos_btn = tk.Button(pos_frame, text="Send Position",font=("Arial", 12), command=self.send_position_cmd)
         send_pos_btn.grid(row=2, column=0, columnspan=3, pady=5)
 
     def connect_serial(self):
@@ -198,7 +216,7 @@ class FingerGUI:
         self.canvas.delete("all")
         # Link lengths and base position
         L1, L2 = 80, 60
-        x0, y0 = 150, 200
+        x0, y0 = 200, 200
         # Assume j1 and j2 are in radians
         r1 = j1
         r2 = j2
@@ -206,45 +224,62 @@ class FingerGUI:
         y1 = y0 - L1 * math.sin(r1)
         x2 = x1 + L2 * math.cos(r1 + r2)
         y2 = y1 - L2 * math.sin(r1 + r2)
+        
         self.canvas.create_line(x0, y0, x1, y1, fill="red", width=5)
         self.canvas.create_line(x1, y1, x2, y2, fill="blue", width=5)
-        self.canvas.create_oval(x1-5, y1-5, x1+5, y1+5, fill="green")
-        self.canvas.create_oval(x2-5, y2-5, x2+5, y2+5, fill="green")
+        self.canvas.create_oval(x0-5, y0-5, x0+5, y0+5, fill="orange")
+        self.canvas.create_oval(x1-5, y1-5, x1+5, y1+5, fill="orange")
+        # self.canvas.create_oval(x2-5, y2-5, x2+5, y2+5, fill="orange")
         # Display current joint angles in the top-right corner (converted to degrees)
         j1_deg = math.degrees(j1)
         j2_deg = math.degrees(j2)
         self.canvas.create_text(
             290, 10,
-            text=f"Joint1={j1_deg:.1f}°\nJoint2={j2_deg:.1f}°",
-            fill="black",
+            text=f"Joint1 = {j1_deg:.1f}°\nJoint2 = {j2_deg:.1f}°",
+            fill="White",
             anchor='ne',
-            font=("Arial", 16, "bold")
+            font=("Arial", 14)
         )
 
     def update_plots(self):
-        # Clear previous plot content
-        self.ax1.clear()
-        self.ax2.clear()
-
-        # Plot Joint1 data
-        self.ax1.plot(self.time_data, self.joint1_actual_data, label="Actual Joint1")
-        self.ax1.plot(self.time_data, self.joint1_desired_data, label="Desired Joint1", linestyle="--")
-        self.ax1.set_title("Joint1")
-        self.ax1.set_xlabel("Time (s)")
-        self.ax1.set_ylabel("Angle (deg)")
-        self.ax1.legend()
-
-        # Plot Joint2 data
-        self.ax2.plot(self.time_data, self.joint2_actual_data, label="Actual Joint2")
-        self.ax2.plot(self.time_data, self.joint2_desired_data, label="Desired Joint2", linestyle="--")
-        self.ax2.set_title("Joint2")
-        self.ax2.set_xlabel("Time (s)")
-        self.ax2.set_ylabel("Angle (deg)")
-        self.ax2.legend()
-
-        self.fig.tight_layout()
+        # Update the data of each line
+        self.line1_actual.set_data(self.time_data, self.joint1_actual_data)
+        self.line1_desired.set_data(self.time_data, self.joint1_desired_data)
+        self.line2_actual.set_data(self.time_data, self.joint2_actual_data)
+        self.line2_desired.set_data(self.time_data, self.joint2_desired_data)
+        
+        # Rescale axes based on new data
+        self.ax1.relim()
+        self.ax1.autoscale_view()
+        self.ax2.relim()
+        self.ax2.autoscale_view()
+        
         self.canvas_fig.draw()
         self.master.after(100, self.update_plots)
+    # def update_plots(self):
+    #     # # Clear previous plot content
+    #     self.ax1.clear()
+    #     self.ax2.clear()
+
+    #     # Plot Joint1 data
+    #     self.ax1.plot(self.time_data, self.joint1_actual_data, label="Actual Joint1")
+    #     self.ax1.plot(self.time_data, self.joint1_desired_data, label="Desired Joint1", linestyle="--")
+    #     self.ax1.set_title("Joint1")
+    #     self.ax1.set_xlabel("Time (s)")
+    #     self.ax1.set_ylabel("Angle (deg)")
+    #     self.ax1.legend()
+
+    #     # Plot Joint2 data
+    #     self.ax2.plot(self.time_data, self.joint2_actual_data, label="Actual Joint2")
+    #     self.ax2.plot(self.time_data, self.joint2_desired_data, label="Desired Joint2", linestyle="--")
+    #     self.ax2.set_title("Joint2")
+    #     self.ax2.set_xlabel("Time (s)")
+    #     self.ax2.set_ylabel("Angle (deg)")
+    #     self.ax2.legend()
+
+    #     self.fig.tight_layout()
+    #     self.canvas_fig.draw()
+    #     self.master.after(100, self.update_plots)
 
     def log(self, msg):
         self.log_text.insert(tk.END, msg + "\n")
@@ -257,7 +292,8 @@ class FingerGUI:
         self.master.destroy()
 
 def main():
-    root = tk.Tk()
+    # root = tk.Tk()superhero
+    root = ttk.Window(themename="cyborg") # darkly cyborg vapor
     app = FingerGUI(root)
     root.mainloop()
 
