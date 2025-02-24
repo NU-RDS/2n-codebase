@@ -1,4 +1,5 @@
 #include <FlexCAN_T4.h>
+#include <math.h>
 #include "motor_protocols/r1806.h"
 #include "motor_protocols/utils.h"
 #include "serial_protocols/serial_protocols.h"
@@ -14,7 +15,6 @@ Finger finger;
 Controller controller;
 
 float* joint_states;
-float* joint_states_desired; // Received from UI
 float motor_offsets[4] = {0.0, 0.0, 0.0, 0.0};
 float print[2] = {0.0, 0.0};
 float* joint_commands;
@@ -22,8 +22,8 @@ float motor_position_states[4] = {0.0, 0.0, 0.0, 0.0};
 float motor_velocity_states[4] = {0.0, 0.0, 0.0, 0.0};
 float motor_position_offsets[4] = {0.0, 0.0, 0.0, 0.0};
 float joint_targets[2] = {0.0, 0.0};
-float static_torque = 0.06;
-float velocity_limit = 12.0;
+float static_torque = 0.065;
+float velocity_limit = 24.0;
 bool calibrated = false;
 std::vector<double> motor_states = {0.0, 0.0, 0.0, 0.0}; // position
 std::vector<double> motor_torques = {0.0, 0.0, 0.0, 0.0};
@@ -137,9 +137,9 @@ void canSniff(const CAN_message_t &msg) {
 
 void calibrate() {
     motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, -static_torque);
-    motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, 0.0);
+    motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, -static_torque);
     motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, -static_torque);
-    motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(4, 0.0);
+    motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(4, -static_torque);
     int c = 0;
     while (c < 150){
         // --- Send Torque Commands at 50 Hz ---
@@ -162,7 +162,6 @@ void calibrate() {
 void setup(void) {
     Serial.begin(115200);
     delay(500);
-
     can1.begin();
     can1.setBaudRate(250000);
     can1.setRX(ALT); // CRX for CAN1 is actually Pin 13 for the ME472 Dev Board V3
@@ -182,43 +181,45 @@ void setup(void) {
     delay(500);
 
     calibrate();
-    joint_states = {-math.pi/2, 0};
+    //joint_states = {0, 0};
     delay(500);
 }
-
-void SerialEvent(){
-    // ---- Moved Serial Read to SerialEvent ----
-    // Read desired position from serial 
-    if (Serial.available() >= JOINT_COMMAND_PACKET_SIZE) {
-        uint8_t joint_command_buffer[JOINT_COMMAND_PACKET_SIZE];
-        // Cast is required because readBytes expects a char pointer.
-        Serial.readBytes((char*)joint_command_buffer, JOINT_COMMAND_PACKET_SIZE);
-        joint_commands = serial_protocols.decodeJointCommandPacket(joint_command_buffer);
-        joint_states_desired = {joint_commands[0], joint_commands[1]};
-        if (joint_commands != nullptr) {
-            received_joint_commands = true;
-            // Update the last valid torque command time.
-            lastpositionCmdTime = millis();
-        }
-    }
-    joint_error_sum = {0.0, 0.0};
-}
-
+//
+//void SerialEvent(){
+//    // ---- Moved Serial Read to SerialEvent ----
+//    // Read desired position from serial 
+//    if (Serial.available() >= JOINT_COMMAND_PACKET_SIZE) {
+//        uint8_t joint_command_buffer[JOINT_COMMAND_PACKET_SIZE];
+//        // Cast is required because readBytes expects a char pointer.
+//        Serial.readBytes((char*)joint_command_buffer, JOINT_COMMAND_PACKET_SIZE);
+//        joint_commands = serial_protocols.decodeJointCommandPacket(joint_command_buffer);
+//        joint_states_desired = {{joint_commands[0]}, {joint_commands[1]}};
+//        if (joint_commands != nullptr) {
+//            received_joint_commands = true;
+//            // Update the last valid torque command time.
+//            lastpositionCmdTime = millis();
+//        }
+//    }
+//    joint_error_sum = {0.0, 0.0};
+//    Serial.print("Received Joint Commands");
+//}
+//
 void loop() {
     can1.events();
+    //Serial.print("CAN Events");
     if(danger_mode == false){
         // --- Joint Position Command Reception ---
-        //if (Serial.available() >= JOINT_COMMAND_PACKET_SIZE) {
-        //    uint8_t joint_command_buffer[JOINT_COMMAND_PACKET_SIZE];
-        //    // Cast is required because readBytes expects a char pointer.
-        //    Serial.readBytes((char*)joint_command_buffer, JOINT_COMMAND_PACKET_SIZE);
-        //    joint_commands = serial_protocols.decodeJointCommandPacket(joint_command_buffer);
-        //    if (joint_commands != nullptr) {
-        //        received_joint_commands = true;
-        //        // Update the last valid torque command time.
-        //        lastpositionCmdTime = millis();
-        //    }
-        //}
+        if (Serial.available() >= JOINT_COMMAND_PACKET_SIZE) {
+            uint8_t joint_command_buffer[JOINT_COMMAND_PACKET_SIZE];
+            // Cast is required because readBytes expects a char pointer.
+            Serial.readBytes((char*)joint_command_buffer, JOINT_COMMAND_PACKET_SIZE);
+            joint_commands = serial_protocols.decodeJointCommandPacket(joint_command_buffer);
+            if (joint_commands != nullptr) {
+                received_joint_commands = true;
+                // Update the last valid torque command time.
+                lastpositionCmdTime = millis();
+            }
+        }
         
         // --- Timeout Check: if no torque command received recently, reset torques to 0 ---
         if (millis() - lastpositionCmdTime > POSITION_TIMEOUT_MS) {
@@ -229,16 +230,18 @@ void loop() {
         }
     
         // Override Testing
-        //motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, -static_torque);
-        //motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, -static_torque);
+        motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, -static_torque);
+        motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, -static_torque);
+        motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, -static_torque);
+        motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(4, -static_torque);
     
         // --- Update Joint States Feedback Data ---
         joint_states = finger.getJointStates(motor_position_states);
-        print[0] = joint_states[0];
-        print[1] = joint_states[1];
         
-    
+        
+        //Serial.print(received_joint_commands);
         if(received_joint_commands == true){
+            //Serial.print(received_joint_commands);
             std::vector<double> js = {joint_states[0], joint_states[1]}; // Converting to std::vector
             std::vector<double> js_d = {joint_states_desired[0], joint_states_desired[1]};
             std::pair<std::vector<double>, std::vector<double>> result = (
@@ -246,23 +249,20 @@ void loop() {
             );
             motor_torques = result.first;
             joint_error_sum = result.second;
-            motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, motor_torques[0]);
-            motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, motor_torques[1]);
-            motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, motor_torques[2]);
-            motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(4, motor_torques[3]);
+            motor1_torque_cmd = r1806_protocols.encodeTorqueCommand(1, -static_torque-motor_torques[0]);
+            motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, -static_torque-motor_torques[1]);
+            motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, -static_torque-motor_torques[2]);
+            motor4_torque_cmd = r1806_protocols.encodeTorqueCommand(4, -static_torque-motor_torques[3]);
+            // print[0] = -static_torque-motor_torques[0];
+            // print[1] = -static_torque-motor_torques[1];
+            //Serial.print(motor_torques[2]);
         }
     
         for (int i=0; i<NUM_MOTORS; i++) {
             if(motor_velocity_states[i] > velocity_limit || motor_velocity_states[i] < -velocity_limit){ {
                 danger_mode = true;
             }
-        }
-        // --- Send Feedback Packet over Serial ---rotocols.encodeTorqueCommand(1, 0.0);
-            // motor2_torque_cmd = r1806_protocols.encodeTorqueCommand(2, 0.0);
-            // motor3_torque_cmd = r1806_protocols.encodeTorqueCommand(3, 0.0);
-            // motor4_torque_cmd = r1806_protocols.encod
-        packet = serial_protocols.encodeFeedbackPacket(print);
-        Serial.write(packet, FEEDBACK_PACKET_SIZE);
+            }
         }
     }
     else {
@@ -273,15 +273,17 @@ void loop() {
     }
 
     if (millis() - timeout > 20) {
-        can1.write(motor1_torque_cmd);
-        can1.write(motor2_torque_cmd);
-        can1.write(motor3_torque_cmd);
-        can1.write(motor4_torque_cmd);
+        // can1.write(motor1_torque_cmd);
+        // can1.write(motor2_torque_cmd);
+        // can1.write(motor3_torque_cmd);
+        // can1.write(motor4_torque_cmd);
         timeout = millis();
     }
 
     // --- Update Joint States Feedback Data ---
-    joint_states = finger.getJointStates(motor_states);
+    joint_states = finger.getJointStates(motor_position_states);
+    print[0] = joint_states[0];
+    print[1] = joint_states[1];
 
     // --- Send Feedback Packet over Serial ---
     packet = serial_protocols.encodeFeedbackPacket(joint_states);

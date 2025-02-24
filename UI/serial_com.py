@@ -150,7 +150,7 @@ class MotorSerialInterface:
 # Example usage:
 if __name__ == '__main__':
     msi = MotorSerialInterface(port='/dev/teensy4', baud_rate=115200)
-    joint_commands = [0.3, 0.3]
+    joint_commands = [0.5, 0.0]
     now = time.time()
     try:
         while True:
