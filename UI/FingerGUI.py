@@ -101,7 +101,7 @@ class FingerGUI:
         pos_frame.pack(side=tk.TOP, fill=tk.X, padx=5, pady=5)
 
         tk.Label(pos_frame, text="Joint1:", font=("Arial", 10)).grid(row=0, column=0, padx=5, pady=2)
-        self.joint1_scale = tk.Scale(pos_frame, from_=-90, to=90, orient=tk.HORIZONTAL,
+        self.joint1_scale = tk.Scale(pos_frame, from_=0, to=90, orient=tk.HORIZONTAL,
                                       variable=self.j1_var, length=300)
         self.joint1_scale.grid(row=0, column=1, padx=5, pady=2)
         self.joint1_entry = tk.Entry(pos_frame, width=6, textvariable=self.j1_var)
